@@ -161,13 +161,14 @@ export const pageQuery = graphql`
           }
           frontmatter {
 			  skills
+			  date(formatString: "MMMM YYYY")
 			title
 			cover {
-			childImageSharp {
-				fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
-				...GatsbyImageSharpFluid_withWebp_tracedSVG
+				childImageSharp {
+					fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+					...GatsbyImageSharpFluid_withWebp_tracedSVG
+					}
 				}
-			}
 			}
           }
         }

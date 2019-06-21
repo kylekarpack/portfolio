@@ -17,7 +17,7 @@ const ProjectItem = ({ node, style, testid }) => (
 				{node.frontmatter.title}
 			</Title>
             <Subtitle isSize={6}>
-				{node.frontmatter.title}
+				{node.frontmatter.date}
             </Subtitle>
           </MediaContent>
         </Media>

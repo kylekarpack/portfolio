@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { useTrail, config } from 'react-spring'
 import styled from 'styled-components'
 import { Layout, ProjectItem } from '../components'
+import { Title } from "bloomer";
 
 const Wrapper = styled.div`
 	padding: 2vw;
@@ -32,7 +33,7 @@ const Portfolio = ({
 	return (
 		<Layout pathname={location.pathname}>
 			<Wrapper>
-				<h1>Recent Work</h1>
+				<Title>Recent Work</Title>
 				<ListWrapper>
 					{trail.map((style, index) => (
 						<ProjectItem
@@ -76,6 +77,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
 			title
+			skills
+			date(formatString: "MMMM YYYY")
             cover {
               childImageSharp {
                 fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
