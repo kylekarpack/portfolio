@@ -6,6 +6,7 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { SEO, Container, Layout, Hero, BGImage } from '../components'
+import { Tag, Title } from "bloomer";
 
 const ImageContainer = styled(animated.div)`
 	padding: 1em;
@@ -30,14 +31,8 @@ const InformationWrapper = styled(animated.div)`
   justify-content: flex-start;
 `
 
-const Title = styled(animated.h1)`
-  margin-top: 0;
-  border-bottom: 4px solid;
-  display: inline-block;
-`
-
 const ContentBlock = styled.div`
-  h2, h3 {
+  h2, h3, .is-2, .is-3 {
 	  color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.grey)};
 	  text-transform: uppercase;
 	  font-size: 1.1rem;
@@ -85,6 +80,38 @@ const Project = ({ data: { mdx: postNode }, location }) => {
 					<ContentBlock customcolor={project.color}>
 						<animated.div style={contentProps}>
 							<MDXRenderer>{postNode.code.body}</MDXRenderer>
+							{
+								project.skills ? 
+									<>
+										<Title tag="h3">Skills</Title>
+										{
+											project.skills.map(skill => {
+												return (
+													<>
+														<Tag isSize='medium'>{skill}</Tag>&nbsp;
+													</>
+												)
+											})
+										}
+									</> : ""
+							}
+							{
+								project.links ? 
+									<>
+										<Title tag="h3">Links</Title>
+										{
+											project.links.map(link => {
+												return (
+													<ul>
+														<li>
+															<a target="_blank" href={link}>{link}</a>
+														</li>
+													</ul>
+												)
+											})
+										}
+									</> : ""
+							}
 						</animated.div>
 					</ContentBlock>
 				</Container>
@@ -123,6 +150,8 @@ export const pageQuery = graphql`
         }
       }
       frontmatter {
+		  skills
+		  links
 		title
         date(formatString: "MMMM YYYY")
 		color

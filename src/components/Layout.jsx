@@ -8,20 +8,10 @@ import Navigation from './Navigation'
 import Footer from './Footer'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
-import 'react-bulma-components/dist/react-bulma-components.min.css';
+import "bulma/css/bulma.css";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  /* html, input, textarea, button {
-    font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-  h1, h2, h3, h4, h5, h6, nav a {
-	font-family: "Palanquin", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	font-weight: 700;
-  }
-  .nav-active {
-    color: ${theme.brand.primary} !important;
-  } */
 `
 
 // We can pass customSEO here to not include the <SEO> component twice. This prop is 'true' on the project template

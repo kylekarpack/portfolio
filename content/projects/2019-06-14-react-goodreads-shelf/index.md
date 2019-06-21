@@ -7,6 +7,8 @@ slug: "react-goodreads-shelf"
 status: "publish"
 title: "react-goodreads-shelf"
 cover: "./cover.png"
+skills: ["React", "ES6", "XML/JSON", "npm"]
+links: ["https://github.com/kylekarpack/react-goodreads-shelf", "https://www.npmjs.com/package/react-goodreads-shelf"]
 ---
 ### Case Study
 
@@ -15,15 +17,3 @@ This React component allows you to display a public Goodreads shelf in a React a
 ```jsx
 <GoodreadsBookshelf userId="USER_ID_HERE" apiKey="API_KEY_HERE" />
 ```
-
-### Skills Used
-
-- React
-- ES6
-- XML/JSON
-- npm
-
-### Links
-
-- [https://github.com/kylekarpack/react-goodreads-shelf](https://github.com/kylekarpack/react-goodreads-shelf)
-- [https://www.npmjs.com/package/react-goodreads-shelf](https://www.npmjs.com/package/react-goodreads-shelf)

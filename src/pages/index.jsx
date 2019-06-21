@@ -7,6 +7,7 @@ import React from 'react';
 import { useTrail, useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { Layout, ProjectItem } from '../components';
+import { Title, Subtitle, Button } from "bloomer";
 
 const Wrapper = styled.div`
 	padding: 2vw;
@@ -96,15 +97,15 @@ const Index = ({
 						<Img fluid={headshot.childImageSharp.fluid} alt="Kyle headshot" />
 					</ImageContainer>
 					<div>
-						<h1>Kyle Karpack</h1>
-						<h2>Software Engineer in Seattle</h2>
+						<Title>Kyle Karpack</Title>
+						<Subtitle>Software Engineer in Seattle</Subtitle>
 						<p>Specializing in user-centered design for large web applications</p>
 					</div>
 				</Profile>
 
 				<hr />
 
-				<h2>Recent Work</h2>
+				<Title isSize={2}>Recent Work</Title>
 				<ListWrapper>
 					{trail.map((style, index) => (
 						<ProjectItem
@@ -117,7 +118,7 @@ const Index = ({
 				</ListWrapper>
 
 				<MoreWrapper>
-					<a className="btn" href="/portfolio">View More</a>
+					<Button isSize="large" isLink="/portfolio">View More</Button>
 				</MoreWrapper>
 			</Wrapper>
 		</Layout>
@@ -159,14 +160,15 @@ export const pageQuery = graphql`
 			color
           }
           frontmatter {
+			  skills
 			title
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
+			cover {
+			childImageSharp {
+				fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+				...GatsbyImageSharpFluid_withWebp_tracedSVG
+				}
+			}
+			}
           }
         }
       }

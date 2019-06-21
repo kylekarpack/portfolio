@@ -8,7 +8,10 @@ status: "publish"
 title: "react-github-graph"
 cover: "./cover.png"
 color: "#9bc377"
+skills: ["React", "ES6", "npm"]
+links: ["https://github.com/kylekarpack/react-github-graph", "https://www.npmjs.com/package/react-github-graph"]
 ---
+
 ### Case Study
 
 A lightweight React component that displays Github contributions for a given user. Usage is remarkably simple. After installing and importing the component, simply drop the tag into a React component:
@@ -17,14 +20,3 @@ A lightweight React component that displays Github contributions for a given use
 <GithubContributions username="kylekarpack"></GithubContributions>
 ```
 Please feel free to use this on your portfolio or in your project.
-
-### Skills Used
-
-- React
-- ES6
-- npm
-
-### Links
-
-- [https://github.com/kylekarpack/react-github-graph](https://github.com/kylekarpack/react-github-graph)
-- [https://www.npmjs.com/package/react-github-graph](https://www.npmjs.com/package/react-github-graph)
