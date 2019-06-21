@@ -4,18 +4,16 @@ import styled from 'styled-components'
 import { Layout } from '../components'
 import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Container, Heading } from "react-bulma-components";
 import {
+	Title,
+	Container,
 	Field,
 	Control,
 	Label,
 	Input,
 	Textarea,
-	Select,
-	Checkbox,
-	Radio,
-	Help,
-  } from 'react-bulma-components';
+	Button
+  } from "bloomer";
 
 class ContactPage extends React.Component {
 
@@ -74,7 +72,7 @@ class ContactPage extends React.Component {
 				/>
 
 				<Container>
-					<Heading>Contact</Heading>
+					<Title>Contact</Title>
 					{/* <h3>Get in Touch</h3>
 					<p>Have an idea for a project? Want me to work for you? Send me a message here and I’ll get back to you as soon as possible.</p>
 			
@@ -91,18 +89,28 @@ class ContactPage extends React.Component {
 							</label>
 						</p>
 
-						<input type="text" name="name" placeholder="Your name" onChange={this.handleChange} />
+						<Field>
+							<Label>Name</Label>
+							<Control>
+								<Input name="name" placeholder="Your name" onChange={this.handleChange} />
+							</Control>
+						</Field>
 
 						<Field>
-        <Label>Name</Label>
-        <Control>
-          <Input placeholder="Text input" />
-        </Control>
-      </Field>
+							<Label>Email</Label>
+							<Control>
+								<Input type="email" name="email" placeholder="Your email" required onChange={this.handleChange} />
+							</Control>
+						</Field>
 
-						<input type="email" name="email" placeholder="Your email" required onChange={this.handleChange} />
-						<textarea name="message" placeholder="Your message" rows="4" required onChange={this.handleChange}></textarea>
-						<button type="submit">Send</button>
+						<Field>
+							<Label>Message</Label>
+							<Control>
+								<Textarea name="message" placeholder="Your message" rows="4" required onChange={this.handleChange} />
+							</Control>
+						</Field>
+
+						<Button type="submit">Send</Button>
 					</form>
 
 					<p hidden={!this.state.submitted}>
