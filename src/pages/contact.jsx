@@ -1,35 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Container, Layout } from '../components'
+import { Layout } from '../components'
 import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-
-const Content = styled(Container)`
-  margin: 0 auto;
-  input, textarea {
-	  padding: .75em 1em;
-	  width: 100%;
-	  display: block;
-	  margin-bottom: 1em;
-	  font-size: 1rem;
-	  background: #f2f4f5;
-	  border: none;
-	  outline: none;
-	  box-shadow: 0 0 1px rgba(0,0,0,0.2);
-	  &:focus {
-		  box-shadow: 0 0 0 2px ${props => props.theme.brand.primary};
-	  }
-  }
-  button {
-	background: ${props => props.theme.brand.primary};
-	color: #fff;
-	padding: .5em 2em;
-	font-size: 1em;
-	border: none;
-
-  }
-`
+import { Container, Heading } from "react-bulma-components";
+import {
+	Field,
+	Control,
+	Label,
+	Input,
+	Textarea,
+	Select,
+	Checkbox,
+	Radio,
+	Help,
+  } from 'react-bulma-components';
 
 class ContactPage extends React.Component {
 
@@ -87,14 +73,15 @@ class ContactPage extends React.Component {
 					{...this.state.map.viewport}
 				/>
 
-				<Content type="text">
-					<h1>Contact</h1>
+				<Container>
+					<Heading>Contact</Heading>
 					{/* <h3>Get in Touch</h3>
 					<p>Have an idea for a project? Want me to work for you? Send me a message here and I’ll get back to you as soon as possible.</p>
 			
 					<h3>Based Out of the PNW</h3>
 					<p>Born and raised here, I love the Pacific Northwest and plan on being here for a long while.</p> */}
 					<form name="contact" method="POST" data-netlify data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit} hidden={this.state.submitted}>
+						
 						<input type="hidden" name="form-name" value="contact" />
 
 						<p hidden>
@@ -105,6 +92,14 @@ class ContactPage extends React.Component {
 						</p>
 
 						<input type="text" name="name" placeholder="Your name" onChange={this.handleChange} />
+
+						<Field>
+        <Label>Name</Label>
+        <Control>
+          <Input placeholder="Text input" />
+        </Control>
+      </Field>
+
 						<input type="email" name="email" placeholder="Your email" required onChange={this.handleChange} />
 						<textarea name="message" placeholder="Your message" rows="4" required onChange={this.handleChange}></textarea>
 						<button type="submit">Send</button>
@@ -113,7 +108,7 @@ class ContactPage extends React.Component {
 					<p hidden={!this.state.submitted}>
 						Thank you for your submission. I will get back to you shortly.
 					</p>
-				</Content>
+				</Container>
 			</Layout>
 		)
 	}
