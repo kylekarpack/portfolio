@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { FaGithub, FaLinkedin, FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
+import { Navbar, Button } from "react-bulma-components";
 
 const Wrapper = styled.header`
 	position: sticky;
@@ -130,49 +131,104 @@ class Navigation extends React.Component {
 			<StaticQuery
 				query={query}
 				render={data => (
-					<Wrapper data-testid="navigation">
+					// <Wrapper data-testid="navigation">
 
-						<a className="navbar-toggle" onClick={this.toggleSideNav}>
-							<FaBars />
-						</a>
+					// 	<a className="navbar-toggle" onClick={this.toggleSideNav}>
+					// 		<FaBars />
+					// 	</a>
 
-						<Nav className={this.state.collapsed ? "navbar collapsed" : "navbar"}>
-							<Link to="/" className="logo">
-								<img src="/logo.png" alt="Site Logo" />
+					// 	<Nav className={this.state.collapsed ? "navbar collapsed" : "navbar"}>
+					// 		<Link to="/" className="logo">
+					// 			<img src="/logo.png" alt="Site Logo" />
+					// 		</Link>
+					// 		<Link to="/" data-testid="home-title-link" activeClassName="nav-active">
+					// 			Home
+					// 		</Link>
+					// 		<Link to="/about" data-testid="about-title-link" activeClassName="nav-active">
+					// 			About
+					// 		</Link>
+					// 		<Link to="/resume" data-testid="resume-title-link" activeClassName="nav-active">
+					// 			Resume
+					// 		</Link>
+					// 		<Link to="/portfolio" data-testid="portfolio-title-link" activeClassName="nav-active">
+					// 			Portfolio
+					// 		</Link>
+					// 		<Link to="/contact" data-testid="contact-title-link" activeClassName="nav-active">
+					// 			Contact
+					// 		</Link>
+					// 	</Nav>
+					// 	<SocialMedia>
+					// 		<a
+					// 			href="https://github.com/kylekarpack"
+					// 			target="_blank"
+					// 			rel="noopener noreferrer"
+					// 			aria-label="Github">
+					// 			<FaGithub />
+					// 		</a>
+					// 		<a
+					// 			href="https://www.linkedin.com/in/kylekarpack"
+					// 			target="_blank"
+					// 			rel="noopener noreferrer"
+					// 			aria-label="LinkedIn">
+					// 			<FaLinkedin />
+					// 		</a>
+					// 	</SocialMedia>
+					// </Wrapper>
+					<Navbar style={{ position: "sticky", top: 0 }}
+					
+					activeClassName="nav-active"
+					  >
+					<Navbar.Brand>
+					  <Navbar.Item renderAs="a" href="#">
+					  		<Link to="/" className="logo">
+					 			<img src="/logo.png" alt="Site Logo" />
 							</Link>
-							<Link to="/" data-testid="home-title-link" activeClassName="nav-active">
-								Home
-							</Link>
-							<Link to="/about" data-testid="about-title-link" activeClassName="nav-active">
-								About
-							</Link>
-							<Link to="/resume" data-testid="resume-title-link" activeClassName="nav-active">
-								Resume
-							</Link>
-							<Link to="/portfolio" data-testid="portfolio-title-link" activeClassName="nav-active">
-								Portfolio
-							</Link>
-							<Link to="/contact" data-testid="contact-title-link" activeClassName="nav-active">
-								Contact
-							</Link>
-						</Nav>
-						<SocialMedia>
-							<a
-								href="https://github.com/kylekarpack"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Github">
-								<FaGithub />
-							</a>
-							<a
-								href="https://www.linkedin.com/in/kylekarpack"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="LinkedIn">
-								<FaLinkedin />
-							</a>
-						</SocialMedia>
-					</Wrapper>
+					  </Navbar.Item>
+					  <Navbar.Burger
+						active={open}
+						onClick={() =>
+						  this.setState(state => {
+							open: !state.open;
+						  })
+						}
+					  />
+					</Navbar.Brand>
+					<Navbar.Menu active={open}>
+					  <Navbar.Container>
+					 		<Navbar.Item href="/" data-testid="home-title-link" activeClassName="nav-active">
+					 			Home
+					 		</Navbar.Item>
+					 		<Navbar.Item href="/about" data-testid="about-title-link" activeClassName="nav-active">
+					 			About
+					 		</Navbar.Item>
+					 		<Navbar.Item href="/resume" data-testid="resume-title-link" activeClassName="nav-active">
+					 			Resume
+					 		</Navbar.Item>
+					 		<Navbar.Item href="/portfolio" data-testid="portfolio-title-link" activeClassName="nav-active">
+					 			Portfolio
+					 		</Navbar.Item>
+					 		<Navbar.Item href="/contact" data-testid="contact-title-link" activeClassName="nav-active">
+					 			Contact
+					 		</Navbar.Item>
+					  </Navbar.Container>
+					  <Navbar.Container position="end">
+						<Navbar.Item
+							href="https://github.com/kylekarpack"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Github">
+							<FaGithub />
+						</Navbar.Item>
+						<Navbar.Item
+							href="https://www.linkedin.com/in/kylekarpack"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="LinkedIn">
+							<FaLinkedin />
+						</Navbar.Item>
+					  </Navbar.Container>
+					</Navbar.Menu>
+				  </Navbar>
 				)}
 			/>
 		)

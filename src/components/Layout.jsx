@@ -8,6 +8,7 @@ import Navigation from './Navigation'
 import Footer from './Footer'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
