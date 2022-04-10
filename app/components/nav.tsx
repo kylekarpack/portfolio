@@ -3,12 +3,14 @@ import type { FunctionComponent } from "react";
 
 export const Nav: FunctionComponent = () => {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/resume">Resume</Link>
-      <Link to="/portfolio">Portfolio</Link>
-      <Link to="/contact">Contact</Link>
-    </nav>
+    <header>
+      <nav className="container flex">
+        <Link className="p-4" to="/">Home</Link>
+        <Link className="p-4" to="/about">About</Link>
+        <Link className="p-4" to="/resume">Resume</Link>
+        <Link className="p-4" to="/portfolio">Portfolio</Link>
+        <Link className="p-4" to="/contact">Contact</Link>
+      </nav>
+    </header>
   );
 };

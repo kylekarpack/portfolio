@@ -45,7 +45,9 @@ export default function App() {
       </head>
       <body className="h-full">
         <Nav />
-        <Outlet />
+        <main className="container prose mx-auto px-8">
+          <Outlet />
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
