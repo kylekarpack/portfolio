@@ -17,7 +17,7 @@ node_modules
 *.js.map
 
 api/index.js
-app/styles/index.css
+app/styles/
 
 # TODO: Remove these
 public/
