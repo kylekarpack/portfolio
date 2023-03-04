@@ -51,9 +51,9 @@ export default function () {
                 ))}
               </div>
             </div>
-            <div className="mt-8 flex gap-4 print:hidden">
+            <div className="mt-8 flex justify-center gap-4 print:hidden">
               <a
-                className="ui-btn custom-bg-gradient flex-1 whitespace-nowrap rounded-2xl py-2 px-4 text-center text-sm font-normal text-white"
+                className="ui-btn custom-bg-gradient whitespace-nowrap rounded-2xl py-2 px-4 text-center text-sm font-normal text-white"
                 download={true}
                 href="/resume/Matthew_Scholta_2023.pdf">
                 Download Resume
