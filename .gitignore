@@ -16,6 +16,8 @@ node_modules
 *.snap
 *.js.map
 
+api/index.js
+
 # TODO: Remove these
 public/
 
