@@ -1,8 +1,10 @@
 import { useLocation } from "@remix-run/react";
 import {
+  SITE_AUTHOR,
+  SITE_YEAR,
   SOCIAL_GITHUB,
   SOCIAL_LINKEDIN,
-  SOCIAL_TWITTER
+  SOCIAL_TWITTER,
 } from "../config/constants";
 
 export const AppFooter = () => {
@@ -22,8 +24,7 @@ export const AppFooter = () => {
           className="p-2"
           href={SOCIAL_LINKEDIN}
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           <img
             alt="Follow me on LinkedIn"
             className="footer-social"
@@ -37,8 +38,7 @@ export const AppFooter = () => {
           className="p-2"
           href={SOCIAL_GITHUB}
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           <img
             alt="Follow me on GitHub"
             className="footer-social"
@@ -48,32 +48,9 @@ export const AppFooter = () => {
             width={16}
           />
         </a>
-        <a
-          className="p-2"
-          href={SOCIAL_TWITTER}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            alt="Follow me on Twitter"
-            className="footer-social"
-            height={16}
-            loading="lazy"
-            src="/images/svg/twitter-dark.svg"
-            width={16}
-          />
-        </a>
       </div>
       <p className="font-font-monospace">
-        Built with <span className="text-color-primary--">&hearts;</span> in{" "}
-        <a
-          href="https://www.google.com/search?q=san+diego+weather"
-          rel="noreferrer"
-          target="_blank"
-        >
-          San Diego
-        </a>
-        , CA.
+        &copy; {SITE_YEAR}, {SITE_AUTHOR}
       </p>
     </footer>
   );

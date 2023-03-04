@@ -139,7 +139,7 @@ var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), AppFooter = () =
             !1,
             {
               fileName: "app/components/AppFooter.tsx",
-              lineNumber: 27,
+              lineNumber: 28,
               columnNumber: 11
             },
             this
@@ -149,7 +149,7 @@ var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), AppFooter = () =
         !1,
         {
           fileName: "app/components/AppFooter.tsx",
-          lineNumber: 21,
+          lineNumber: 23,
           columnNumber: 9
         },
         this
@@ -185,87 +185,29 @@ var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), AppFooter = () =
         !1,
         {
           fileName: "app/components/AppFooter.tsx",
-          lineNumber: 36,
-          columnNumber: 9
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-        "a",
-        {
-          className: "p-2",
-          href: SOCIAL_TWITTER,
-          target: "_blank",
-          rel: "noreferrer",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-            "img",
-            {
-              alt: "Follow me on Twitter",
-              className: "footer-social",
-              height: 16,
-              loading: "lazy",
-              src: "/images/svg/twitter-dark.svg",
-              width: 16
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/AppFooter.tsx",
-              lineNumber: 57,
-              columnNumber: 11
-            },
-            this
-          )
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/AppFooter.tsx",
-          lineNumber: 51,
+          lineNumber: 37,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/components/AppFooter.tsx",
-      lineNumber: 20,
+      lineNumber: 22,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "font-font-monospace", children: [
-      "Built with ",
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-color-primary--", children: "\u2665" }, void 0, !1, {
-        fileName: "app/components/AppFooter.tsx",
-        lineNumber: 68,
-        columnNumber: 20
-      }, this),
-      " in",
-      " ",
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-        "a",
-        {
-          href: "https://www.google.com/search?q=san+diego+weather",
-          rel: "noreferrer",
-          target: "_blank",
-          children: "San Diego"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/AppFooter.tsx",
-          lineNumber: 69,
-          columnNumber: 9
-        },
-        this
-      ),
-      ", CA."
+      "\xA9 ",
+      SITE_YEAR,
+      ", ",
+      SITE_AUTHOR
     ] }, void 0, !0, {
       fileName: "app/components/AppFooter.tsx",
-      lineNumber: 67,
+      lineNumber: 52,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/AppFooter.tsx",
-    lineNumber: 19,
+    lineNumber: 21,
     columnNumber: 5
   }, this);
 };
@@ -3984,7 +3926,7 @@ function uses_default() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "97c6c6a5", entry: { module: "/build/entry.client-7IQ75F7V.js", imports: ["/build/_shared/chunk-7RHL3K4S.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WBA2PDVR.js", imports: ["/build/_shared/chunk-FXIJPGLV.js", "/build/_shared/chunk-VKBADAWC.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !0 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-VQ27HJRM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[sitemap.xml]": { id: "routes/[sitemap.xml]", parentId: "root", path: "sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/[sitemap.xml]-LMNECGY7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/blog/$slug": { id: "routes/api/blog/$slug", parentId: "root", path: "api/blog/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/api/blog/$slug-JZZI3NZE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/blog/index": { id: "routes/api/blog/index", parentId: "root", path: "api/blog", index: !0, caseSensitive: void 0, module: "/build/routes/api/blog/index-KN2T6G5T.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/portfolio/$slug": { id: "routes/api/portfolio/$slug", parentId: "root", path: "api/portfolio/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/api/portfolio/$slug-DQQPBBGD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/portfolio/index": { id: "routes/api/portfolio/index", parentId: "root", path: "api/portfolio", index: !0, caseSensitive: void 0, module: "/build/routes/api/portfolio/index-4UH3B7ZO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/qualities": { id: "routes/api/qualities", parentId: "root", path: "api/qualities", index: void 0, caseSensitive: void 0, module: "/build/routes/api/qualities-7A2F5LET.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/$slug": { id: "routes/blog/$slug", parentId: "root", path: "blog/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/blog/$slug-UVOA3RUQ.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/blog/index": { id: "routes/blog/index", parentId: "root", path: "blog", index: !0, caseSensitive: void 0, module: "/build/routes/blog/index-FD3IO3YV.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-3533HD6O.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/portfolio/$slug": { id: "routes/portfolio/$slug", parentId: "root", path: "portfolio/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/portfolio/$slug-RDD6SVVN.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/portfolio/index": { id: "routes/portfolio/index", parentId: "root", path: "portfolio", index: !0, caseSensitive: void 0, module: "/build/routes/portfolio/index-YQJXOT7O.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/resume": { id: "routes/resume", parentId: "root", path: "resume", index: void 0, caseSensitive: void 0, module: "/build/routes/resume-UXYEI4PO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sandbox/css-polaroid": { id: "routes/sandbox/css-polaroid", parentId: "root", path: "sandbox/css-polaroid", index: void 0, caseSensitive: void 0, module: "/build/routes/sandbox/css-polaroid-OOFTRSQ3.js", imports: ["/build/_shared/chunk-YZZJMHG7.js", "/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sandbox/index": { id: "routes/sandbox/index", parentId: "root", path: "sandbox", index: !0, caseSensitive: void 0, module: "/build/routes/sandbox/index-26HZXVWJ.js", imports: ["/build/_shared/chunk-YZZJMHG7.js", "/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/uses": { id: "routes/uses", parentId: "root", path: "uses", index: void 0, caseSensitive: void 0, module: "/build/routes/uses-OJTYO55I.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-97C6C6A5.js" };
+var assets_manifest_default = { version: "0ed3ace3", entry: { module: "/build/entry.client-7IQ75F7V.js", imports: ["/build/_shared/chunk-7RHL3K4S.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-JO4IIS2H.js", imports: ["/build/_shared/chunk-FXIJPGLV.js", "/build/_shared/chunk-VKBADAWC.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !0 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-VQ27HJRM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[sitemap.xml]": { id: "routes/[sitemap.xml]", parentId: "root", path: "sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/[sitemap.xml]-LMNECGY7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/blog/$slug": { id: "routes/api/blog/$slug", parentId: "root", path: "api/blog/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/api/blog/$slug-JZZI3NZE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/blog/index": { id: "routes/api/blog/index", parentId: "root", path: "api/blog", index: !0, caseSensitive: void 0, module: "/build/routes/api/blog/index-KN2T6G5T.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/portfolio/$slug": { id: "routes/api/portfolio/$slug", parentId: "root", path: "api/portfolio/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/api/portfolio/$slug-DQQPBBGD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/portfolio/index": { id: "routes/api/portfolio/index", parentId: "root", path: "api/portfolio", index: !0, caseSensitive: void 0, module: "/build/routes/api/portfolio/index-4UH3B7ZO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/api/qualities": { id: "routes/api/qualities", parentId: "root", path: "api/qualities", index: void 0, caseSensitive: void 0, module: "/build/routes/api/qualities-7A2F5LET.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/$slug": { id: "routes/blog/$slug", parentId: "root", path: "blog/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/blog/$slug-UVOA3RUQ.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/blog/index": { id: "routes/blog/index", parentId: "root", path: "blog", index: !0, caseSensitive: void 0, module: "/build/routes/blog/index-FD3IO3YV.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-V7BCTFBC.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/portfolio/$slug": { id: "routes/portfolio/$slug", parentId: "root", path: "portfolio/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/portfolio/$slug-RDD6SVVN.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/portfolio/index": { id: "routes/portfolio/index", parentId: "root", path: "portfolio", index: !0, caseSensitive: void 0, module: "/build/routes/portfolio/index-YQJXOT7O.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/resume": { id: "routes/resume", parentId: "root", path: "resume", index: void 0, caseSensitive: void 0, module: "/build/routes/resume-UXYEI4PO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sandbox/css-polaroid": { id: "routes/sandbox/css-polaroid", parentId: "root", path: "sandbox/css-polaroid", index: void 0, caseSensitive: void 0, module: "/build/routes/sandbox/css-polaroid-OOFTRSQ3.js", imports: ["/build/_shared/chunk-YZZJMHG7.js", "/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sandbox/index": { id: "routes/sandbox/index", parentId: "root", path: "sandbox", index: !0, caseSensitive: void 0, module: "/build/routes/sandbox/index-26HZXVWJ.js", imports: ["/build/_shared/chunk-YZZJMHG7.js", "/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/uses": { id: "routes/uses", parentId: "root", path: "uses", index: void 0, caseSensitive: void 0, module: "/build/routes/uses-OJTYO55I.js", imports: ["/build/_shared/chunk-NBWHSWK2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-0ED3ACE3.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
