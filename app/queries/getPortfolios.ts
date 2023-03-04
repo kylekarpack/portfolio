@@ -4,11 +4,11 @@ export const getPortfolios = gql`
   query {
     portfolios(orderBy: createdAt_DESC) {
       current
-      # date
+      date
       description
-      #images {
-      # url
-      #}
+      images {
+        url(transformation: { image: { resize: { width: 300 } } })
+      }
       #overview
       slug
       #thumbnailTemp

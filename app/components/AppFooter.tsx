@@ -48,7 +48,7 @@ export const AppFooter = () => {
           />
         </a>
       </div>
-      <p className="font-font-monospace">
+      <p className="text-color-copy-light">
         &copy; {SITE_YEAR}, {SITE_AUTHOR}
       </p>
     </footer>

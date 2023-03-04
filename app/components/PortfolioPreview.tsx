@@ -19,7 +19,7 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
   const date = new Date(data.date);
 
   // Markup
-  const _renderImage = () => (
+  const renderImage = () => (
     <div className="w-full">
       <img
         alt=""
@@ -35,15 +35,13 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
     <Link
       className="work-preview text-color-copy"
       prefetch="intent"
-      to={`/portfolio/${data.slug}`}
-    >
-      {/* {data.images[0] && renderImage()} */}
+      to={`/portfolio/${data.slug}`}>
+      {data.images[0] && renderImage()}
 
       <h3 className="m-0 font-font-serif text-xl font-bold">{data.title}</h3>
       <div className="mt-1 mb-6 flex items-baseline gap-2 font-medium text-color-copy-dark">
         {!current && <span>{new Date(date).getFullYear()}</span>}
         {!current && <span className="font-light">|</span>}
-        <span>{data.company}</span>
       </div>
 
       <p>{data.overview}</p>

@@ -34,9 +34,9 @@ export default function () {
       <section>
         <div className="bg-color-background-dark text-color-background">
           <AppHero
-            className="py-20 md:py-40"
-            copy="Right now..."
-            highlight="What I'm building"
+            className="py-20 md:py-20"
+            copy="Current Work"
+            highlight="What I am Building"
             tag="h1"
           />
         </div>
@@ -52,9 +52,9 @@ export default function () {
       <section>
         <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
           <AppHero
-            className="py-20 md:py-40"
-            copy="In the past..."
-            highlight="What I've built"
+            className="py-20 md:py-20"
+            copy="Past Projects"
+            highlight="What I Have Built"
             tag="h2"
           />
         </div>

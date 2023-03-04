@@ -6,6 +6,7 @@ import { SectionTechnology } from "~/components/SectionTechnology";
 import { SectionAmbitions } from "~/components/SectionAmbitions";
 import { getMetaData } from "~/metadata";
 import Mantra from "~/components/Mantra";
+import { SectionProficiencies } from "~/components/SectionProficiencies";
 
 export const meta: MetaFunction = (args) => {
   return {
@@ -50,7 +51,9 @@ export default function () {
       </section>
       <SectionAmbitions />
       <section className="bg-color-background-dark py-20 text-color-background-light">
-        <SectionTechnology />
+        <div className="mx-auto max-w-3xl px-4 pb-12 md:px-0">
+          <SectionProficiencies />
+        </div>
       </section>
     </>
   );

@@ -8,9 +8,9 @@ export const getPortfolioBySlug = gql`
       }
       description
       id
-      # images {
-      #  url
-      #}
+      images {
+        url
+      }
       slug
       title
     }
