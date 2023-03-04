@@ -1,6 +1,7 @@
 import type { EntryContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import { renderToString } from "react-dom/server";
+import { artwork } from "~/config/artwork";
 
 export default function handleRequest(
   request: Request,
@@ -12,10 +13,10 @@ export default function handleRequest(
     <RemixServer context={remixContext} url={request.url} />
   );
 
-  responseHeaders.set("Content-Type", "text/html");
+  responseHeaders.set("Content-Type", "text/html; charset=UTF-8;");
 
-  return new Response("<!DOCTYPE html>" + markup, {
-    status: responseStatusCode,
+  return new Response("<!DOCTYPE html>" + artwork + markup, {
     headers: responseHeaders,
+    status: responseStatusCode
   });
 }

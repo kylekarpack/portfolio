@@ -10,3 +10,11 @@ node_modules
 /prisma/data.db-journal
 
 /app/styles/tailwind.css
+
+.cache/
+.DS_Store
+*.snap
+
+# TODO: Remove these
+public/
+
