@@ -64,7 +64,6 @@ export default function () {
       <section className="bg-color-background-dark py-20 text-color-background-light">
         <SectionTechnology />
       </section>
-      <SectionCompanies />
     </>
   );
 }
