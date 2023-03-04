@@ -1,11 +1,10 @@
 import {
-  MESSAGE_HIRE_CONOSLE,
+  MESSAGE_HIRE_CONSOLE,
   SITE_AUTHOR,
   SITE_EMAIL_ADDRESS,
   SITE_YEAR,
   SOCIAL_GITHUB,
   SOCIAL_LINKEDIN,
-  SOCIAL_TWITTER
 } from "~/config/constants";
 
 /**
@@ -16,16 +15,16 @@ import {
 const artwork = `
 <!--
 
-  ${MESSAGE_HIRE_CONOSLE}
+  ${MESSAGE_HIRE_CONSOLE}
 
            |
           / \\
-         / _ \\         ${SITE_AUTHOR}
-        |.o '.|        ${SITE_EMAIL_ADDRESS}
+         / _ \\        ${SITE_AUTHOR}
+        |.o '.|        
         |'._.'|
         |     |         - Github: ${SOCIAL_GITHUB}
       .*|  |  |*.       - LinkedIn ${SOCIAL_LINKEDIN}
-     /  |  |  |  \\      - Twitter ${SOCIAL_TWITTER}
+     /  |  |  |  \\
      |,-'--|--'-.|
         \\     /        Ⓒ ${SITE_YEAR}
          \\ | /

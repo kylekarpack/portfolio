@@ -1,7 +1,6 @@
 export const COOKIE_THEME = `theme`;
 
-export const MESSAGE_HIRE_CONOSLE = `Well, since you've taken the time to read this, I guess you're interested...`;
-export const MESSAGE_HIRE_ARTWORK = `Well, since you've taken the time to read this, I guess you're interested...`;
+export const MESSAGE_HIRE_CONSOLE = `Hello there!`;
 
 export const SITE_AUTHOR = `Kyle Karpack`;
 export const SITE_DESCRIPTION = `The portfolio of ${SITE_AUTHOR}`;
@@ -17,4 +16,3 @@ export const SITE_YEAR = new Date().getFullYear();
 
 export const SOCIAL_GITHUB = `https://github.com/kylekarpack`;
 export const SOCIAL_LINKEDIN = `https://linkedin.com/in/kylekarpack`;
-export const SOCIAL_TWITTER = `https://twitter.com/kylekarpack`;
