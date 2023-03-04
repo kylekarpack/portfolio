@@ -4,7 +4,6 @@ import {
   SITE_YEAR,
   SOCIAL_GITHUB,
   SOCIAL_LINKEDIN,
-  SOCIAL_TWITTER,
 } from "../config/constants";
 
 export const AppFooter = () => {

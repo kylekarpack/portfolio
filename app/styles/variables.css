@@ -16,9 +16,7 @@
 }
 
 /**
- *
- *          COLOR PALETTE
- *
+ * COLOR PALETTE
  */
 :root {
   --color-background-transparent: rgb(255 255 255 / 85%);
@@ -76,7 +74,7 @@ html.light {
   --color-copy: #24292e;
   --color-copy-dark: #57606a;
 
-  --color-primary: #f00;
+  --color-primary: #43a9d1;
 }
 
 html.dark {

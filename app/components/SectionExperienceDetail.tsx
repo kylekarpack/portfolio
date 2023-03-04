@@ -10,24 +10,14 @@ export const SectionExperienceDetail = (
   props: SectionExperienceDetailProps
 ) => {
   const { experience } = props;
-  const {
-    company,
-    companyUrl,
-    dateRange,
-    description,
-    highlights,
-    image,
-    title,
-  } = experience;
+  const { company, companyUrl, dateRange, description, highlights, title } =
+    experience;
 
   // Setup
   const [start, stop] = dateRange ?? [];
 
-  // TEMP
-  // console.log(`Worked at ${company} for`, _length);
-
   return (
-    <div className="flex flex-col gap-10 md:flex-row" key={title}>
+    <div className="flex flex-col gap-6 md:flex-row" key={title}>
       <div className="flex flex-col gap-2 text-base print:basis-8 md:basis-[160px]">
         <div className="flex">
           <h3 className="flex items-center gap-2 font-bold">
@@ -38,25 +28,10 @@ export const SectionExperienceDetail = (
               rel="noreferrer"
               target="_blank"
             />
-            {experience.contract && (
-              <small className="text-xs font-normal italic text-gray-700">
-                (contract)
-              </small>
-            )}
-            {image && (
-              <img
-                alt={`${company} favicon`}
-                className="h-4 w-4"
-                height="auto"
-                loading="eager"
-                src={image}
-                width="auto"
-              />
-            )}
           </h3>
         </div>
-        <h3 className="uppercase- text-xs font-medium">
-          <div className="uppercase">{title}</div>
+        <h3 className="text-xs font-medium">
+          <div className="mb-1 font-bold">{title}</div>
           <div className="text-color-copy-light">
             {format(start!, "MMM yyyy")} -{" "}
             {stop ? format(stop, "MMM yyyy") : "Present"}

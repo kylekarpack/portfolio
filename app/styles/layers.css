@@ -13,7 +13,6 @@
   .light .custom-bg-gradient {
     /* @apply from-[hsla(0, 100%, 50%, 1)] to-[hsla(217, 91%, 60%, 1)] bg-gradient-to-l; */
     @apply bg-gradient-to-tr from-color-primary to-blue-500;
-    animation: gradient var(--duration-text) ease infinite;
     background-size: 400% 400%;
   }
 
@@ -21,7 +20,6 @@
     /* @apply from-[hsla(210, 12%, 16%, 1)] to-[hsla(0, 0%, 0%, 1)] bg-gradient-to-tr text-color-background-light; */
     /* @apply bg-gradient-to-l from-[#FD5A1E] to-yellow-400; */
     @apply bg-gradient-to-l from-[#111] to-[#222] text-color-background-light;
-    animation: gradient var(--duration-bg) ease infinite;
     background-size: 400% 400%;
   }
 
@@ -63,17 +61,6 @@
   .work-preview:hover h3 {
     @apply text-highlight;
   }
-
-  /*
-  .work-preview span {
-    opacity: 0;
-    transition: opacity 140ms ease-out;
-  }
-
-  .work-preview:hover span {
-    opacity: 1;
-  }
-  */
 
   .wysiwyg blockquote a {
     @apply text-highlight;

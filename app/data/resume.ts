@@ -5,7 +5,6 @@ export interface Experience {
   dateRange?: [start: Date, end?: Date];
   description: string;
   highlights: string[];
-  image?: string;
   tags: string[];
   title: string;
 }
@@ -25,7 +24,6 @@ export const experience: Experience[] = [
       `Migrating our main business intelligence UI to a new framework and infrastructure while adding new features, improving build time by 80%, and exceeding Adobe's targeted code quality and performance metrics`,
       `Leading a product-wide goal to move new development to React and leverage Adobe's Unified Shell architecture`,
     ],
-    image: `https://assets-global.website-files.com/602a3f3e454f14956d14543a/602a3f3e454f1438b61455af_ShiftsmartIcon.png`,
     tags: ["NodeJS", "TypeScript"],
     title: `Senior Software Engineer`,
   },
@@ -34,30 +32,16 @@ export const experience: Experience[] = [
     companyUrl: "https://net-inspect.com",
     dateRange: [new Date("March 2013"), new Date("August 2019")],
     description: `<p>
-      Successfully pitched, prototyped, and delivered several high-impact
-      projects within the organization. Assisting in hiring, managing, and
-      mentoring engineers at various levels, distributed across the globe.
+      Led a team of developers building the leading SaaS application for manufacturing quality management.
+      Accomplishments include:
     </p>`,
     highlights: [
-      `Content Management System; Pitched, prototyped, and delivered`,
-      `Progressive Web App (PWA); Pitched, prototyped, and delivered`,
-      `Lerna Monorepo; Pitched, prototyped, and delivered`,
-      `CSS Overhaul; Pitched, prototyped, and delivered`,
-      `Apollo Migration, Redux Migration, Checkout Overhaul, and many more...`,
+      "Completion and launch of a full rewrite of the application in Angular.",
+      "Responsibility for architectural decisions, sprint planning, mentoring junior developers, and interviewing candidates",
+      "Implementation of regular code reviews, code quality standards, automated testing, extensive documentation, and performance budgets to reduce bugs and improve developer productivity",
+      "Migration to Microsoft Azure to reduce costs and provide scalability",
     ],
-    image: `https://cf-tup-assets.thredup.com/shop/images/manifest_v2/favicon_96.png`,
-    tags: [
-      "CSS",
-      "Docker",
-      "HTML",
-      "Kubernetes",
-      "PostCSS",
-      "NodeJS",
-      "React",
-      "TailwindCSS",
-      "TypeScript",
-      "Webpack",
-    ],
+    tags: [],
     title: `Lead Front-End Engineer`,
   },
 ];
