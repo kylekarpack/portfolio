@@ -23,6 +23,7 @@ export const meta: MetaFunction = (args) => {
 export default function () {
   // Hooks
   const data = useLoaderData<LoaderData>();
+  console.log(data);
 
   // Setup
   const current = data.filter((node) => node.current);

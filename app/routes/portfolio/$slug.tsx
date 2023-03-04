@@ -9,13 +9,13 @@ import { getMetaData } from "~/metadata";
 export { loader };
 
 export const meta: MetaFunction = (args) => {
-  const image = args.data?.images[0] ? args.data?.images[0]?.url : false;
+  const image = args.data?.images?.[0] ? args.data?.images[0]?.url : false;
 
   return getMetaData({
     canonical: args.parentsData?.root?.canonical,
     description: args.data?.description,
     image,
-    title: args.data?.title
+    title: args.data?.title,
   });
 };
 
@@ -23,8 +23,10 @@ export default function () {
   // Hooks
   const data = useLoaderData<LoaderData>();
 
+  console.log(data);
+
   // Setup
-  const img = data.images[0] ? data.images[0]?.url : false;
+  const img = data.images?.[0] ? data.images[0]?.url : false;
 
   return (
     <>

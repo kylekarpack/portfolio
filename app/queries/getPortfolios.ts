@@ -2,17 +2,16 @@ import { gql } from "~/utils/graphcms";
 
 export const getPortfolios = gql`
   query {
-    portfolios(orderBy: date_DESC) {
-      company
+    portfolios(orderBy: createdAt_DESC) {
       current
-      date
+      # date
       description
-      images {
-        url
-      }
-      overview
+      #images {
+      # url
+      #}
+      #overview
       slug
-      thumbnailTemp
+      #thumbnailTemp
       title
     }
   }

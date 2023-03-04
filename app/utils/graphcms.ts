@@ -12,15 +12,17 @@ export const fetchFromGraphCMS = async (
 ) => {
   const body: any = { query };
 
-  if (variables) body.variables = variables;
+  if (variables) {
+    body.variables = variables;
+  }
 
   return fetch(GRAPHCMS_URL, {
     body: JSON.stringify(body),
     headers: {
       Authorization: `Bearer ${GRAPHCMS_TOKEN}`,
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    method: "POST"
+    method: "POST",
   });
 };
 
