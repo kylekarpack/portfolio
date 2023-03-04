@@ -18,9 +18,15 @@ export interface Portfolio {
 export type LoaderData = Portfolio[];
 
 export const loader: LoaderFunction = async (args): Promise<LoaderData> => {
-  const data = await fetchFromGraphCMS(getPortfolios);
-  const res = await data.json();
-  const items = res.data.portfolios ?? [];
+  // const data = await fetchFromGraphCMS(getPortfolios);
+  // const res = await data.json();
+  // const items = res.data.portfolios ?? [];
+
+  const items: LoaderData = [
+    {
+      company: "test",
+    },
+  ];
 
   if (!items.length) {
     throw new Response(`Portfolio items not found`, { status: 404 });

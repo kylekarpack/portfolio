@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
-  useLoaderData
+  useLoaderData,
 } from "@remix-run/react";
 import type { DataFunctionArgs, LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
@@ -22,7 +22,7 @@ import {
   SITE_DESCRIPTION,
   SITE_SHARE_IMAGE,
   SITE_TITLE,
-  SITE_URL
+  SITE_URL,
 } from "~/config/constants";
 import { useIntro } from "~/hooks/useIntro";
 import { getMetaData } from "~/metadata";
@@ -51,8 +51,8 @@ export const meta: MetaFunction = (args) => ({
     canonical: args.data?.canonical,
     description: SITE_DESCRIPTION,
     image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
-    title: SITE_TITLE
-  })
+    title: SITE_TITLE,
+  }),
 });
 
 export default function App() {

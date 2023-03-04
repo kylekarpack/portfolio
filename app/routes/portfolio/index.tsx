@@ -14,8 +14,8 @@ export const meta: MetaFunction = (args) => {
   return {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
-      description: `A collection of ramblings by ${SITE_AUTHOR}.`,
-      title: `Featured Work | ${SITE_TITLE}`,
+      description: `The portfolio of ${SITE_AUTHOR}.`,
+      title: `Recent Work | ${SITE_TITLE}`,
     }),
   };
 };

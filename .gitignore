@@ -9,15 +9,12 @@ node_modules
 /prisma/data.db
 /prisma/data.db-journal
 
-/app/styles/tailwind.css
-
 .cache/
 .DS_Store
 *.snap
 *.js.map
 
 api/index.js
-app/styles/
 
 # TODO: Remove these
 public/
