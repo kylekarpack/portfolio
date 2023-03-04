@@ -17,9 +17,9 @@ export const meta: MetaFunction = (args) => {
   return {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
-      description: `A collection of ramblings by ${SITE_AUTHOR}.`,
-      title: `A developers ramblings | ${SITE_TITLE}`
-    })
+      description: `A blog by ${SITE_AUTHOR}.`,
+      title: `Blog | ${SITE_TITLE}`,
+    }),
   };
 };
 
@@ -35,8 +35,8 @@ export default function () {
       <section className="bg-gradient-dark-- bg-color-background-dark text-color-background">
         <AppHero
           className="mx-auto max-w-6xl py-20 md:py-40"
-          copy="Yes, another blog..."
-          highlight="Developer ramblings"
+          copy="Blog"
+          highlight=""
           tag="h1"
         />
       </section>

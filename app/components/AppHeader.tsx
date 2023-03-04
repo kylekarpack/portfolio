@@ -22,15 +22,13 @@ export const AppHeader = () => {
       className={classNames(
         "header hidden overflow-hidden print:hidden md:block",
         { closed }
-      )}
-    >
+      )}>
       <div className="mx-auto flex h-full w-full max-w-5xl items-center justify-evenly md:text-sm">
         <button
           className="header-logo ml-4 gap-2 px-4 md:hidden"
           onClick={onToggle}
           title="Toggle menu"
-          type="button"
-        >
+          type="button">
           <img
             alt="Toggle Menu"
             className="max-h-4"
@@ -49,51 +47,34 @@ export const AppHeader = () => {
 
         <div className="flex-1" />
 
-        <nav className="flex h-full flex-col font-font-monospace md:flex-row">
+        <nav className="flex h-full flex-col md:flex-row">
           <NavLink
             className="header-link"
             onClick={onClose}
             prefetch="intent"
-            to="/"
-          >
+            to="/">
             About
           </NavLink>
           <NavLink
             className="header-link"
             onClick={onClose}
             prefetch="intent"
-            to="/blog"
-          >
-            Blog
-          </NavLink>
-          <NavLink
-            className="header-link"
-            onClick={onClose}
-            prefetch="intent"
-            to="/portfolio"
-          >
+            to="/portfolio">
             Portfolio
           </NavLink>
           <NavLink
             className="header-link"
             onClick={onClose}
             prefetch="intent"
-            to="/resume"
-          >
+            to="/resume">
             Resume
           </NavLink>
-          {/*
-          <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/sandbox">
-            Sandbox
-          </NavLink>
-          */}
           <NavLink
             className="header-link"
             onClick={onClose}
             prefetch="intent"
-            to="/uses"
-          >
-            Uses
+            to="/contact">
+            Contact
           </NavLink>
         </nav>
       </div>

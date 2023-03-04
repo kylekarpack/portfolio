@@ -1,11 +1,13 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
-import { social } from "~/data/resume";
-import { SITE_AUTHOR, SITE_TITLE, SITE_YEAR } from "~/config/constants";
 import { AppShareLink } from "~/components/AppShareButton";
 import { AppSocialLink } from "~/components/AppSocialLink";
+import Mantra from "~/components/Mantra";
 import { SectionEducation } from "~/components/SectionEducation";
 import { SectionExperience } from "~/components/SectionExperience";
+import { SectionProficiencies } from "~/components/SectionProficiencies";
+import { SITE_AUTHOR, SITE_TITLE, SITE_YEAR } from "~/config/constants";
+import { social } from "~/data/resume";
 import { getMetaData } from "~/metadata";
 
 import styles from "~/styles/resume.css";
@@ -22,7 +24,7 @@ export const meta: MetaFunction = (args) => {
   return {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
-      description: `The online resume of ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`,
+      description: `The resume of ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`,
       title: `${SITE_YEAR} Resume | ${SITE_TITLE}`,
     }),
   };
@@ -40,7 +42,7 @@ export default function () {
                 className="custom-bg-gradient aspect-square max-h-48 overflow-hidden rounded-full p-1"
                 height="auto"
                 loading="eager"
-                src="/images/assets/matt-scaled.webp"
+                src="/images/assets/headshot.jpg"
                 width="auto"
               />
               <div className="flex flex-shrink-0 flex-col gap-2 p-4">
@@ -64,21 +66,18 @@ export default function () {
         <div className="resume-sections mb-20 flex flex-1 flex-col gap-10">
           <section>
             <h1 className="uppercase- mb-10 text-2xl font-extrabold md:text-4xl">
-              <span className="sr-only">The {SITE_YEAR} online resume of </span>
+              <span className="sr-only">The resume of </span>
               {SITE_AUTHOR}
             </h1>
             <div className="mb-8 border-t border-solid border-color-border print:hidden" />
             <div className="flex items-center gap-10">
               <p>
-                <span className="mr-1">👨‍💻</span> A Software Engineer whose
-                passion lies in creating <b>quality code</b> written{" "}
-                <b>for humans</b>, unlocking <b>developer productivity</b>, and
-                creating a delightful <b>user experience</b>.
+                <Mantra />
               </p>
             </div>
           </section>
           <SectionExperience />
-          {/* <SectionProficiencies /> */}
+          <SectionProficiencies />
           <SectionEducation />
         </div>
       </div>

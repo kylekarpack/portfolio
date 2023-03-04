@@ -24,22 +24,14 @@ export const AppHeaderMobile = () => {
         <NavLink className="header-link" onClick={onClose} to="/">
           About
         </NavLink>
-        <NavLink className="header-link" onClick={onClose} to="/blog">
-          Blog
-        </NavLink>
         <NavLink className="header-link" onClick={onClose} to="/portfolio">
           Portfolio
         </NavLink>
         <NavLink className="header-link" onClick={onClose} to="/resume">
           Resume
         </NavLink>
-        {/*
-        <NavLink className="header-link" onClick={onClose} to="/sandbox">
-          Sandbox
-        </NavLink>
-        */}
-        <NavLink className="header-link" onClick={onClose} to="/uses">
-          Uses
+        <NavLink className="header-link" onClick={onClose} to="/contact">
+          Contact
         </NavLink>
       </nav>
     );
@@ -48,16 +40,14 @@ export const AppHeaderMobile = () => {
   return (
     <header
       className={classNames("header overflow-hidden print:hidden md:hidden", {
-        closed
-      })}
-    >
+        closed,
+      })}>
       <div className="flex h-14 w-full items-center md:text-sm">
         <button
           className="header-logo ml-2 h-full gap-2 px-4 md:hidden"
           onClick={onToggle}
           title="Toggle menu"
-          type="button"
-        >
+          type="button">
           <img
             alt="Toggle Menu"
             className="max-h-4"
@@ -71,8 +61,7 @@ export const AppHeaderMobile = () => {
 
         <NavLink
           className="header-logo ml-4 flex h-full items-center gap-2 px-4"
-          to="/"
-        >
+          to="/">
           <AppLogo className="h-full" />
           <span className="sr-only">Home</span>
         </NavLink>
