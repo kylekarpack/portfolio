@@ -21,7 +21,7 @@ export const experience: Experience[] = [
       </p>
     `,
     highlights: [
-      `Managing the UI roadmap, including planning and implementing large-scale projects`,
+      `Managing the  UI roadmap, including planning and implementing large-scale projects`,
       `Migrating our main business intelligence UI to a new framework and infrastructure while adding new features, improving build time by 80%, and exceeding Adobe's targeted code quality and performance metrics`,
       `Leading a product-wide goal to move new development to React and leverage Adobe's Unified Shell architecture`,
     ],
