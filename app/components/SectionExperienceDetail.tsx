@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import type { Experience } from "~/data/resume";
 import { getTimeWorked } from "~/utils/date-time";
 
@@ -12,18 +13,15 @@ export const SectionExperienceDetail = (
   const {
     company,
     companyUrl,
-    date,
     dateRange,
     description,
     highlights,
     image,
-    title
+    title,
   } = experience;
 
   // Setup
-  const start = dateRange ? dateRange[0] : new Date();
-  const stop = dateRange?.[1] ? dateRange[1] : new Date();
-  const _length = getTimeWorked(start, stop);
+  const [start, stop] = dateRange ?? [];
 
   // TEMP
   // console.log(`Worked at ${company} for`, _length);
@@ -59,7 +57,10 @@ export const SectionExperienceDetail = (
         </div>
         <h3 className="uppercase- text-xs font-medium">
           <div className="uppercase">{title}</div>
-          <div className="text-color-copy-light">{date}</div>
+          <div className="text-color-copy-light">
+            {format(start!, "MMM yyyy")} -{" "}
+            {stop ? format(stop, "MMM yyyy") : "Present"}
+          </div>
         </h3>
       </div>
 

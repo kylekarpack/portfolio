@@ -2,9 +2,10 @@
   "name": "portfolio-remix",
   "description": "Portfolio of Kyle Karpack",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
-  "license": "",
+  "engineStrict": true,
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "npm run build:css && remix build",

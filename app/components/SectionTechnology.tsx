@@ -16,11 +16,9 @@ export const SectionTechnology = () => {
   const keys = Object.keys(data).filter((key) => key !== "default");
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 md:flex-row md:py-20">
+    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-12 md:flex-row md:py-20">
       <div className="basis-2/5">
-        <h2 className="mb-8 text-xl md:text-3xl">
-          Technology <span className="ml-2">🧰</span>
-        </h2>
+        <h2 className="mb-8 text-xl md:text-3xl">Technology</h2>
 
         <div className="work-details flex flex-wrap gap-2">
           {keys.map((key) => {
@@ -29,15 +27,14 @@ export const SectionTechnology = () => {
             return (
               <button
                 className={classnames(`rounded-md px-2 py-1 text-sm`, {
-                  active
+                  active,
                 })}
                 key={key}
                 onClick={() => {
                   const newValue = heading === key ? undefined : key;
                   setHeading(newValue);
                 }}
-                type="button"
-              >
+                type="button">
                 {key}
               </button>
             );
