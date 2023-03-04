@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import { useRef, useState } from "react";
-import { data } from "~/data/details";
+import { technologies } from "~/data/details";
 
 /**
  * @name SectionTechnology
@@ -12,13 +12,12 @@ export const SectionTechnology = () => {
   const [heading, setHeading] = useState<string>();
 
   // Setup
-  const description = heading ? data[heading] : data.default;
-  const keys = Object.keys(data).filter((key) => key !== "default");
+  const keys = Object.keys(technologies).filter((key) => key !== "default");
 
   return (
     <div className="mx-auto flex max-w-6xl flex-col gap-10 px-12 md:flex-row md:py-20">
       <div className="basis-2/5">
-        <h2 className="mb-8 text-xl md:text-3xl">Technology</h2>
+        <h2 className="mb-8 text-xl md:text-3xl">Technologies</h2>
 
         <div className="work-details flex flex-wrap gap-2">
           {keys.map((key) => {
@@ -44,9 +43,9 @@ export const SectionTechnology = () => {
 
       <blockquote
         className="my-8 basis-3/5 text-xl font-light leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: description }}
-        ref={refDescription}
-      />
+        ref={refDescription}>
+        {technologies[heading!]?.join(", ")}
+      </blockquote>
     </div>
   );
 };

@@ -21,3 +21,48 @@ export const data: Record<string, string> = {
   VSCode: `Visual Studio Code, also commonly referred to as VS Code, is a source-code editor made by Microsoft. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. It rocks 🤘!`,
   CSS: `Pushing pixels is what got me into development so its no suprise I genuinely love CSS. My preferred tooling includes; TailwindCSS, CSS Modules, PostCSS, and Progressive Enhancement.`,
 };
+
+export const technologies: Record<string, string[]> = {
+  Languages: [
+    "TypeScript",
+    "Javascript",
+    "HTML",
+    "CSS/SCSS/LESS",
+    "C#",
+    "SQL",
+    "Some Rust",
+    "Some Go",
+  ],
+  "Frameworks & More": [
+    "NodeJS",
+    "React",
+    "Angular",
+    "NextJS",
+    "Remix",
+    "Gatsby",
+    "GraphQL",
+    "Recoil",
+  ],
+  "Infrastructure & Devops": [
+    "Azure",
+    "AWS",
+    "Jenkins",
+    "GitHub Actions",
+    "Docker",
+  ],
+  Testing: ["Jest", "Testing Library", "Vitest", "Cypress"],
+  Monitoring: ["Splunk", "New Relic", "Grafana"],
+  Tooling: [
+    "Webpack",
+    "Parcel",
+    "Vite",
+    "Lerna",
+    "NX",
+    "NPM",
+    "Yarn",
+    "Git",
+    "Jira",
+  ],
+  Databases: ["Snowflake", "MSSQL", "MongoDB", "Postgres", "ElasticSearch"],
+  Design: ["Various Adobe products", "SVG", "image optimization"],
+};
