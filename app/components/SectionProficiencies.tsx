@@ -4,7 +4,7 @@ export const SectionProficiencies = () => {
   return (
     <section>
       <div>
-        <h2 className="py-8 text-lg print:py-4 md:text-xl">Proficiencies</h2>
+        <h2 className="py-8 text-lg print:py-4 md:text-xl">Skills</h2>
         <div className="mb-8 border-t border-solid border-color-border print:hidden" />
       </div>
 

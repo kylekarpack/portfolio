@@ -25,6 +25,7 @@ export const loader: LoaderFunction = async (args): Promise<LoaderData> => {
   const items: LoaderData = [
     {
       company: "test",
+      date: new Date(),
     },
   ];
 
