@@ -21,7 +21,7 @@ export default function () {
   return (
     <>
       <div className="relative">
-        <section className="relative z-0 m-auto flex max-w-6xl flex-col-reverse items-center justify-center gap-4 py-20 md:flex-row md:py-40">
+        <section className="relative z-0 m-auto flex max-w-6xl flex-col-reverse items-center justify-center gap-4 py-8 md:flex-row md:py-12">
           <AppHero
             className="py-10 md:py-20 md:text-right"
             copy={
@@ -32,10 +32,10 @@ export default function () {
             highlight={SITE_AUTHOR}
             tag="h1"
           />
-          <div>
+          <div className="w-48">
             <img
               alt={SITE_AUTHOR}
-              className="custom-bg-gradient aspect-square max-h-32 overflow-hidden rounded-full p-1 transition-transform md:max-h-40"
+              className="custom-bg-gradient mx-auto aspect-square max-h-32 overflow-hidden rounded-full p-1 transition-transform md:max-h-40"
               height="auto"
               loading="eager"
               src="/images/assets/headshot.jpg"

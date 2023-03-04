@@ -33,7 +33,7 @@ export const meta: MetaFunction = (args) => {
 export default function () {
   return (
     <div className="m-auto max-w-5xl py-10 md:py-20">
-      <div className="flex flex-col gap-20 px-4 md:flex-row md:px-0">
+      <div className="flex flex-col gap-12 px-4 md:flex-row lg:gap-20">
         <aside className="print:hidden md:w-1/5">
           <div className="sticky top-32">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
@@ -53,7 +53,7 @@ export default function () {
             </div>
             <div className="mt-8 flex justify-center gap-4 print:hidden">
               <a
-                className="ui-btn custom-bg-gradient whitespace-nowrap rounded-2xl py-2 px-4 text-center text-sm font-normal text-white"
+                className="ui-btn custom-bg-gradient block max-w-xs flex-1 whitespace-nowrap rounded-2xl py-2 px-4 text-center text-sm font-normal text-white"
                 download={true}
                 href="/resume/Matthew_Scholta_2023.pdf">
                 Download Resume
