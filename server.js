@@ -3,7 +3,7 @@ import * as build from "@remix-run/dev/server-build";
 
 const handleRequest = createPagesFunctionHandler({
   build,
-  mode: process.env.NODE_ENV,
+  mode: "production",
   getLoadContext: (context) => context.env,
 });
 
