@@ -49,5 +49,5 @@ export const technologies: Record<string, string[]> = {
   Testing: ["Jest", "Testing Library", "Vitest", "Cypress"],
   Monitoring: ["Splunk", "New Relic", "Grafana"],
   Databases: ["Snowflake", "MSSQL", "MongoDB", "Postgres", "ElasticSearch"],
-  Design: ["Various Adobe products", "SVG", "image optimization"],
+  Design: ["Various Adobe products", "SVG", "strong UX fundamentals"],
 };
