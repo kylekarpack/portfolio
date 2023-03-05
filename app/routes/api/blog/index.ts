@@ -1,5 +1,5 @@
-import { Response } from "@remix-run/node";
-import type { LoaderFunction } from "@remix-run/node";
+import { Response } from "@remix-run/cloudflare";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
 import { fetchFromGraphCMS } from "~/utils/graphcms";
 import { getPosts } from "~/queries/getPosts";
@@ -44,7 +44,7 @@ export const loader: LoaderFunction = async (): Promise<LoaderData> => {
 
     return {
       posts,
-      tags
+      tags,
     };
   } catch (error) {
     throw error;

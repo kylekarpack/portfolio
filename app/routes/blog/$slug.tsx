@@ -1,5 +1,5 @@
 import { useCatch, useLoaderData } from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
 
 import { AppHero } from "~/components/AppHero";
 import type { LoaderData } from "~/routes/api/blog/$slug";
@@ -14,7 +14,7 @@ import { getMetaData } from "~/metadata";
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: stylesLines },
-    { rel: "stylesheet", href: stylesTheme }
+    { rel: "stylesheet", href: stylesTheme },
   ];
 };
 
@@ -27,8 +27,8 @@ export const meta: MetaFunction = (args) => {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
       description: args.data?.description,
-      title: args.data?.title
-    })
+      title: args.data?.title,
+    }),
   };
 };
 
@@ -43,7 +43,7 @@ export default function () {
     month: "long",
     timeZone: "UTC",
     weekday: undefined,
-    year: "numeric"
+    year: "numeric",
   });
 
   return (

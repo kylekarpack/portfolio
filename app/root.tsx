@@ -2,8 +2,8 @@ import type {
   DataFunctionArgs,
   LinksFunction,
   MetaFunction,
-} from "@remix-run/node";
-import { json } from "@remix-run/node";
+} from "@remix-run/cloudflare";
+import { json } from "@remix-run/cloudflare";
 import {
   Links,
   LiveReload,

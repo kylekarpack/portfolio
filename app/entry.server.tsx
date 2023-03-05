@@ -1,4 +1,4 @@
-import type { EntryContext } from "@remix-run/node";
+import type { EntryContext } from "@remix-run/cloudflare";
 import { RemixServer } from "@remix-run/react";
 import { renderToString } from "react-dom/server";
 import { artwork } from "~/config/artwork";
@@ -17,6 +17,6 @@ export default function handleRequest(
 
   return new Response("<!DOCTYPE html>" + artwork + markup, {
     headers: responseHeaders,
-    status: responseStatusCode
+    status: responseStatusCode,
   });
 }

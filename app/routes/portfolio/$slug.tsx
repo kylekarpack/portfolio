@@ -1,5 +1,5 @@
 import { useCatch, useLoaderData } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/cloudflare";
 
 import { AppHero } from "~/components/AppHero";
 import { loader } from "~/routes/api/portfolio/$slug";

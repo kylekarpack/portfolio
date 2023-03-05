@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
 import { fetchFromGraphCMS } from "~/utils/graphcms";
 import type { Post } from "~/routes/api/blog";
@@ -62,8 +62,8 @@ export const loader: LoaderFunction = async (args) => {
     headers: {
       "Content-Type": "application/xml",
       "xml-version": "1.0",
-      encoding: "UTF-8"
+      encoding: "UTF-8",
     },
-    status: 200
+    status: 200,
   });
 };

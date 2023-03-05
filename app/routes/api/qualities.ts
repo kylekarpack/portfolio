@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
 const qualities = [
   "A problem solver 🧩",
@@ -7,7 +7,7 @@ const qualities = [
   "A self starter  🏇",
   "An innovator 💡",
   "A perpetual learner 📚",
-  "A rule breaker 🙊"
+  "A rule breaker 🙊",
 ];
 
 export const loader: LoaderFunction = async (args): Promise<string> => {
