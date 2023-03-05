@@ -23,7 +23,6 @@ export const meta: MetaFunction = (args) => {
 export default function () {
   // Hooks
   const data = useLoaderData<LoaderData>();
-  console.log(data);
 
   // Setup
   const current = data.filter((node) => node.current);
@@ -43,7 +42,11 @@ export default function () {
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {current.map((node) => (
-              <PortfolioPreview current={true} data={node} key={node.slug} />
+              <PortfolioPreview
+                current={true}
+                data={node as any}
+                key={node.slug}
+              />
             ))}
           </div>
         </div>
@@ -61,7 +64,11 @@ export default function () {
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {recent.map((node) => (
-              <PortfolioPreview current={false} data={node} key={node.slug} />
+              <PortfolioPreview
+                current={false}
+                data={node as any}
+                key={node.slug}
+              />
             ))}
           </div>
         </div>

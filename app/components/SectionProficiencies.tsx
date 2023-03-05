@@ -14,7 +14,7 @@ export const SectionProficiencies: FunctionComponent<{ title?: string }> = ({
       <div className="mt-8 grid grid-cols-1 gap-8 p-1 text-sm print:grid-cols-3 md:grid-cols-2">
         {Object.keys(technologies).map((el) => (
           <div key={el}>
-            <h3 className="mb-2 text-base text-color-copy-light">{el}</h3>
+            <h3 className="mb-2 text-base opacity-60">{el}</h3>
             {technologies[el]?.join(", ")}
           </div>
         ))}

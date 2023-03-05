@@ -1,15 +1,13 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
-
 import { AppShareLink } from "~/components/AppShareButton";
 import { AppSocialLink } from "~/components/AppSocialLink";
 import Mantra from "~/components/Mantra";
 import { SectionEducation } from "~/components/SectionEducation";
 import { SectionExperience } from "~/components/SectionExperience";
 import { SectionProficiencies } from "~/components/SectionProficiencies";
-import { SITE_AUTHOR, SITE_TITLE, SITE_YEAR } from "~/config/constants";
+import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 import { social } from "~/data/resume";
 import { getMetaData } from "~/metadata";
-
 import styles from "~/styles/resume.css";
 
 export const links: LinksFunction = () => [
@@ -25,7 +23,7 @@ export const meta: MetaFunction = (args) => {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
       description: `The resume of ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`,
-      title: `${SITE_YEAR} Resume | ${SITE_TITLE}`,
+      title: `Resume | ${SITE_TITLE}`,
     }),
   };
 };
