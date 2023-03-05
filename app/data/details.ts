@@ -25,6 +25,7 @@ export const technologies: Record<string, string[]> = {
     "Gatsby",
     "GraphQL",
     "Recoil",
+    "Tailwind CSS",
     ".NET",
   ],
   Tooling: [

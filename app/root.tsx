@@ -1,4 +1,9 @@
-import classnames from "classnames";
+import type {
+  DataFunctionArgs,
+  LinksFunction,
+  MetaFunction,
+} from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -9,13 +14,9 @@ import {
   useCatch,
   useLoaderData,
 } from "@remix-run/react";
-import type { DataFunctionArgs, LinksFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import type { MetaFunction } from "@remix-run/node";
+import classnames from "classnames";
 
-import { cookieTheme } from "~/cookies";
 import { AppFooter } from "~/components/AppFooter";
-import { BASE_URL } from "~/config/settings.server";
 import { AppHeader } from "~/components/AppHeader";
 import { AppHeaderMobile } from "~/components/AppHeaderMobile";
 import {
@@ -24,9 +25,11 @@ import {
   SITE_TITLE,
   SITE_URL,
 } from "~/config/constants";
+import { BASE_URL } from "~/config/settings.server";
+import { cookieTheme } from "~/cookies";
 import { useIntro } from "~/hooks/useIntro";
-import { getMetaData } from "~/metadata";
 import { usePageTracking } from "~/hooks/usePageTracking";
+import { getMetaData } from "~/metadata";
 
 import styles from "~/styles/index.css";
 
@@ -114,7 +117,7 @@ export function CatchBoundary() {
   return (
     <html>
       <head>
-        <title>Oh no!</title>
+        <title>Error</title>
         <Meta />
         <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
         <link href={favicon} rel="favicon" />
@@ -131,14 +134,8 @@ export function CatchBoundary() {
         <main>
           <div className="mx-auto max-w-5xl pt-10">
             <h1>
-              {caught.status} {caught.statusText} - Catch Boundary
+              {caught.status} {caught.statusText} - Error
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
-              enim minima esse ipsam! Sit consequatur doloribus earum facere
-              eaque quaerat molestiae. Sed cupiditate ea non ipsum? Sed aliquid
-              quis quia.
-            </p>
           </div>
         </main>
 
@@ -158,12 +155,10 @@ export function ErrorBoundary({ error }: { error: unknown }) {
   const favicon = "/images/svg/logo.svg";
   const manifest = "/manifest.json";
 
-  console.error(`🧧 Error`, error);
-
   return (
     <html>
       <head>
-        <title>Oh no!</title>
+        <title>Error</title>
         <Meta />
         <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
         <link href={favicon} rel="favicon" />
@@ -175,12 +170,8 @@ export function ErrorBoundary({ error }: { error: unknown }) {
 
       <body>
         <div className="m-auto flex h-screen max-w-5xl flex-col justify-center">
-          <h1 className="mb-4 text-2xl">Oh no!</h1>
-          <p>
-            Sorry but I seemed to have broken something.
-            <br />
-            Please try again later :(
-          </p>
+          <h1 className="mb-4 text-2xl">Error</h1>
+          <p>Something went wrong</p>
         </div>
         <Scripts />
       </body>
