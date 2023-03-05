@@ -8,8 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "npm run build:css && remix build",
-    "build:css": "postcss styles/**/*.css --base styles --dir app/styles --env production",
+    "build": "remix build",
     "dev": "remix dev",
     "postinstall": "remix setup node",
     "test": "NODE_ENV=test TZ=UTC vitest",
