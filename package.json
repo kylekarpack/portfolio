@@ -2,7 +2,7 @@
   "name": "portfolio-remix",
   "description": "Portfolio of Kyle Karpack",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "engineStrict": true,
   "license": "MIT",
