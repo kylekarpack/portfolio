@@ -4,13 +4,11 @@ import { fetchFromGraphCMS } from "~/utils/graphcms";
 import { getPortfolios } from "~/queries/getPortfolios";
 
 export interface Portfolio {
-  company: string;
   current: boolean;
   date: Date;
   images: any;
-  overview: string;
+  description: string;
   slug: string;
-  thumbnailTemp: string;
   title: string;
 }
 
@@ -20,8 +18,6 @@ export const loader: LoaderFunction = async (args): Promise<LoaderData> => {
   const data = await fetchFromGraphCMS(getPortfolios);
   const res = await data.json();
   const items = res.data.portfolios ?? [];
-
-  console.log(items);
 
   if (!items.length) {
     throw new Response(`Portfolio items not found`, { status: 404 });

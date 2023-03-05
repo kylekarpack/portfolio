@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { format } from "date-fns";
 import { SITE_YEAR } from "~/config/constants";
 import type { Portfolio } from "~/routes/api/portfolio";
 
@@ -38,13 +39,12 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
       to={`/portfolio/${data.slug}`}>
       {data.images[0] && renderImage()}
 
-      <h3 className="m-0 font-font-serif text-xl font-bold">{data.title}</h3>
-      <div className="mt-1 mb-6 flex items-baseline gap-2 font-medium text-color-copy-dark">
-        {!current && <span>{new Date(date).getFullYear()}</span>}
-        {!current && <span className="font-light">|</span>}
+      <h3 className="mt-4 font-font-serif text-xl font-bold">{data.title}</h3>
+      <div className="mt-2 mb-4 flex items-baseline gap-2 font-medium text-color-copy-light">
+        {!current && date && <span>{format(date, "MMMM yyyy")}</span>}
       </div>
 
-      <p>{data.overview}</p>
+      <p>{data.description}</p>
     </Link>
   );
 };

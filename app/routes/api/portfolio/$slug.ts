@@ -5,7 +5,6 @@ import { fetchFromGraphCMS } from "~/utils/graphcms";
 import { getPortfolioBySlug } from "~/queries/getPortfolio";
 
 export type LoaderData = {
-  company: string;
   content: {
     html: string;
   };
@@ -15,7 +14,7 @@ export type LoaderData = {
       url: string;
     }
   ];
-  intro: string;
+  description: string;
   slug: string;
   title: string;
 };

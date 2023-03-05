@@ -30,58 +30,37 @@ export default function () {
 
   return (
     <>
-      <div className="m-auto max-w-3xl">
-        <AppHero
-          className="py-20 md:py-40"
-          copy={data.company}
-          highlight={data.title}
-          tag="h1"
-        />
-      </div>
+      <div className="mb-12 block items-center gap-12 align-middle md:flex ">
+        <div className="flex-1">
+          <div className="m-auto max-w-3xl">
+            <AppHero
+              className="py-20"
+              copy={data.description}
+              highlight={data.title}
+              tag="h1"
+            />
+          </div>
+        </div>
 
-      {img && (
-        <img
-          alt={data.title}
-          className="mb-20 mt-0 w-full border-t border-b border-color-border"
-          height="auto"
-          loading="eager"
-          src={img}
-          style={{ aspectRatio: "2/1" }}
-          width="100%"
-        />
-      )}
+        {img && (
+          <div className="flex-1">
+            <img
+              alt={data.title}
+              className="mt-0 w-full"
+              height="auto"
+              loading="eager"
+              src={img}
+              width="100%"
+            />
+          </div>
+        )}
+      </div>
       <div className="relative m-auto flex max-w-3xl flex-col">
         <div
-          className="wysiwyg px-4"
+          className="wysiwyg"
           dangerouslySetInnerHTML={{ __html: data.content.html }}
         />
       </div>
-
-      <div className="relative m-auto mb-20 flex max-w-3xl flex-col">
-        <blockquote>{data.intro}</blockquote>
-      </div>
-
-      {/*
-      <div className="bg-color-background-dark py-20 text-color-background-light">
-        <div className="mx-auto flex max-w-6xl flex-col gap-20 md:flex-row">
-          <div className="flex flex-1 flex-col items-center justify-center">
-            <h3 className="mb-4 text-lg font-extrabold">
-              Testing another article
-            </h3>
-            <Link to="/portfolio">Read more {`>>`}</Link>
-          </div>
-
-          <div className="border-0 border-solid md:border-l md:border-l-color-border" />
-
-          <div className="flex flex-1 flex-col items-center justify-center">
-            <h3 className="mb-4 text-lg font-extrabold">
-              Testing another article
-            </h3>
-            <Link to="/portfolio">Read more {`>>`}</Link>
-          </div>
-        </div>
-      </div>
-      */}
     </>
   );
 }
@@ -95,7 +74,7 @@ export const CatchBoundary = () => {
       <section className="mx-auto max-w-6xl">
         <AppHero
           className="py-20 md:py-40"
-          copy="Uh oh..."
+          copy="Error: Not Found"
           highlight="404"
           tag="h1"
         />
