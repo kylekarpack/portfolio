@@ -33,7 +33,7 @@ export default function () {
     <div className="m-auto max-w-5xl py-10 md:py-20">
       <div className="flex flex-col gap-12 px-4 md:flex-row lg:gap-20">
         <aside className="print:hidden md:w-1/5">
-          <div className="sticky top-32">
+          <div className="sticky top-36">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
               <img
                 alt={SITE_AUTHOR}

@@ -6,7 +6,7 @@ import {
 } from "~/config/constants";
 
 /**
- *
+ * Introduce myself in the console
  */
 export const useIntro = () => {
   const styleContact = "color: default; font-size: 14px;";
@@ -21,8 +21,10 @@ ${SITE_AUTHOR}
 
   // Life Cycle
   useEffect(() => {
-    console.group("Thank you for looking, let's connect!");
-    console.log(strContact, styleContact);
-    console.groupEnd();
+    if (location.hostname !== "localhost") {
+      console.group("Thank you for looking, let's connect!");
+      console.log(strContact, styleContact);
+      console.groupEnd();
+    }
   }, []);
 };

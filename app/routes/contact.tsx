@@ -1,9 +1,19 @@
+import { LinksFunction } from "@remix-run/node";
 import { MetaFunction } from "@remix-run/server-runtime";
-import { useState } from "react";
+import styles from "mapbox-gl/dist/mapbox-gl.css";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import Map from "react-map-gl";
+import ContactForm from "~/components/ContactForm";
 import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
-import ReactMapGL from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+
+export const links: LinksFunction = () => [
+  {
+    href: styles,
+    media: "screen",
+    rel: "stylesheet",
+  },
+];
 
 export const meta: MetaFunction = (args) => {
   return {
@@ -16,26 +26,31 @@ export const meta: MetaFunction = (args) => {
 };
 
 export default function () {
-  const [map, setMap] = useState({
-    mapboxApiAccessToken:
-      "pk.eyJ1Ijoia3lsZWthcnBhY2siLCJhIjoiY2pvZXZmNTh4MDZ2dzN3bm1pbmk1dDlmZiJ9.Gapqs5j98RUsHOBl2rqOGQ",
-    mapStyle: "mapbox://styles/mapbox/outdoors-v10",
-    viewport: {
-      width: "100%",
-      height: "40vh",
-      latitude: 47.6798,
-      longitude: -122.3258,
-      zoom: 11,
-    },
-  });
   return (
-    <div>
-      <ReactMapGL
-        mapboxAccessToken={map.mapboxApiAccessToken}
-        mapStyle={map.mapStyle}
-        onViewportChange={(viewport) => setMap({ ...map, viewport })}
-        {...map.viewport}
-      />
-    </div>
+    <>
+      <div className="h-64">
+        <Map
+          mapboxAccessToken="pk.eyJ1Ijoia3lsZWthcnBhY2siLCJhIjoiY2pvZXZmNTh4MDZ2dzN3bm1pbmk1dDlmZiJ9.Gapqs5j98RUsHOBl2rqOGQ"
+          mapStyle="mapbox://styles/mapbox/outdoors-v10"
+          initialViewState={{
+            latitude: 47.6798,
+            longitude: -122.3258,
+            zoom: 11,
+          }}
+          style={{ height: "100%" }}
+        />
+      </div>
+
+      <div className="my-12 mx-auto max-w-lg">
+        <GoogleReCaptchaProvider
+          reCaptchaKey="6LcU0XoUAAAAAA2IMX6btadVmmBjNfz-tgYSzgC0"
+          scriptProps={{
+            async: true,
+            defer: true,
+          }}>
+          <ContactForm />
+        </GoogleReCaptchaProvider>
+      </div>
+    </>
   );
 }
