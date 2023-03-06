@@ -2,13 +2,14 @@ import { useForm } from "@formcarry/react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const ContactForm = () => {
-  const { state, submit } = useForm({ id: "S52M7fPOAJ" });
+  const { state, submit } = useForm({
+    id: "S52M7fPOAJ",
+  });
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    const currentTarget = e.currentTarget; // Cache for after default prevention
-    e.preventDefault();
-
+  const repopulateForm = async (
+    currentTarget: EventTarget & HTMLFormElement
+  ) => {
     if (!executeRecaptcha) {
       throw new Error("Could not initialize ReCaptcha");
     }
@@ -19,10 +20,15 @@ const ContactForm = () => {
     tokenElement.name = "g-recaptcha-response";
     tokenElement.type = "hidden";
     tokenElement.value = contactPageToken;
+    currentTarget.append(tokenElement);
 
-    e.currentTarget = currentTarget;
-    e.currentTarget.append(tokenElement);
+    return currentTarget;
+  };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const cachedCurrentTarget = e.currentTarget; // Cache for after default prevention
+    e.preventDefault();
+    e.currentTarget = await repopulateForm(cachedCurrentTarget);
     submit(e);
   };
 
@@ -89,6 +95,14 @@ const ContactForm = () => {
           className="hover:bg-blue-dark mt-3 rounded-lg bg-sky-600 py-3 px-6 font-bold text-white transition duration-300 ease-in-out hover:bg-sky-500 md:w-32">
           Submit
         </button>
+
+        {state.error && (
+          <div
+            className="relative rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
+            role="alert">
+            <span className="block sm:inline">{state.error}</span>
+          </div>
+        )}
       </form>
     </>
   );
