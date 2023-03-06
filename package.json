@@ -13,7 +13,7 @@
     "postinstall": "remix setup node",
     "test": "NODE_ENV=test TZ=UTC vitest",
     "test:coverage": "NODE_ENV=test TZ=UTC vitest run --coverage",
-    "format": "prettier ./app/**/*.{ts,tsx}"
+    "format": "prettier ./app/**/*.{ts,tsx} --ignore-path .gitignore --write"
   },
   "sideEffects": false,
   "type": "commonjs",
