@@ -92,18 +92,18 @@ const ContactForm = () => {
         <button
           disabled={state.submitting}
           type="submit"
-          className="hover:bg-blue-dark mt-3 rounded-lg bg-sky-600 py-3 px-6 font-bold text-white transition duration-300 ease-in-out hover:bg-sky-500 md:w-32">
-          Submit
+          className="hover:bg-blue-dark mt-3 rounded-lg bg-sky-600 py-3 px-6 font-bold text-white transition duration-300 ease-in-out hover:bg-sky-500 md:inline-block">
+          {state.submitting ? "Submitting..." : "Submit"}
         </button>
-
-        {state.error && (
-          <div
-            className="relative rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
-            role="alert">
-            <span className="block sm:inline">{state.error}</span>
-          </div>
-        )}
       </form>
+
+      {state.error && (
+        <div
+          className="relative mt-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
+          role="alert">
+          <span className="block sm:inline">{state.error.message}</span>
+        </div>
+      )}
     </>
   );
 };
