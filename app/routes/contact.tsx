@@ -1,5 +1,5 @@
-import { LinksFunction } from "@remix-run/node";
-import { MetaFunction } from "@remix-run/server-runtime";
+import type { LinksFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/server-runtime";
 import styles from "mapbox-gl/dist/mapbox-gl.css";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import Map from "react-map-gl";

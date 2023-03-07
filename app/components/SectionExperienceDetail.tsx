@@ -1,6 +1,5 @@
 import { format } from "date-fns";
 import type { Experience } from "~/data/resume";
-import { getTimeWorked } from "~/utils/date-time";
 
 export interface SectionExperienceDetailProps {
   experience: Experience;

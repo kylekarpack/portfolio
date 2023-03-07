@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { technologies } from "~/data/details";
 
 export const SectionProficiencies: FunctionComponent<{ title?: string }> = ({ title = "Skills" }) => {

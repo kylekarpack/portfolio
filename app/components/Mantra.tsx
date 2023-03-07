@@ -1,4 +1,4 @@
-export default function () {
+export default function Mantra() {
   return (
     <>
       Specializing in crafting <strong>lasting infrastructure</strong> to support large applications and{" "}

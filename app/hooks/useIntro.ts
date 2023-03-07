@@ -18,9 +18,9 @@ ${SITE_AUTHOR}
   // Life Cycle
   useEffect(() => {
     if (location.hostname !== "localhost") {
-      console.group("Thank you for looking, let's connect!");
+      console.group("Hi there!");
       console.log(strContact, styleContact);
       console.groupEnd();
     }
-  }, []);
+  }, [strContact]);
 };
