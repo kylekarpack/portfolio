@@ -23,15 +23,14 @@ export const BlogPreview = (props: BlogPreviewProps) => {
     month: "2-digit",
     timeZone: "UTC",
     weekday: undefined,
-    year: "numeric"
+    year: "numeric",
   });
 
   return (
     <Link
       className={classnames("blog-preview relative flex flex-col", className)}
       prefetch="intent"
-      to={`/blog/${slug}`}
-    >
+      to={`/blog/${slug}`}>
       {/* TODO: Add a nice CSS transition here */}
       <img alt={title} height="auto" loading="lazy" src={image} width="auto" />
 

@@ -6,12 +6,9 @@ export interface SectionExperienceDetailProps {
   experience: Experience;
 }
 
-export const SectionExperienceDetail = (
-  props: SectionExperienceDetailProps
-) => {
+export const SectionExperienceDetail = (props: SectionExperienceDetailProps) => {
   const { experience } = props;
-  const { company, companyUrl, dateRange, description, highlights, title } =
-    experience;
+  const { company, companyUrl, dateRange, description, highlights, title } = experience;
 
   // Setup
   const [start, stop] = dateRange ?? [];
@@ -33,8 +30,7 @@ export const SectionExperienceDetail = (
         <h3 className="text-xs font-medium">
           <div className="mb-1 font-bold">{title}</div>
           <div className="text-color-copy-light">
-            {format(start!, "MMM yyyy")} -{" "}
-            {stop ? format(stop, "MMM yyyy") : "Present"}
+            {format(start!, "MMM yyyy")} - {stop ? format(stop, "MMM yyyy") : "Present"}
           </div>
         </h3>
       </div>
@@ -43,11 +39,7 @@ export const SectionExperienceDetail = (
         <div dangerouslySetInnerHTML={{ __html: description }} />
         <ul className="my-4 ml-4 list-disc text-sm font-light text-color-copy">
           {highlights.map((highlight, index) => (
-            <li
-              className="my-1"
-              dangerouslySetInnerHTML={{ __html: highlight }}
-              key={index}
-            />
+            <li className="my-1" dangerouslySetInnerHTML={{ __html: highlight }} key={index} />
           ))}
         </ul>
       </div>

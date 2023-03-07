@@ -17,8 +17,7 @@ export const AppSocialLink = (props: AppSocialLinkProps) => {
       href={data.url}
       key={data.title}
       rel="noopener noreferrer"
-      target="_blank"
-    >
+      target="_blank">
       <img alt={alt} height={size} src={data.icon} width={size} />
       {data.title}
     </a>

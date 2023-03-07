@@ -5,6 +5,6 @@
 
 export const trackSocial = (social: string) => {
   window.gtag("event", "view_social", {
-    provider: social
+    provider: social,
   });
 };

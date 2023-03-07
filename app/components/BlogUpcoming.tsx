@@ -26,9 +26,7 @@ export const BlogUpcoming = (props: BlogUpcomingProps) => {
           <li className="mb-2 rounded-md border bg-color-background-light p-2 text-sm">
             Developer tooling - debuggers &amp; loggers
           </li>
-          <li className="mb-2 rounded-md border bg-color-background-light p-2 text-sm">
-            Lerna is back!
-          </li>
+          <li className="mb-2 rounded-md border bg-color-background-light p-2 text-sm">Lerna is back!</li>
           <li className="mb-2 rounded-md border bg-color-background-light p-2 text-sm">
             You are not Google - moving quickly
           </li>

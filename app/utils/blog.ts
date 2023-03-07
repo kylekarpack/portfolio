@@ -23,6 +23,6 @@ export const filterBlogPosts = (posts: Post[]) => {
 
   return {
     diy,
-    technical
+    technical,
   };
 };

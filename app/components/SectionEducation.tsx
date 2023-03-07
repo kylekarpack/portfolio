@@ -7,15 +7,10 @@ export const SectionEducation = () => {
       </div>
 
       <h3>University of Washington</h3>
-      <h4 className="font-normal">
-        B.S.E., Human Centered Design &amp; Engineering
-      </h4>
+      <h4 className="font-normal">B.S.E., Human Centered Design &amp; Engineering</h4>
 
       <div className="mt-4">
-        <p className="text-sm">
-          Bachelor's of Science in Engineering with a focus in Human-Computer
-          Interaction
-        </p>
+        <p className="text-sm">Bachelor's of Science in Engineering with a focus in Human-Computer Interaction</p>
       </div>
     </section>
   );

@@ -1,10 +1,5 @@
 import { useLocation } from "@remix-run/react";
-import {
-  SITE_AUTHOR,
-  SITE_YEAR,
-  SOCIAL_GITHUB,
-  SOCIAL_LINKEDIN,
-} from "../config/constants";
+import { SITE_AUTHOR, SITE_YEAR, SOCIAL_GITHUB, SOCIAL_LINKEDIN } from "../config/constants";
 
 export const AppFooter = () => {
   // Hooks
@@ -19,11 +14,7 @@ export const AppFooter = () => {
   return (
     <footer className="mt-10 justify-center gap-2 text-center text-sm print:hidden md:mt-20">
       <div className="m-auto flex justify-center gap-4">
-        <a
-          className="p-2"
-          href={SOCIAL_LINKEDIN}
-          target="_blank"
-          rel="noreferrer">
+        <a className="p-2" href={SOCIAL_LINKEDIN} target="_blank" rel="noreferrer">
           <img
             alt="Follow me on LinkedIn"
             className="footer-social"
@@ -33,11 +24,7 @@ export const AppFooter = () => {
             width={16}
           />
         </a>
-        <a
-          className="p-2"
-          href={SOCIAL_GITHUB}
-          target="_blank"
-          rel="noreferrer">
+        <a className="p-2" href={SOCIAL_GITHUB} target="_blank" rel="noreferrer">
           <img
             alt="Follow me on GitHub"
             className="footer-social"

@@ -18,7 +18,7 @@ export const useWebShareAPI = (): UseWebShareAPI => {
 
   const data: ShareData = {
     text: SITE_DESCRIPTION,
-    title: `Join me on ${SITE_TITLE}`
+    title: `Join me on ${SITE_TITLE}`,
   };
 
   // Handlers
@@ -38,6 +38,6 @@ export const useWebShareAPI = (): UseWebShareAPI => {
 
   return {
     isAvailable,
-    onShare
+    onShare,
   };
 };

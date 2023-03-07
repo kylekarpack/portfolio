@@ -7,9 +7,8 @@ export const SectionMisc = () => {
             Miscellaneous <span className="ml-2">🧩</span>
           </h2>
           <p>
-            Living in San Diego you can find me and the family at the beach!
-            Otherwise there's a good chance I am hauling ass along the coast on
-            my motorcycle 🏍️💨.
+            Living in San Diego you can find me and the family at the beach! Otherwise there's a good chance I am
+            hauling ass along the coast on my motorcycle 🏍️💨.
           </p>
         </div>
         <div className="flex flex-shrink-0 flex-wrap gap-4">

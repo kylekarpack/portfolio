@@ -15,6 +15,6 @@ Sitemap: ${BASE_URL}/sitemap.xml
 
   return new Response(robotText, {
     headers: { "Content-Type": "text/plain" },
-    status: 200
+    status: 200,
   });
 };

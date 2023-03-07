@@ -24,7 +24,7 @@ export const AppWysiwyg = (props: AppWysiwygProps) => {
             <pre className="line-numbers language-js">
               <code className="language-js">{children}</code>
             </pre>
-          )
+          ),
         }}
       />
     </div>

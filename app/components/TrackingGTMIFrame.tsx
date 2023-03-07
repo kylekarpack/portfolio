@@ -21,7 +21,7 @@ export const TrackingGTMIFrame = (props: TrackingGTMIFrameProps) => {
         src={src}
         style={{
           display: "none",
-          visibility: "hidden"
+          visibility: "hidden",
         }}
         title="GTM Container"
         width="0"

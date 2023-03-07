@@ -6,16 +6,7 @@ export interface Data {
 }
 
 export const technologies: Record<string, string[]> = {
-  Languages: [
-    "TypeScript",
-    "Javascript",
-    "HTML",
-    "CSS/SCSS/LESS",
-    "C#",
-    "SQL",
-    "Some Rust",
-    "Some Go",
-  ],
+  Languages: ["TypeScript", "Javascript", "HTML", "CSS/SCSS/LESS", "C#", "SQL", "Some Rust", "Some Go"],
   "Frameworks & More": [
     "NodeJS",
     "React",
@@ -28,24 +19,8 @@ export const technologies: Record<string, string[]> = {
     "Tailwind CSS",
     ".NET",
   ],
-  Tooling: [
-    "Webpack",
-    "Parcel",
-    "Vite",
-    "Lerna",
-    "NX",
-    "NPM",
-    "Yarn",
-    "Git",
-    "Jira",
-  ],
-  "Infrastructure & Devops": [
-    "Azure",
-    "AWS",
-    "Jenkins",
-    "GitHub Actions",
-    "Docker",
-  ],
+  Tooling: ["Webpack", "Parcel", "Vite", "Lerna", "NX", "NPM", "Yarn", "Git", "Jira"],
+  "Infrastructure & Devops": ["Azure", "AWS", "Jenkins", "GitHub Actions", "Docker"],
   Testing: ["Jest", "Testing Library", "Vitest", "Cypress"],
   Monitoring: ["Splunk", "New Relic", "Grafana"],
   Databases: ["Snowflake", "MSSQL", "MongoDB", "Postgres", "ElasticSearch"],

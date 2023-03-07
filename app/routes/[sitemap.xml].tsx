@@ -62,8 +62,8 @@ export const loader: LoaderFunction = async (args) => {
     headers: {
       "Content-Type": "application/xml",
       "xml-version": "1.0",
-      encoding: "UTF-8"
+      encoding: "UTF-8",
     },
-    status: 200
+    status: 200,
   });
 };

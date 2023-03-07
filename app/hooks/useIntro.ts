@@ -1,9 +1,5 @@
 import { useEffect } from "react";
-import {
-  SITE_AUTHOR,
-  SOCIAL_GITHUB,
-  SOCIAL_LINKEDIN,
-} from "~/config/constants";
+import { SITE_AUTHOR, SOCIAL_GITHUB, SOCIAL_LINKEDIN } from "~/config/constants";
 
 /**
  * Introduce myself in the console

@@ -18,9 +18,7 @@ export const AppHero = (props: AppHeroProps) => {
     <div className={cssComponent}>
       <Tag className="inline-block text-xl font-extrabold md:text-4xl">
         {copy && <div className="ext-base font-normal md:text-xl">{copy}</div>}
-        <div className="text-highlight px-3 text-4xl md:text-6xl">
-          {highlight}
-        </div>
+        <div className="text-highlight px-3 text-4xl md:text-6xl">{highlight}</div>
       </Tag>
     </div>
   );

@@ -33,10 +33,7 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
   );
 
   return (
-    <Link
-      className="work-preview text-color-copy"
-      prefetch="intent"
-      to={`/portfolio/${data.slug}`}>
+    <Link className="work-preview text-color-copy" prefetch="intent" to={`/portfolio/${data.slug}`}>
       {data.images[0] && renderImage()}
 
       <h3 className="mt-4 font-font-serif text-xl font-bold">{data.title}</h3>

@@ -3,7 +3,7 @@ export const SectionSoftware = () => {
   const linkProps = {
     className: "font-font-serif text-base text-color-copy-light",
     rel: "noreferrer",
-    target: "_blank"
+    target: "_blank",
   };
 
   return (
@@ -29,9 +29,8 @@ export const SectionSoftware = () => {
             </a>
           </h3>
           <p>
-            Is my editor of choice and I could not be happier! It 100% does
-            everything I need it to and I am continuously impressed by the
-            improvements I've seen to date.
+            Is my editor of choice and I could not be happier! It 100% does everything I need it to and I am
+            continuously impressed by the improvements I've seen to date.
           </p>
         </div>
 
@@ -42,25 +41,20 @@ export const SectionSoftware = () => {
             </a>
           </h3>
           <p>
-            As far as terminal users go, I use it heavily every day. iTerm2 is
-            free and full of features I use and many that I don't even know
-            exist. Tabs, split-view, fast and reliable.
+            As far as terminal users go, I use it heavily every day. iTerm2 is free and full of features I use and many
+            that I don't even know exist. Tabs, split-view, fast and reliable.
           </p>
         </div>
 
         <div>
           <h3 className="my-4 text-xl">
-            <a
-              {...linkProps}
-              href="https://www.docker.com/products/docker-desktop"
-            >
+            <a {...linkProps} href="https://www.docker.com/products/docker-desktop">
               <span className="mr-2">🐳</span> Docker Desktop
             </a>
           </h3>
           <p>
-            At the core of the modern development workflow is 🐳 Docker. I can't
-            begin to explain how enjoyable a great docker and docker-compose
-            workflow can be.
+            At the core of the modern development workflow is 🐳 Docker. I can't begin to explain how enjoyable a great
+            docker and docker-compose workflow can be.
           </p>
         </div>
 
@@ -72,9 +66,8 @@ export const SectionSoftware = () => {
             </a>
           </h3>
           <p>
-            It's not that often that get to play designer but I do enjoy keeping
-            up with the tools. Figma is available in the browser + app,
-            incredibly fast, powerful, and FREE. I love it!
+            It's not that often that get to play designer but I do enjoy keeping up with the tools. Figma is available
+            in the browser + app, incredibly fast, powerful, and FREE. I love it!
           </p>
         </div>
       </div>

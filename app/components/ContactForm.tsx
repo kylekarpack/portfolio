@@ -7,9 +7,7 @@ const ContactForm = () => {
   });
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const repopulateForm = async (
-    currentTarget: EventTarget & HTMLFormElement
-  ) => {
+  const repopulateForm = async (currentTarget: EventTarget & HTMLFormElement) => {
     if (!executeRecaptcha) {
       throw new Error("Could not initialize ReCaptcha");
     }
@@ -34,20 +32,13 @@ const ContactForm = () => {
 
   // Success message
   if (state.submitted) {
-    return (
-      <div>
-        Thank you! I have received your submission and will reply shortly.
-      </div>
-    );
+    return <div>Thank you! I have received your submission and will reply shortly.</div>;
   }
 
   return (
     <>
       <h1 className="mb-4 text-2xl text-gray-700">Contact Me</h1>
-      <form
-        className="flex flex-col justify-center"
-        onSubmit={handleSubmit}
-        action="">
+      <form className="flex flex-col justify-center" onSubmit={handleSubmit} action="">
         <div className="flex flex-col">
           <label htmlFor="name" className="hidden">
             Your Name
@@ -98,9 +89,7 @@ const ContactForm = () => {
       </form>
 
       {state.error && (
-        <div
-          className="relative mt-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
-          role="alert">
+        <div className="relative mt-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700" role="alert">
           <span className="block sm:inline">{state.error.message}</span>
         </div>
       )}

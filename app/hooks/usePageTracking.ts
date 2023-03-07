@@ -10,7 +10,7 @@ export const usePageTracking = () => {
     if (!window.gtag) return;
 
     window.gtag("event", "page_view", {
-      page_location: `${BASE_URL}${pathname}`
+      page_location: `${BASE_URL}${pathname}`,
     });
   }, [pathname]);
 };

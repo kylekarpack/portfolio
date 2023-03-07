@@ -13,17 +13,10 @@ export const AppUserCard = (props: AppUserCardProps) => {
 
   return (
     <div className={classnames(className, "flex items-center gap-4")}>
-      <img
-        alt={alt}
-        className="h-10 w-10 rounded-full border border-color-border-dark"
-        src={image}
-      />
+      <img alt={alt} className="h-10 w-10 rounded-full border border-color-border-dark" src={image} />
       <div>
         <h3 className="text-xl">{SITE_AUTHOR}</h3>
-        <div
-          className="font-font-monospace text-xs"
-          dangerouslySetInnerHTML={{ __html: copy }}
-        />
+        <div className="font-font-monospace text-xs" dangerouslySetInnerHTML={{ __html: copy }} />
       </div>
     </div>
   );

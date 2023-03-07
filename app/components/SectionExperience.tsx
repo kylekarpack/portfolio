@@ -24,10 +24,7 @@ export const SectionExperience = () => {
 
       <div className="flex flex-col gap-10">
         {experience.map((exp) => (
-          <SectionExperienceDetail
-            experience={exp}
-            key={`${exp.company}/${exp.title}`}
-          />
+          <SectionExperienceDetail experience={exp} key={`${exp.company}/${exp.title}`} />
         ))}
       </div>
       {experience.length > shown && (
