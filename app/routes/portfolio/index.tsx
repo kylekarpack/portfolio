@@ -4,11 +4,11 @@ import { useLoaderData } from "@remix-run/react";
 import type { LoaderData } from "~/routes/api/portfolio";
 import { AppHero } from "~/components/AppHero";
 import { PortfolioPreview } from "~/components/PortfolioPreview";
-import { loader } from "~/routes/api/portfolio";
+import { loader as copyLoader } from "~/routes/api/portfolio";
 import { getMetaData } from "~/metadata";
 import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 
-export { loader };
+export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs if the loader is simply re-exported
 
 export const meta: MetaFunction = (args) => {
   return {
@@ -32,21 +32,12 @@ export default function () {
     <>
       <section>
         <div className="bg-color-background-dark text-color-background">
-          <AppHero
-            className="py-20 md:py-20"
-            copy="Current Work"
-            highlight="What I am Building"
-            tag="h1"
-          />
+          <AppHero className="py-20 md:py-20" copy="Current Work" highlight="What I am Building" tag="h1" />
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {current.map((node) => (
-              <PortfolioPreview
-                current={true}
-                data={node as any}
-                key={node.slug}
-              />
+              <PortfolioPreview current={true} data={node as any} key={node.slug} />
             ))}
           </div>
         </div>
@@ -54,21 +45,12 @@ export default function () {
 
       <section>
         <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
-          <AppHero
-            className="py-20 md:py-20"
-            copy="Past Projects"
-            highlight="What I Have Built"
-            tag="h2"
-          />
+          <AppHero className="py-20 md:py-20" copy="Past Projects" highlight="What I Have Built" tag="h2" />
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {recent.map((node) => (
-              <PortfolioPreview
-                current={false}
-                data={node as any}
-                key={node.slug}
-              />
+              <PortfolioPreview current={false} data={node as any} key={node.slug} />
             ))}
           </div>
         </div>
