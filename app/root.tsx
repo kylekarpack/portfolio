@@ -1,30 +1,12 @@
-import type {
-  DataFunctionArgs,
-  LinksFunction,
-  MetaFunction,
-} from "@remix-run/node";
+import type { DataFunctionArgs, LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useCatch,
-  useLoaderData,
-} from "@remix-run/react";
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch, useLoaderData } from "@remix-run/react";
 import classnames from "classnames";
 
 import { AppFooter } from "~/components/AppFooter";
 import { AppHeader } from "~/components/AppHeader";
 import { AppHeaderMobile } from "~/components/AppHeaderMobile";
-import {
-  SITE_DESCRIPTION,
-  SITE_SHARE_IMAGE,
-  SITE_TITLE,
-  SITE_URL,
-} from "~/config/constants";
+import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "~/config/constants";
 import { BASE_URL } from "~/config/settings.server";
 import { cookieTheme } from "~/cookies";
 import { useIntro } from "~/hooks/useIntro";
@@ -65,7 +47,7 @@ export default function App() {
   // Setup
   const { canonical, theme } = data;
   const isDark = theme === "dark";
-  const favicon = "/images/svg/logo.svg";
+  const favicon = "/images/favicon/favicon.ico";
   const manifest = "/manifest.json";
   // const manifest = isDark ? "/manifest-dark.json" : "/manifest.json";
 

@@ -15,6 +15,3 @@ node_modules
 *.js.map
 
 api/index.js
-
-# TODO: Remove these
-public/

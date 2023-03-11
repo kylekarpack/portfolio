@@ -9,9 +9,7 @@ export interface PortfolioPreviewProps {
 }
 
 /**
- * @name PortfolioPreview
- * @description Unfortunately I don't have a ton of great imagery to work with
- * for all of these past projects so I need to try and focus on the content 🤔
+ * Preview a portfolio item
  */
 export const PortfolioPreview = (props: PortfolioPreviewProps) => {
   const { current = false, data } = props;
