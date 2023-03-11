@@ -60,14 +60,14 @@ export const AppHeaderMobile = () => {
         <div className="flex-1 md:hidden" />
 
         <NavLink className="header-logo ml-4 flex h-full items-center gap-2 px-4" to="/">
-          <AppLogo className="h-full" />
+          <AppLogo />
           <span className="sr-only">Home</span>
         </NavLink>
 
         <div className="flex-1 pl-20" />
       </div>
 
-      <div className="h-full font-font-monospace md:flex-row">{!closed && renderNavigation()}</div>
+      <div className="h-full md:flex-row">{!closed && renderNavigation()}</div>
     </header>
   );
 };
