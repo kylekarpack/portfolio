@@ -7,11 +7,9 @@ export const getPortfolios = gql`
       date
       description
       images {
-        url(transformation: { image: { resize: { width: 400, height: 250, fit: crop } } })
+        handle
       }
-      #overview
       slug
-      #thumbnailTemp
       title
     }
   }

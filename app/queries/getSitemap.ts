@@ -10,31 +10,8 @@ export const getSitemap = gql`
     }
 
     portfolios(orderBy: date_DESC) {
-      # company
-      # current
       date
-      # description
-      # images {
-      #   url
-      # }
-      # overview
       slug
-      # thumbnailTemp
-      title
-    }
-
-    posts(orderBy: createdAt_ASC) {
-      # content {
-      #   html
-      # }
-      date
-      # description
-      # id
-      # imageTemp
-      # intro
-      slug
-      # tags
-      # sticky
       title
     }
   }

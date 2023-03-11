@@ -17,7 +17,7 @@ export const loader: LoaderFunction = async (args) => {
   const res = await data.json();
   const routes = ["/blog", "/portfolio", "/resume", "/uses"];
 
-  const { portfolios, posts } = res.data;
+  const { portfolios } = res.data;
 
   const links = routes.map(
     (path: string) => `  <url>
@@ -28,6 +28,7 @@ export const loader: LoaderFunction = async (args) => {
   </url>`
   );
 
+  /*
   const blog = posts.map(
     (p: Post) => `  <url>
     <changefreq>monthly</changefreq>
@@ -36,6 +37,7 @@ export const loader: LoaderFunction = async (args) => {
     <priority>0.8</priority>
   </url>`
   );
+  */
 
   const portfolio = portfolios.map(
     (p: Portfolio) => `  <url>
@@ -55,7 +57,6 @@ export const loader: LoaderFunction = async (args) => {
   </url>
   ${links.join("\n")}
   ${portfolio.join("\n")}
-  ${blog.join("\n")}
 </urlset>`;
 
   return new Response(content, {
