@@ -1,7 +1,7 @@
 import { NavLink } from "@remix-run/react";
 import classNames from "classnames";
 import { useState } from "react";
-
+import { AllNavLinks } from "./AppHeader";
 import { AppLogo } from "./AppLogo";
 
 export const AppHeaderMobile = () => {
@@ -15,26 +15,6 @@ export const AppHeaderMobile = () => {
 
   const onToggle = () => {
     setClosed(!closed);
-  };
-
-  // Markup
-  const renderNavigation = () => {
-    return (
-      <nav className="mt-14 flex flex-col items-center gap-4 md:flex-row">
-        <NavLink className="header-link" onClick={onClose} to="/">
-          About
-        </NavLink>
-        <NavLink className="header-link" onClick={onClose} to="/portfolio">
-          Portfolio
-        </NavLink>
-        <NavLink className="header-link" onClick={onClose} to="/resume">
-          Resume
-        </NavLink>
-        <NavLink className="header-link" onClick={onClose} to="/contact">
-          Contact
-        </NavLink>
-      </nav>
-    );
   };
 
   return (
@@ -67,7 +47,13 @@ export const AppHeaderMobile = () => {
         <div className="flex-1 pl-20" />
       </div>
 
-      <div className="h-full md:flex-row">{!closed && renderNavigation()}</div>
+      <div className="h-full md:flex-row">
+        {!closed && (
+          <nav className="mt-14 flex flex-col items-center gap-4 md:flex-row">
+            <AllNavLinks onClose={onClose} />
+          </nav>
+        )}
+      </div>
     </header>
   );
 };

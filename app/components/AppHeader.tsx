@@ -1,8 +1,28 @@
 import { NavLink } from "@remix-run/react";
 import classNames from "classnames";
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 
 import { AppLogo } from "./AppLogo";
+
+export const AllNavLinks: FunctionComponent<{ onClose: () => void }> = ({ onClose }) => (
+  <>
+    <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/">
+      Home
+    </NavLink>
+    <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/about">
+      About
+    </NavLink>
+    <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/portfolio">
+      Portfolio
+    </NavLink>
+    <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/resume">
+      Resume
+    </NavLink>
+    <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/contact">
+      Contact
+    </NavLink>
+  </>
+);
 
 export const AppHeader = () => {
   // Hooks
@@ -40,18 +60,7 @@ export const AppHeader = () => {
         <div className="flex-1" />
 
         <nav className="flex h-full flex-col md:flex-row">
-          <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/">
-            About
-          </NavLink>
-          <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/portfolio">
-            Portfolio
-          </NavLink>
-          <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/resume">
-            Resume
-          </NavLink>
-          <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/contact">
-            Contact
-          </NavLink>
+          <AllNavLinks onClose={onClose} />
         </nav>
       </div>
     </header>
