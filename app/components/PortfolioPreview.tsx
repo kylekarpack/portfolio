@@ -1,3 +1,4 @@
+import Image, { GraphImageProp } from "@graphcms/react-image";
 import { Link } from "@remix-run/react";
 import { format } from "date-fns";
 import type { Portfolio } from "~/routes/api/portfolio";
@@ -18,24 +19,28 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
   // Setup
   const date = new Date(data.date);
 
-  // Markup
-  const renderImage = () => (
-    <div className="w-full">
-      <img
-        alt=""
-        className="w-full border transition-all hover:rotate-3 hover:scale-110"
-        height="auto"
-        src={data.images[0].url}
-        width="auto"
-      />
-    </div>
-  );
+  const asset: GraphImageProp = {
+    handle: data.images[0]?.handle ?? "",
+    width: 400,
+    height: 250,
+  };
 
   return (
     <Link className="work-preview text-color-copy" prefetch="intent" to={`/portfolio/${data.slug}`}>
-      {data.images[0] && renderImage()}
+      {asset.handle && (
+        <div className="w-full">
+          <Image
+            alt={data.title}
+            image={asset}
+            withWebp={true}
+            transforms={["quality=value:40"]}
+            maxWidth={400}
+            className="w-full border transition-all hover:scale-105 hover:opacity-90"
+          />
+        </div>
+      )}
 
-      <h3 className="mt-4 font-font-serif text-xl font-bold">{data.title}</h3>
+      <h3 className="mt-4 font-font-serif text-xl font-bold transition-all">{data.title}</h3>
       <div className="mt-2 mb-4 flex items-baseline gap-2 font-medium text-color-copy-light">
         {!current && date && <span>{format(date, "MMMM yyyy")}</span>}
       </div>
