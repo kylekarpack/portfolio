@@ -3,7 +3,15 @@
  */
 module.exports = {
   // When running locally in development mode, we use the built in remix server
-  server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
+  server:
+    process.env.NODE_ENV === "production"
+      ? // when running the Netify CLI or building on Netlify, we want to use
+        {
+          server: "./server.js",
+          serverBuildPath: ".netlify/functions-internal/server.js",
+        }
+      : // otherwise support running remix dev, i.e. no custom server
+        undefined,
   ignoredRouteFiles: [".*"],
   future: {
     unstable_tailwind: true,
