@@ -2,7 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
-// import GoodreadsBookshelf from "react-goodreads-shelf";
+import { GoodreadsBookshelf } from "react-goodreads-shelf";
 import { GithubContributions } from "react-github-graph";
 
 export const meta: MetaFunction = (args) => {
@@ -45,12 +45,12 @@ export default function () {
         </div>
       </section>
 
-      <section>
+      <section className="bg-color-background-light py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
           <h2 className="my-4 text-xl md:text-3xl">Recently Read</h2>
-          {/* <GoodreadsBookshelf userId="63515611" limit={14} width={100} displayOptions={{ hideDetails: true }} /> */}
+          <GoodreadsBookshelf userId="63515611" limit={14} width={100} displayOptions={{ hideDetails: true }} />
 
-          <Link to="/about/reading">See more</Link>
+          {/* <Link to="/about/reading">See more</Link> */}
         </div>
       </section>
     </div>
