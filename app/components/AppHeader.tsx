@@ -46,7 +46,7 @@ export const AppHeader = () => {
             className="max-h-4"
             height={16}
             loading="eager"
-            src="/images/branding/menu.svg"
+            src="/images/svg/menu.svg"
             width={19}
           />
         </button>

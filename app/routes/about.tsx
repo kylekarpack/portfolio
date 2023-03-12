@@ -9,7 +9,7 @@ export const meta: MetaFunction = (args) => {
   return {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
-      title: `${SITE_TITLE}`,
+      title: `About | ${SITE_TITLE}`,
     }),
   };
 };

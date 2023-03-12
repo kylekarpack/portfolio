@@ -1,5 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
 import { AppHero } from "~/components/AppHero";
 import Mantra from "~/components/Mantra";
 import { SectionProficiencies } from "~/components/SectionProficiencies";
@@ -10,7 +9,7 @@ export const meta: MetaFunction = (args) => {
   return {
     ...getMetaData({
       canonical: args.parentsData?.root?.canonical,
-      title: `About | ${SITE_TITLE}`,
+      title: `${SITE_TITLE}`,
     }),
   };
 };
