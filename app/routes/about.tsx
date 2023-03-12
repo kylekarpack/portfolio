@@ -36,9 +36,12 @@ export default function () {
         </div>
       </section>
 
-      <section>
+      <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
-          <GithubContributions username="kylekarpack" />
+          <GithubContributions
+            username="kylekarpack"
+            renderHeader={(header) => <h2 className="my-4 text-xl md:text-3xl">{header}</h2>}
+          />
         </div>
       </section>
 
