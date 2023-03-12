@@ -13,6 +13,9 @@ const baseConfig =
  */
 module.exports = {
   ...baseConfig,
+  appDirectory: "app",
+  assetsBuildDirectory: "public/build",
+  publicPath: "/build/",
   ignoredRouteFiles: [".*"],
   future: {
     unstable_tailwind: true,
@@ -21,4 +24,5 @@ module.exports = {
     v2_routeConvention: true,
   },
   serverDependenciesToBundle: [/^react-github-graph/, /^react-goodreads-shelf/],
+  serverBuildDirectory: "netlify/functions/server/build",
 };
