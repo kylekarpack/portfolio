@@ -2,8 +2,8 @@ import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 import type { RenderResult } from "@testing-library/react";
 
-import { AppTags } from "../AppTags";
-import type { AppTagsProps } from "../AppTags";
+import { AppTags } from "./AppTags";
+import type { AppTagsProps } from "./AppTags";
 
 describe("AppTags Component", () => {
   let props: AppTagsProps;
@@ -17,7 +17,7 @@ describe("AppTags Component", () => {
     props = {
       classNameTag: "tag-classname",
       heading: "App Tag - Test Heading",
-      tags: ["One", "Two", "Three"]
+      tags: ["One", "Two", "Three"],
     };
 
     createWrapper();

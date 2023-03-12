@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 
-import { AppSocialLink } from "../AppSocialLink";
+import { AppSocialLink } from "./AppSocialLink";
 
 describe("AppSocialLink Component", () => {
   const component = render(
@@ -9,7 +9,7 @@ describe("AppSocialLink Component", () => {
       data={{
         icon: "/path/to/facebook.svg",
         title: "Facebook",
-        url: "https://facebook.com"
+        url: "https://facebook.com",
       }}
     />
   );

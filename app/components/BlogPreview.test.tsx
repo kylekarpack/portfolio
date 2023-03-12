@@ -2,8 +2,8 @@ import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 import type { RenderResult } from "@testing-library/react";
 
-import { BlogPreview } from "../BlogPreview";
-import type { BlogPreviewProps } from "../BlogPreview";
+import { BlogPreview } from "./BlogPreview";
+import type { BlogPreviewProps } from "./BlogPreview";
 import { MemoryRouter } from "react-router";
 
 describe("BlogPreview Component", () => {
@@ -24,7 +24,7 @@ describe("BlogPreview Component", () => {
       date: "2020-01-01",
       image: "https://example.com/image.jpg",
       slug: "hello-world",
-      title: "Hello World"
+      title: "Hello World",
     };
 
     createWrapper();

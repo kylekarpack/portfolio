@@ -2,8 +2,8 @@ import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 import type { RenderResult } from "@testing-library/react";
 
-import { BlogFeatured } from "../BlogFeatured";
-import type { BlogFeaturedProps } from "../BlogFeatured";
+import { BlogFeatured } from "./BlogFeatured";
+import type { BlogFeaturedProps } from "./BlogFeatured";
 import { MemoryRouter } from "react-router";
 
 describe("BlogFeatured Component", () => {
@@ -22,15 +22,15 @@ describe("BlogFeatured Component", () => {
     props = {
       post: {
         content: {
-          html: "<p>lorem ipsum dolor sit amet</p>"
+          html: "<p>lorem ipsum dolor sit amet</p>",
         },
         date: "2020-01-01",
         id: "test-id",
         imageTemp: "https://via.placeholder.com/150",
         slug: "test-slug",
         sticky: false,
-        title: "Test Title"
-      }
+        title: "Test Title",
+      },
     };
 
     createWrapper();

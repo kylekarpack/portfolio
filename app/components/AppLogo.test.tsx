@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 
-import { AppLogo } from "../AppLogo";
+import { AppLogo } from "./AppLogo";
 
 describe("AppLogo Component", () => {
   const component = render(<AppLogo />);
