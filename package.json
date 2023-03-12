@@ -40,6 +40,7 @@
     "react-map-gl": "^7.0.21"
   },
   "devDependencies": {
+    "@netlify/functions": "^1.4.0",
     "@remix-run/dev": "^1.14.0",
     "@remix-run/eslint-config": "^1.14.0",
     "@remix-run/serve": "^1.14.0",
