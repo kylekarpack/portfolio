@@ -7,7 +7,6 @@ import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 import { loader } from "~/routes/api/blog";
 import type { LoaderData } from "~/routes/api/blog";
 import { BlogFeatured } from "~/components/BlogFeatured";
-import { BlogUpcoming } from "~/components/BlogUpcoming";
 import { getMetaData } from "~/metadata";
 import { filterBlogPosts } from "~/utils/blog";
 
@@ -33,21 +32,12 @@ export default function () {
   return (
     <>
       <section className="bg-gradient-dark-- bg-color-background-dark text-color-background">
-        <AppHero
-          className="mx-auto max-w-6xl py-20 md:py-40"
-          copy="Blog"
-          highlight=""
-          tag="h1"
-        />
+        <AppHero className="mx-auto max-w-6xl py-20 md:py-40" copy="Blog" highlight="" tag="h1" />
       </section>
 
       <section className="section-full m-auto flex max-w-6xl flex-col items-center justify-center gap-20 px-4 py-20">
         <div className="flex flex-col gap-20 md:flex-row">
-          <BlogFeatured
-            className="basis-2/3"
-            post={data.technical.featured[0]}
-          />
-          <BlogUpcoming className="basis-1/3" />
+          <BlogFeatured className="basis-2/3" post={data.technical.featured[0]} />
         </div>
 
         <div className="grid w-full gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -69,11 +59,10 @@ export default function () {
         <div>
           <h2 className="mb-8 w-full text-left text-3xl">Do it yourself</h2>
           <p>
-            You see and hear the acronym "DIY" everywhere, and you probably
-            already know what it stands for: "do it yourself." It's a pretty
-            straightforward-sounding concept. Well, when I am not building
-            things with code, I love to work with my hands around the house.
-            It's also amazing to share the process and experience with my kids.
+            You see and hear the acronym "DIY" everywhere, and you probably already know what it stands for: "do it
+            yourself." It's a pretty straightforward-sounding concept. Well, when I am not building things with code, I
+            love to work with my hands around the house. It's also amazing to share the process and experience with my
+            kids.
           </p>
         </div>
 
