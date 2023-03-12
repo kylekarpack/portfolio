@@ -14,6 +14,7 @@ import { usePageTracking } from "~/hooks/usePageTracking";
 import { getMetaData } from "~/metadata";
 
 import styles from "~/styles/index.css";
+import Pwa from "./components/Pwa";
 
 export const links: LinksFunction = () => {
   return [
@@ -52,7 +53,6 @@ export default function App() {
   const isDark = theme === "dark";
   const favicon = "/images/favicon/favicon.ico";
   const manifest = "/manifest.json";
-  // const manifest = isDark ? "/manifest-dark.json" : "/manifest.json";
 
   // Styles
   const cssComponent = classnames(theme ?? "", isDark);
@@ -65,11 +65,11 @@ export default function App() {
     <html lang="en" className={cssComponent}>
       <head>
         <link href={canonical} rel="canonical" />
-        <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
         <link href={favicon} rel="favicon" />
         <link href={favicon} rel="icon" type="image/svg+xml" />
         <link href={favicon} rel="mask-icon" type="image/svg+xml" />
         <link href={manifest} rel="manifest" />
+        <Pwa />
 
         <Links />
         <Meta />
