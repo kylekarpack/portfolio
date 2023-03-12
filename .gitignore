@@ -17,3 +17,4 @@ node_modules
 api/index.js
 coverage/
 .netlify/
+netlify/functions/server/build/
