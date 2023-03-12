@@ -1,8 +1,8 @@
+import { cssBundleHref } from "@remix-run/css-bundle";
 import type { DataFunctionArgs, LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch, useLoaderData } from "@remix-run/react";
 import classnames from "classnames";
-
 import { AppFooter } from "~/components/AppFooter";
 import { AppHeader } from "~/components/AppHeader";
 import { AppHeaderMobile } from "~/components/AppHeaderMobile";
@@ -16,7 +16,10 @@ import { getMetaData } from "~/metadata";
 import styles from "~/styles/index.css";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: cssBundleHref! },
+    { rel: "stylesheet", href: styles },
+  ];
 };
 
 export const loader = async (args: DataFunctionArgs) => {

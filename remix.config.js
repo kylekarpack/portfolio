@@ -16,5 +16,7 @@ module.exports = {
   future: {
     unstable_tailwind: true,
     unstable_postcss: true,
+    unstable_cssSideEffectImports: true,
   },
+  serverDependenciesToBundle: [/^react-github-graph/],
 };
