@@ -9,20 +9,20 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "~": resolve(__dirname, "./app")
-    }
+      "~": resolve(__dirname, "./app"),
+    },
   },
 
   test: {
     coverage: {
       all: true,
-      exclude: ["node_modules", "public/build/**/*"],
-      include: [],
-      reporter: ["text", "json", "html"]
+      exclude: ["node_modules", "public/build/**/*", "**/*.test.{ts,tsx}"],
+      include: ["app/**/*.{ts,tsx}"],
+      reporter: ["text", "json", "html"],
     },
     globals: true,
     environment: "jsdom",
     exclude: ["build", "node_modules", "public", ".templates/**"],
-    setupFiles: "./test/setup.ts"
-  }
+    setupFiles: "./test/setup.ts",
+  },
 });
