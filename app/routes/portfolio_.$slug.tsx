@@ -3,8 +3,8 @@ import type { MetaFunction } from "@remix-run/node";
 import { useCatch, useLoaderData } from "@remix-run/react";
 import { AppHero } from "~/components/AppHero";
 import { getMetaData } from "~/metadata";
-import type { LoaderData } from "~/routes/api.portfolio.$slug";
-import { loader as copyLoader } from "~/routes/api.portfolio.$slug";
+import type { LoaderData } from "~/routes/api/portfolio/$slug/route";
+import { loader as copyLoader } from "~/routes/api/portfolio/$slug/route";
 
 export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs if the loader is simply re-exported
 
