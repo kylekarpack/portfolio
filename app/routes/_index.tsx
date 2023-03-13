@@ -18,7 +18,7 @@ export default function () {
   return (
     <>
       <div className="relative">
-        <section className="relative z-0 m-auto  py-8 md:py-12">
+        <section className="relative z-0 m-auto py-8 md:py-12">
           <div className="mx-auto flex max-w-2xl flex-col-reverse items-center justify-center gap-4 md:flex-row">
             <AppHero
               className="py-10 md:py-20 md:text-right"
@@ -43,8 +43,8 @@ export default function () {
         </section>
       </div>
 
-      <section className="bg-color-background-dark py-20 text-color-background-light">
-        <div className="mx-auto max-w-3xl px-4 pb-12 md:px-0">
+      <section className="bg-color-background-dark py-8 text-color-background-light md:py-20">
+        <div className="mx-auto max-w-3xl px-8 pb-12 md:px-0">
           <SectionProficiencies />
         </div>
       </section>

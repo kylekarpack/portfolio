@@ -41,7 +41,7 @@ export default function () {
         />
       </div>
 
-      <div className="my-12 mx-auto max-w-lg">
+      <div className="my-12 mx-auto max-w-lg px-8 md:px-0">
         <GoogleReCaptchaProvider
           reCaptchaKey="6LcU0XoUAAAAAA2IMX6btadVmmBjNfz-tgYSzgC0"
           scriptProps={{

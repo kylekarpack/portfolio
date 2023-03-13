@@ -49,7 +49,7 @@ export const AppHeaderMobile = () => {
 
       <div className="h-full md:flex-row">
         {!closed && (
-          <nav className="mt-14 flex flex-col items-center gap-4 md:flex-row">
+          <nav className="mt-14 flex flex-col items-center gap-4 text-2xl md:flex-row">
             <AllNavLinks onClose={onClose} />
           </nav>
         )}
