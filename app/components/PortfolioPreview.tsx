@@ -1,7 +1,7 @@
 import Image, { GraphImageProp } from "@graphcms/react-image";
 import { Link } from "@remix-run/react";
 import { format } from "date-fns";
-import type { Portfolio } from "~/routes/api/portfolio";
+import type { Portfolio } from "~/routes/api.portfolio";
 
 export interface PortfolioPreviewProps {
   current: boolean;
