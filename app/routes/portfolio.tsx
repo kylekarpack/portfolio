@@ -32,10 +32,10 @@ export default function () {
     <>
       <section>
         <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
-          <AppHero className="py-20 md:py-10" copy="Current Work" highlight="Portfolio" tag="h1" reverse />
+          <AppHero className="py-12 md:py-10" copy="Current Work" highlight="Portfolio" tag="h1" reverse />
         </div>
         <div className="mx-auto md:max-w-6xl">
-          <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          <div className="my-8 grid grid-cols-1 gap-16 p-4 md:my-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {current.map((node) => (
               <PortfolioPreview current={true} data={node as any} key={node.slug} />
             ))}
@@ -45,7 +45,7 @@ export default function () {
 
       <section>
         <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
-          <AppHero className="py-20 md:py-20" copy="Past Projects" tag="h2" />
+          <AppHero className="py-12 md:py-10" copy="Past Projects" tag="h1" />
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">

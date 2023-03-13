@@ -65,4 +65,8 @@
   .wysiwyg blockquote a {
     @apply text-highlight;
   }
+
+  .image-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
 }

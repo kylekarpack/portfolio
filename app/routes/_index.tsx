@@ -27,14 +27,14 @@ export default function () {
               tag="h1"
             />
             <div className="w-48">
-              <img
-                alt={SITE_AUTHOR}
-                className="custom-bg-gradient mx-auto aspect-square max-h-32 overflow-hidden rounded-full p-1 transition-transform md:max-h-40"
-                height="auto"
-                loading="eager"
-                src="/images/assets/headshot.jpg"
-                width="auto"
-              />
+              <div className="image-fade-in">
+                <img
+                  alt={SITE_AUTHOR}
+                  className="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden rounded-full p-1 transition-transform"
+                  loading="eager"
+                  src="/images/assets/headshot.jpg"
+                />
+              </div>
             </div>
           </div>
           <div className="mx-auto max-w-3xl px-4 py-12 text-center text-lg md:px-0 md:text-xl">

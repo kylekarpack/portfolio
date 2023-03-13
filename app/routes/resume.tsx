@@ -34,14 +34,14 @@ export default function () {
         <aside className="print:hidden md:w-1/5">
           <div className="sticky top-36">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
-              <img
-                alt={SITE_AUTHOR}
-                className="custom-bg-gradient aspect-square max-h-48 overflow-hidden rounded-full p-1"
-                height="auto"
-                loading="eager"
-                src="/images/assets/headshot.jpg"
-                width="auto"
-              />
+              <div className="image-fade-in">
+                <img
+                  alt={SITE_AUTHOR}
+                  className="custom-bg-gradient aspect-square w-full overflow-hidden rounded-full p-1"
+                  loading="eager"
+                  src="/images/assets/headshot.jpg"
+                />
+              </div>
               <div className="flex flex-shrink-0 flex-col gap-2 p-4">
                 {social.map((data) => (
                   <AppSocialLink data={data} key={data.title} />

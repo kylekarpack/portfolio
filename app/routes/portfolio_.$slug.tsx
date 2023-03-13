@@ -35,15 +35,15 @@ export default function () {
 
   return (
     <>
-      <div className="mb-12 block items-center gap-12 align-middle md:flex ">
-        <div className="flex-1">
+      <div className="mb-12 block items-center gap-12 bg-white py-8 align-middle md:flex">
+        <div className="flex-1 px-4">
           <div className="m-auto max-w-3xl">
             <AppHero className="py-20" copy={data.description} highlight={data.title} tag="h1" />
           </div>
         </div>
 
         {img && (
-          <div className="flex-1">
+          <div className="flex-1 px-4">
             <Image
               alt={data.title}
               image={asset}
