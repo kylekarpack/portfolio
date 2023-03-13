@@ -31,8 +31,8 @@ export default function () {
   return (
     <>
       <section>
-        <div className="bg-color-background-dark text-color-background">
-          <AppHero className="py-20 md:py-20" copy="Current Work" highlight="What I am Building" tag="h1" />
+        <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
+          <AppHero className="py-20 md:py-10" copy="Current Work" highlight="Portfolio" tag="h1" reverse />
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
@@ -45,7 +45,7 @@ export default function () {
 
       <section>
         <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
-          <AppHero className="py-20 md:py-20" copy="Past Projects" highlight="What I Have Built" tag="h2" />
+          <AppHero className="py-20 md:py-20" copy="Past Projects" tag="h2" />
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">

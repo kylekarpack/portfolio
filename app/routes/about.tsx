@@ -17,7 +17,7 @@ export const meta: MetaFunction = (args) => {
 export default function () {
   return (
     <div className="relative">
-      <section className="bg-color-background-light py-20 ">
+      <section className="bg-color-background-light py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
           <h2 className="my-4 text-xl md:text-3xl">About Me</h2>
           <div className="gap-10 md:flex">

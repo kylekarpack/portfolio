@@ -38,10 +38,12 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
         </div>
       )}
 
-      <h3 className="mt-4 font-font-serif text-xl font-bold transition-all">{data.title}</h3>
-      <div className="mt-2 mb-4 flex items-baseline gap-2 font-medium text-color-copy-light">
-        {!current && date && <span>{format(date, "MMMM yyyy")}</span>}
-      </div>
+      <h3 className="mt-4 mb-2 font-font-serif text-xl font-bold transition-all duration-500">{data.title}</h3>
+      {!current && date && (
+        <div className="mt-2 mb-2 flex items-baseline gap-2 font-medium text-color-copy-light">
+          <span>{format(date, "MMMM yyyy")}</span>
+        </div>
+      )}
 
       <p>{data.description}</p>
     </Link>
