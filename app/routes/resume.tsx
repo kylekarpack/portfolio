@@ -1,5 +1,6 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { AppSocialLink } from "~/components/AppSocialLink";
+import GraphCmsImage from "~/components/GraphCmsImage";
 import Mantra from "~/components/Mantra";
 import { SectionEducation } from "~/components/SectionEducation";
 import { SectionExperience } from "~/components/SectionExperience";
@@ -34,14 +35,13 @@ export default function () {
         <aside className="print:hidden md:w-1/5">
           <div className="sticky top-36">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
-              <div className="image-fade-in">
-                <img
-                  alt={SITE_AUTHOR}
-                  className="custom-bg-gradient aspect-square w-full overflow-hidden rounded-full p-1"
-                  loading="eager"
-                  src="/images/assets/headshot.jpg"
-                />
-              </div>
+              <GraphCmsImage
+                handle="9kiAYtliQPyl2fnEN1AL"
+                alt={SITE_AUTHOR}
+                className="rounded-full"
+                outerWrapperClassName="custom-bg-gradient aspect-square w-full overflow-hidden p-1 rounded-full"
+                loading="eager"
+              />
               <div className="flex flex-shrink-0 flex-col gap-2 p-4">
                 {social.map((data) => (
                   <AppSocialLink data={data} key={data.title} />

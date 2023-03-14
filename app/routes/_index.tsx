@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { AppHero } from "~/components/AppHero";
+import GraphCmsImage from "~/components/GraphCmsImage";
 import Mantra from "~/components/Mantra";
 import { SectionProficiencies } from "~/components/SectionProficiencies";
 import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
@@ -27,14 +28,13 @@ export default function () {
               tag="h1"
             />
             <div className="w-48">
-              <div className="image-fade-in">
-                <img
-                  alt={SITE_AUTHOR}
-                  className="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden rounded-full p-1 transition-transform"
-                  loading="eager"
-                  src="/images/assets/headshot.jpg"
-                />
-              </div>
+              <GraphCmsImage
+                handle="9kiAYtliQPyl2fnEN1AL"
+                alt={SITE_AUTHOR}
+                className="rounded-full"
+                outerWrapperClassName="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden p-1 rounded-full"
+                loading="eager"
+              />
             </div>
           </div>
           <div className="mx-auto max-w-3xl px-4 py-12 text-center text-lg md:px-0 md:text-xl">
