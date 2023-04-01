@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import type { Portfolio } from "~/routes/api/portfolio/route";
 
 export interface PortfolioPreviewProps {
-  current: boolean;
+  hideDate: boolean;
   data: Portfolio;
 }
 
@@ -12,7 +12,7 @@ export interface PortfolioPreviewProps {
  * Preview a portfolio item
  */
 export const PortfolioPreview = (props: PortfolioPreviewProps) => {
-  const { current = false, data } = props;
+  const { hideDate: current = false, data } = props;
 
   // Setup
   const date = new Date(data.date);

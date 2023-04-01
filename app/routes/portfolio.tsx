@@ -38,7 +38,7 @@ export default function () {
         <div className="mx-auto md:max-w-6xl">
           <div className="my-8 grid grid-cols-1 gap-16 p-4 md:my-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {current.map((node) => (
-              <PortfolioPreview current={true} data={node as any} key={node.slug} />
+              <PortfolioPreview hideDate={true} data={node as any} key={node.slug} />
             ))}
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function () {
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {past.map((node) => (
-              <PortfolioPreview current={false} data={node as any} key={node.slug} />
+              <PortfolioPreview hideDate={false} data={node as any} key={node.slug} />
             ))}
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function () {
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {student.map((node) => (
-              <PortfolioPreview current={false} data={node as any} key={node.slug} />
+              <PortfolioPreview hideDate={true} data={node as any} key={node.slug} />
             ))}
           </div>
         </div>
