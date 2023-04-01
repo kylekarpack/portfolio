@@ -59,7 +59,7 @@ export default function () {
 
       <section>
         <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
-          <AppHero className="py-12 md:py-10" copy="Student Projects" tag="h1" />
+          <AppHero className="py-12 md:py-10" copy="Student / Intern Projects" tag="h1" />
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">

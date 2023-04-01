@@ -38,7 +38,7 @@ export default function () {
       <div className="mb-12 block items-center gap-12 bg-white py-8 align-middle md:flex">
         <div className="flex-1 px-4">
           <div className="m-auto max-w-3xl">
-            <AppHero className="py-20" copy={data.description} highlight={data.title} tag="h1" />
+            <AppHero className="py-20" copy={data.description} highlight={data.title} tag="h1" reverse />
           </div>
         </div>
 
@@ -48,8 +48,8 @@ export default function () {
               alt={data.title}
               image={asset}
               withWebp={true}
-              transforms={["quality=value:50"]}
               maxWidth={600}
+              transforms={["quality=value:50"]}
               className="mt-0 w-full"
             />
           </div>
