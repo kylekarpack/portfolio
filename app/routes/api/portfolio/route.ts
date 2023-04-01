@@ -4,7 +4,7 @@ import { fetchFromGraphCMS } from "~/utils/graphcms";
 import { getPortfolios } from "~/queries/getPortfolios";
 
 export interface Portfolio {
-  current: boolean;
+  portfolioItemType: "current" | "past" | "student";
   date: Date;
   images: any;
   description: string;

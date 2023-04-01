@@ -25,8 +25,9 @@ export default function () {
   const data = useLoaderData<LoaderData>();
 
   // Setup
-  const current = data.filter((node) => node.current);
-  const recent = data.filter((node) => !node.current);
+  const current = data.filter((node) => node.portfolioItemType === "current");
+  const past = data.filter((node) => node.portfolioItemType === "past");
+  const student = data.filter((node) => node.portfolioItemType === "student");
 
   return (
     <>
@@ -49,7 +50,20 @@ export default function () {
         </div>
         <div className="mx-auto md:max-w-6xl">
           <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-            {recent.map((node) => (
+            {past.map((node) => (
+              <PortfolioPreview current={false} data={node as any} key={node.slug} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
+          <AppHero className="py-12 md:py-10" copy="Student Projects" tag="h1" />
+        </div>
+        <div className="mx-auto md:max-w-6xl">
+          <div className="my-20 grid grid-cols-1 gap-16 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+            {student.map((node) => (
               <PortfolioPreview current={false} data={node as any} key={node.slug} />
             ))}
           </div>
