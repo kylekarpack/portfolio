@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a0b47af2-a2ae-4b1f-b405-9ad2a442daaf/deploy-status)](https://app.netlify.com/sites/kylekarpack/deploys)
+
+
 # Kyle Karpack's Portfolio
 
 The professional portfolio of Kyle Karpack
