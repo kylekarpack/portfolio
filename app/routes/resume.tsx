@@ -61,7 +61,7 @@ export default function () {
 
         <div className="resume-sections mb-20 flex flex-1 flex-col gap-10">
           <section>
-            <h1 className="uppercase- mb-10 text-2xl font-extrabold md:text-4xl">
+            <h1 className="mb-2 text-2xl font-extrabold  sm:mb-10 md:text-4xl">
               <span className="sr-only">The resume of </span>
               {SITE_AUTHOR}
             </h1>

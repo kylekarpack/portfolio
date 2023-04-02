@@ -35,10 +35,10 @@ export default function () {
 
   return (
     <>
-      <div className="mb-12 block items-center gap-12 bg-white py-8 align-middle md:flex">
+      <div className="mb-12 block items-center gap-12 bg-white align-middle sm:py-8 md:flex">
         <div className="flex-1 px-4">
           <div className="m-auto max-w-3xl">
-            <AppHero className="py-20" copy={data.description} highlight={data.title} tag="h1" reverse />
+            <AppHero className="py-12 sm:py-20" copy={data.description} highlight={data.title} tag="h1" reverse />
           </div>
         </div>
 
@@ -55,7 +55,7 @@ export default function () {
           </div>
         )}
       </div>
-      <div className="relative m-auto flex max-w-3xl flex-col">
+      <div className="relative m-auto max-w-3xl px-4 sm:px-0">
         <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: data.content.html }} />
       </div>
     </>
