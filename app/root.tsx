@@ -121,6 +121,7 @@ export function CatchBoundary() {
             <h1>
               {caught.status} {caught.statusText} - Error
             </h1>
+            <pre>{JSON.stringify(caught, null, 4)}</pre>
           </div>
         </main>
 
@@ -157,6 +158,7 @@ export function ErrorBoundary({ error }: { error: unknown }) {
         <div className="m-auto flex h-screen max-w-5xl flex-col justify-center">
           <h1 className="mb-4 text-2xl">Error</h1>
           <p>Something went wrong</p>
+          <pre>{JSON.stringify(error, null, 4)}</pre>
         </div>
         <Scripts />
       </body>
