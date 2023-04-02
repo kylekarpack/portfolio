@@ -28,7 +28,7 @@ export const experience: Experience[] = [
     roles: [
       {
         title: `Senior Software Engineer`,
-        dateRange: { start: new Date("October 2019") },
+        dateRange: { start: new Date("2019-10-14") },
       },
     ],
   },
@@ -48,11 +48,11 @@ export const experience: Experience[] = [
     roles: [
       {
         title: "Lead Front-End Engineer",
-        dateRange: { start: new Date("July 2018"), end: new Date("August 2019") },
+        dateRange: { start: new Date("2018-07-12"), end: new Date("2019-08-26") },
       },
       {
         title: "Software Engineer",
-        dateRange: { start: new Date("March 2013"), end: new Date("July 2018") },
+        dateRange: { start: new Date("2013-03-30"), end: new Date("2018-07-12") },
       },
     ],
   },
