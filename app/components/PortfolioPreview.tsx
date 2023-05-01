@@ -1,4 +1,4 @@
-import Image, { GraphImageProp } from "@graphcms/react-image";
+import Image, { GraphImageProp } from "@karpack/react-image";
 import { Link } from "@remix-run/react";
 import { format } from "date-fns";
 import type { Portfolio } from "~/routes/api/portfolio/route";

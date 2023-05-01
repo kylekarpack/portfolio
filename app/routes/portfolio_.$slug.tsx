@@ -1,4 +1,4 @@
-import Image, { GraphImageProp } from "@graphcms/react-image";
+import Image, { GraphImageProp } from "@karpack/react-image";
 import type { MetaFunction } from "@remix-run/node";
 import { useCatch, useLoaderData } from "@remix-run/react";
 import { AppHero } from "~/components/AppHero";

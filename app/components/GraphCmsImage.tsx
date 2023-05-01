@@ -1,4 +1,4 @@
-import Image, { GraphImageProp, GraphImageProps } from "@graphcms/react-image";
+import Image, { GraphImageProp, GraphImageProps } from "@karpack/react-image";
 import { FunctionComponent } from "react";
 
 const GraphCmsImage: FunctionComponent<
