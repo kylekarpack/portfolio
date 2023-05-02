@@ -1,9 +1,12 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
 import { GoodreadsBookshelf } from "react-goodreads-shelf";
-import { GithubContributions } from "react-github-graph";
+import GitHubCalendar from "react-github-calendar";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import reactTooltipStypes from "react-tooltip/dist/react-tooltip.css";
+import { cloneElement } from "react";
 
 export const meta: MetaFunction = (args) => {
   return {
@@ -12,6 +15,15 @@ export const meta: MetaFunction = (args) => {
       title: `About | ${SITE_TITLE}`,
     }),
   };
+};
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: reactTooltipStypes,
+    },
+  ];
 };
 
 export default function () {
@@ -39,10 +51,18 @@ export default function () {
 
       <section className="py-8 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
-          <GithubContributions
+          <GitHubCalendar
             username="kylekarpack"
-            renderHeader={(header) => <h2 className="my-4 text-xl md:text-3xl">{header}</h2>}
+            colorScheme="light"
+            hideColorLegend
+            renderBlock={(block, activity) =>
+              cloneElement(block, {
+                "data-tooltip-id": "react-tooltip",
+                "data-tooltip-html": `${activity.count} contributions on ${activity.date}`,
+              })
+            }
           />
+          <ReactTooltip id="react-tooltip" />
         </div>
       </section>
 

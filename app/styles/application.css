@@ -179,3 +179,23 @@
     transform: scale(1);
   }
 }
+
+.react-activity-calendar {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.react-activity-calendar .react-activity-calendar__footer {
+  margin-top: 0 !important;
+}
+
+.react-activity-calendar .react-activity-calendar__count {
+  font-size: theme(fontSize.3xl);
+  line-height: theme(lineHeight.10);
+  font-weight: theme(fontWeight.black);
+  margin: theme(margin.0) theme(margin.0) theme(margin.4);
+}
+
+.react-activity-calendar rect {
+  fill: #eee;
+}

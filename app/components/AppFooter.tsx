@@ -12,7 +12,7 @@ export const AppFooter = () => {
   if (isResume) return null;
 
   return (
-    <footer className="mt-10 justify-center gap-2 text-center text-sm print:hidden md:mt-20">
+    <footer className="justify-center gap-2 py-10 text-center text-sm print:hidden md:py-20">
       <div className="m-auto flex justify-center gap-4">
         <a className="p-2" href={SOCIAL_LINKEDIN} target="_blank" rel="noreferrer">
           <img
