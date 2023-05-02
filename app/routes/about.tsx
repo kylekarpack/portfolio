@@ -55,6 +55,8 @@ export default function () {
             username="kylekarpack"
             colorScheme="light"
             hideColorLegend
+            fontSize={12}
+            showWeekdayLabels
             renderBlock={(block, activity) =>
               cloneElement(block, {
                 "data-tooltip-id": "react-tooltip",
