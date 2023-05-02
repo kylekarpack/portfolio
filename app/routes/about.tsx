@@ -1,12 +1,12 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
-import { SITE_TITLE } from "~/config/constants";
-import { getMetaData } from "~/metadata";
-import { GoodreadsBookshelf } from "react-goodreads-shelf";
+import { cloneElement } from "react";
 import GitHubCalendar from "react-github-calendar";
+import { GoodreadsBookshelf } from "react-goodreads-shelf";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import reactTooltipStypes from "react-tooltip/dist/react-tooltip.css";
-import { cloneElement } from "react";
+import { SITE_TITLE } from "~/config/constants";
+import { getMetaData } from "~/metadata";
 
 export const meta: MetaFunction = (args) => {
   return {
@@ -60,7 +60,9 @@ export default function () {
             renderBlock={(block, activity) =>
               cloneElement(block, {
                 "data-tooltip-id": "react-tooltip",
-                "data-tooltip-html": `${activity.count} contributions on ${activity.date}`,
+                "data-tooltip-html": `${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${
+                  activity.date
+                }`,
               })
             }
           />
