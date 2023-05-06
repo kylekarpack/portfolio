@@ -52,6 +52,7 @@ export default function () {
       <section className="py-8 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
           <GitHubCalendar
+            year="last"
             username="kylekarpack"
             colorScheme="light"
             hideColorLegend
