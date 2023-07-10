@@ -25,7 +25,7 @@ export const SectionExperienceDetail = (props: SectionExperienceDetailProps) => 
 
   return (
     <div className="flex flex-col gap-6 md:flex-row" key={company}>
-      <div className="flex flex-col gap-2 text-base print:basis-8 md:basis-[160px]">
+      <div className="flex flex-col gap-2 text-base print:basis-8 md:basis-[180px]">
         <div className="flex">
           <h3 className="flex items-center gap-2 font-bold">
             <a

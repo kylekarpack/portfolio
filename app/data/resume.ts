@@ -17,18 +17,26 @@ export const experience: Experience[] = [
     companyUrl: "https://adobe.com/",
     description: `
       <p>
-        Leading front-end efforts towards Adobe's goal to bring its newly-acquired B2B product onto the Adobe platform.
+        Leading front-end efforts towards developing and delivering Adobe's flagship B2B marketing analysis product.
       </p>
     `,
     highlights: [
       `Managing the UI roadmap, including planning and implementing large-scale projects`,
       `Migrating our main business intelligence UI to a new framework and infrastructure while adding new features, improving build time by 80%, and exceeding Adobe's targeted code quality and performance metrics`,
-      `Leading a product-wide goal to move new development to React and leverage Adobe's Unified Shell architecture`,
+      `Leading a product-wide goal to move new development to React and leverage Adobe's unified experience architecture`,
     ],
     roles: [
       {
-        title: `Senior Software Engineer`,
-        dateRange: { start: new Date("2019-10-14") },
+        title: `Lead Software Engineer`,
+        dateRange: { start: new Date("2023-07-01") },
+      },
+      {
+        title: `Senior Software Engineer II`,
+        dateRange: { start: new Date("2021-07-01"), end: new Date("2023-06-30") },
+      },
+      {
+        title: `Senior Software Engineer I`,
+        dateRange: { start: new Date("2019-10-14"), end: new Date("2021-06-30") },
       },
     ],
   },
