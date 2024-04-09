@@ -11,6 +11,7 @@ module.exports = {
     unstable_postcss: true,
     unstable_cssSideEffectImports: true,
     v2_routeConvention: true,
+    v2_dev: true,
   },
   serverDependenciesToBundle: [/^react-github-graph/, /^react-goodreads-shelf/],
   serverBuildDirectory: "netlify/functions/server/build",

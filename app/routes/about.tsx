@@ -37,8 +37,8 @@ export default function () {
 
               <p>
                 Thanks for checking out my site. I'm a software engineer based in Seattle. If you are looking to hire an
-                experienced front-end developer, please check out my <Link to="/resume">resume</Link> and feel free to{" "}
-                <Link to="/contact">contact me</Link> any time. Outside work, I enjoy hiking, soccer, cooking, reading,
+                experienced software engineering leader, please check out my <Link to="/resume">resume</Link> and feel free to{" "}
+                <Link to="/contact">contact me</Link> any time. Outside work, I enjoy being outside, cooking, reading, fixing my old house,
                 and spending time with family.
               </p>
             </div>
