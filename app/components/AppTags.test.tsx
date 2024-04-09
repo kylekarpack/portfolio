@@ -24,7 +24,38 @@ describe("AppTags Component", () => {
   });
 
   test("should render our AppTags", () => {
-    expect(component.baseElement).toMatchSnapshot();
+    expect(component.baseElement).toMatchInlineSnapshot(`
+      <body>
+        <div>
+          <div>
+            <h2
+              class="mb-8 text-2xl"
+            >
+              App Tag - Test Heading
+            </h2>
+            <div
+              class="flex flex-wrap gap-2"
+            >
+              <div
+                class="tag-classname"
+              >
+                One
+              </div>
+              <div
+                class="tag-classname"
+              >
+                Two
+              </div>
+              <div
+                class="tag-classname"
+              >
+                Three
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    `);
 
     props.tags.forEach((tag) => {
       const className = props.classNameTag ?? "";
