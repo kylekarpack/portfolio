@@ -17,7 +17,7 @@ import { AppHeader } from "~/components/AppHeader";
 import { AppHeaderMobile } from "~/components/AppHeaderMobile";
 import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "~/config/constants";
 import { BASE_URL } from "~/config/settings.server";
-import { cookieTheme } from "~/cookies";
+import { cookieTheme } from "~/cookies.server";
 import { useIntro } from "~/hooks/useIntro";
 // import { usePageTracking } from "~/hooks/usePageTracking";
 import { getMetaData } from "~/metadata";
