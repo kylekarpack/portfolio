@@ -4,7 +4,7 @@ import { cloneElement } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { GoodreadsBookshelf } from "react-goodreads-shelf";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import reactTooltipStypes from "react-tooltip/dist/react-tooltip.css";
+import reactTooltipStypes from "react-tooltip/dist/react-tooltip.css?url";
 import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
 
@@ -37,9 +37,9 @@ export default function () {
 
               <p>
                 Thanks for checking out my site. I'm a software engineer based in Seattle. If you are looking to hire an
-                experienced software engineering leader, please check out my <Link to="/resume">resume</Link> and feel free to{" "}
-                <Link to="/contact">contact me</Link> any time. Outside work, I enjoy being outside, cooking, reading, fixing my old house,
-                and spending time with family.
+                experienced software engineering leader, please check out my <Link to="/resume">resume</Link> and feel
+                free to <Link to="/contact">contact me</Link> any time. Outside work, I enjoy being outside, cooking,
+                reading, fixing my old house, and spending time with family.
               </p>
             </div>
             <div className="flex-1">

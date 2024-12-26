@@ -21,7 +21,7 @@ import { useIntro } from "~/hooks/useIntro";
 // import { usePageTracking } from "~/hooks/usePageTracking";
 import { getMetaData } from "~/metadata";
 
-import styles from "~/styles/index.css";
+import styles from "~/styles/index.css?url";
 import Pwa from "./components/Pwa";
 
 export const links: LinksFunction = () => {

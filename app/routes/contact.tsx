@@ -1,6 +1,6 @@
 import type { LinksFunction } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/server-runtime";
-import styles from "mapbox-gl/dist/mapbox-gl.css";
+import styles from "mapbox-gl/dist/mapbox-gl.css?url";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import Map from "react-map-gl";
 import ContactForm from "~/components/ContactForm";
@@ -41,7 +41,7 @@ export default function () {
         />
       </div>
 
-      <div className="my-12 mx-auto max-w-lg px-8 md:px-0">
+      <div className="mx-auto my-12 max-w-lg px-8 md:px-0">
         <GoogleReCaptchaProvider
           reCaptchaKey="6LcU0XoUAAAAAA2IMX6btadVmmBjNfz-tgYSzgC0"
           scriptProps={{

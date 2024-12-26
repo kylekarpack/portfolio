@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     remix({
       appDirectory: "app",
-      ignoredRouteFiles: [".*"],
+      ignoredRouteFiles: ["**/*.css"],
     }),
     tsconfigPaths(),
   ],

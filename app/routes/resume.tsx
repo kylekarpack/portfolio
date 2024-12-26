@@ -8,7 +8,7 @@ import { SectionProficiencies } from "~/components/SectionProficiencies";
 import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 import { social } from "~/data/resume";
 import { getMetaData } from "~/metadata";
-import styles from "~/styles/resume.css";
+import styles from "~/styles/resume.css?url";
 
 export const links: LinksFunction = () => [
   {
@@ -50,7 +50,7 @@ export default function () {
             </div>
             <div className="mt-8 flex justify-center gap-4 print:hidden">
               <a
-                className="ui-btn custom-bg-gradient block max-w-xs flex-1 whitespace-nowrap rounded-2xl py-2 px-4 text-center text-sm font-normal text-white"
+                className="ui-btn custom-bg-gradient block max-w-xs flex-1 whitespace-nowrap rounded-2xl px-4 py-2 text-center text-sm font-normal text-white"
                 download={true}
                 href="/resume/Kyle_Karpack_Resume.pdf">
                 Download Resume
