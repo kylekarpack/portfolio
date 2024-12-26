@@ -1,6 +1,6 @@
 import Image, { GraphImageProp } from "@karpack/react-image";
 import type { MetaFunction } from "@remix-run/node";
-import { useCatch, useLoaderData } from "@remix-run/react";
+import { useLoaderData, useRouteError } from "@remix-run/react";
 import { AppHero } from "~/components/AppHero";
 import { getMetaData } from "~/metadata";
 import type { LoaderData } from "~/routes/api/portfolio/$slug/route";
@@ -11,12 +11,14 @@ export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs 
 export const meta: MetaFunction = (args) => {
   const image = args.data?.images[0]?.url ?? false;
 
-  return getMetaData({
-    canonical: args.parentsData?.root?.canonical,
-    description: args.data?.description,
-    image,
-    title: args.data?.title,
-  });
+  return [
+    getMetaData({
+      canonical: args.parentsData?.root?.canonical,
+      description: args.data?.description,
+      image,
+      title: args.data?.title,
+    }),
+  ];
 };
 
 export default function () {
@@ -64,9 +66,9 @@ export default function () {
 
 export const CatchBoundary = () => {
   // Hooks
-  const caught = useCatch();
+  const error: any = useRouteError();
 
-  if (caught.status === 404) {
+  if (error?.status === 404) {
     return (
       <section className="mx-auto max-w-6xl">
         <AppHero className="py-20 md:py-40" copy="Error: Not Found" highlight="404" tag="h1" />

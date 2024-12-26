@@ -41,6 +41,7 @@ describe("AppHeader Component", () => {
               <a
                 aria-current="page"
                 class="header-logo ml-4 gap-2 px-4 active"
+                data-discover="true"
                 href="/"
               >
                 <img
@@ -65,30 +66,35 @@ describe("AppHeader Component", () => {
                 <a
                   aria-current="page"
                   class="header-link active"
+                  data-discover="true"
                   href="/"
                 >
                   Home
                 </a>
                 <a
                   class="header-link"
+                  data-discover="true"
                   href="/about"
                 >
                   About
                 </a>
                 <a
                   class="header-link"
+                  data-discover="true"
                   href="/portfolio"
                 >
                   Portfolio
                 </a>
                 <a
                   class="header-link"
+                  data-discover="true"
                   href="/resume"
                 >
                   Resume
                 </a>
                 <a
                   class="header-link"
+                  data-discover="true"
                   href="/contact"
                 >
                   Contact

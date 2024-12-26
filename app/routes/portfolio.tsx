@@ -11,13 +11,15 @@ import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs if the loader is simply re-exported
 
 export const meta: MetaFunction = (args) => {
-  return {
-    ...getMetaData({
-      canonical: args.parentsData?.root?.canonical,
-      description: `The portfolio of ${SITE_AUTHOR}.`,
-      title: `Recent Work | ${SITE_TITLE}`,
-    }),
-  };
+  return [
+    {
+      ...getMetaData({
+        canonical: args.parentsData?.root?.canonical,
+        description: `The portfolio of ${SITE_AUTHOR}.`,
+        title: `Recent Work | ${SITE_TITLE}`,
+      }),
+    },
+  ];
 };
 
 export default function () {
@@ -32,7 +34,7 @@ export default function () {
   return (
     <>
       <section>
-        <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
+        <div className="border-0 border-b border-t border-color-border bg-color-background-light text-color-background-dark">
           <AppHero className="py-12 md:py-10" copy="Current Work" highlight="Portfolio" tag="h1" reverse />
         </div>
         <div className="mx-auto md:max-w-6xl">
@@ -45,7 +47,7 @@ export default function () {
       </section>
 
       <section>
-        <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
+        <div className="border-0 border-b border-t border-color-border bg-color-background-light text-color-background-dark">
           <AppHero className="py-12 md:py-10" copy="Past Projects" tag="h1" />
         </div>
         <div className="mx-auto md:max-w-6xl">
@@ -58,7 +60,7 @@ export default function () {
       </section>
 
       <section>
-        <div className="border-0 border-t border-b border-color-border bg-color-background-light text-color-background-dark">
+        <div className="border-0 border-b border-t border-color-border bg-color-background-light text-color-background-dark">
           <AppHero className="py-12 md:py-10" copy="Student / Intern Projects" tag="h1" />
         </div>
         <div className="mx-auto md:max-w-6xl">

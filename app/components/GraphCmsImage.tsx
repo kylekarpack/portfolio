@@ -10,6 +10,11 @@ const GraphCmsImage: FunctionComponent<
     height: 400,
   };
 
+  // Handle server rendering
+  if (typeof document === "undefined") {
+    return <></>;
+  }
+
   return <Image {...rest} image={asset} withWebp={true} transforms={["quality=value:40"]} maxWidth={200} />;
 };
 

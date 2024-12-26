@@ -1,26 +1,22 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { DataFunctionArgs, LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch, useLoaderData } from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRouteError } from "@remix-run/react";
 import classnames from "classnames";
 import { AppFooter } from "~/components/AppFooter";
 import { AppHeader } from "~/components/AppHeader";
 import { AppHeaderMobile } from "~/components/AppHeaderMobile";
 import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "~/config/constants";
 import { BASE_URL } from "~/config/settings.server";
-import { cookieTheme } from "~/cookies";
+import { cookieTheme } from "~/cookies.server";
 import { useIntro } from "~/hooks/useIntro";
-import { usePageTracking } from "~/hooks/usePageTracking";
+// import { usePageTracking } from "~/hooks/usePageTracking";
 import { getMetaData } from "~/metadata";
 
-import styles from "~/styles/index.css";
+import styles from "~/styles/index.css?url";
 import Pwa from "./components/Pwa";
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: cssBundleHref! },
-    { rel: "stylesheet", href: styles },
-  ];
+  return [{ rel: "stylesheet", href: styles }];
 };
 
 export const loader = async (args: DataFunctionArgs) => {
@@ -35,14 +31,16 @@ export const loader = async (args: DataFunctionArgs) => {
   return json({ baseUrl, canonical, theme });
 };
 
-export const meta: MetaFunction = (args) => ({
-  ...getMetaData({
-    canonical: args.data?.canonical,
-    description: SITE_DESCRIPTION,
-    image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
-    title: SITE_TITLE,
-  }),
-});
+export const meta: MetaFunction = (args) => [
+  {
+    ...getMetaData({
+      canonical: args.data?.canonical,
+      description: SITE_DESCRIPTION,
+      image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
+      title: SITE_TITLE,
+    }),
+  },
+];
 
 export default function App() {
   // Hooks
@@ -59,7 +57,7 @@ export default function App() {
 
   // Life Cycle
   useIntro();
-  usePageTracking();
+  // usePageTracking();
 
   return (
     <html lang="en" className={cssComponent}>
@@ -85,81 +83,24 @@ export default function App() {
         {/* Remix */}
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
 }
 
-export function CatchBoundary() {
-  // Hooks
-  const caught = useCatch();
-
-  // Setup
-  const favicon = "/images/svg/logo.svg";
-  const manifest = "/manifest.json";
-
+export function ErrorBoundary() {
+  const error = useRouteError();
+  console.error(error);
   return (
     <html>
       <head>
-        <title>Error</title>
+        <title>Oh no!</title>
         <Meta />
-        <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
-        <link href={favicon} rel="favicon" />
-        <link href={favicon} rel="icon" type="image/svg+xml" />
-        <link href={favicon} rel="mask-icon" type="image/svg+xml" />
-        <link href={manifest} rel="manifest" />
         <Links />
       </head>
-
       <body>
-        <AppHeader />
-        <AppHeaderMobile />
-
-        <main>
-          <div className="mx-auto max-w-5xl pt-10">
-            <h1>
-              {caught.status} {caught.statusText} - Error
-            </h1>
-            <pre>{JSON.stringify(caught, null, 4)}</pre>
-          </div>
-        </main>
-
-        <AppFooter />
-
-        {/* Analytics */}
-        {/* <TrackingGA id={googleAnalytics} /> */}
-
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
-export function ErrorBoundary({ error }: { error: unknown }) {
-  // Setup
-  const favicon = "/images/svg/logo.svg";
-  const manifest = "/manifest.json";
-
-  return (
-    <html>
-      <head>
-        <title>Error</title>
-        <Meta />
-        <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
-        <link href={favicon} rel="favicon" />
-        <link href={favicon} rel="icon" type="image/svg+xml" />
-        <link href={favicon} rel="mask-icon" type="image/svg+xml" />
-        <link href={manifest} rel="manifest" />
-        <Links />
-      </head>
-
-      <body>
-        <div className="m-auto flex h-screen max-w-5xl flex-col justify-center">
-          <h1 className="mb-4 text-2xl">Error</h1>
-          <p>Something went wrong</p>
-          <pre>{JSON.stringify(error, null, 4)}</pre>
-        </div>
+        Something went wrong: {error?.data}
+        {/* add the UI you want your users to see */}
         <Scripts />
       </body>
     </html>

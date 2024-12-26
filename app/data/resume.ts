@@ -17,7 +17,7 @@ export const experience: Experience[] = [
     companyUrl: "https://adobe.com/",
     description: `
       <p>
-        Leading front-end efforts towards developing and delivering Adobe's flagship B2B marketing analysis product.
+        Leading front-end efforts towards developing and delivering Adobe's flagship analysis products.
       </p>
     `,
     highlights: [

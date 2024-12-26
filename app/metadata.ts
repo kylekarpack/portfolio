@@ -1,4 +1,4 @@
-import type { HtmlMetaDescriptor } from "@remix-run/node";
+import type { MetaDescriptor } from "@remix-run/node";
 import { SITE_AUTHOR, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "./config/constants";
 
 export interface MetaDataOptions {
@@ -15,7 +15,7 @@ const defaults: MetaDataOptions = {
   title: SITE_TITLE,
 };
 
-export const getMetaDataBase = (): HtmlMetaDescriptor => ({
+export const getMetaDataBase = (): MetaDescriptor => ({
   charset: "utf-8",
   author: SITE_AUTHOR,
   "color-scheme": "dark light",
@@ -26,7 +26,7 @@ export const getMetaDataBase = (): HtmlMetaDescriptor => ({
   "apple-mobile-web-app-title": `2023 Portfolio`,
 });
 
-export const getMetaData = (options: MetaDataOptions): HtmlMetaDescriptor => ({
+export const getMetaData = (options: MetaDataOptions): MetaDescriptor => ({
   ...getMetaDataBase(),
 
   // SEO Meta Tags
