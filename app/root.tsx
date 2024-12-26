@@ -18,7 +18,7 @@ import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "~/conf
 import { BASE_URL } from "~/config/settings.server";
 import { cookieTheme } from "~/cookies";
 import { useIntro } from "~/hooks/useIntro";
-import { usePageTracking } from "~/hooks/usePageTracking";
+// import { usePageTracking } from "~/hooks/usePageTracking";
 import { getMetaData } from "~/metadata";
 
 import styles from "~/styles/index.css";
@@ -64,7 +64,7 @@ export default function App() {
 
   // Life Cycle
   useIntro();
-  usePageTracking();
+  // usePageTracking();
 
   return (
     <html lang="en" className={cssComponent}>
