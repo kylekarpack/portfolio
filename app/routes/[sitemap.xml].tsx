@@ -1,7 +1,6 @@
 import type { LoaderFunction } from "@remix-run/node";
 
 import { fetchFromGraphCMS } from "~/utils/graphcms";
-import type { Post } from "~/routes/api/blog";
 import type { Portfolio } from "~/routes/api/portfolio/route";
 import { BASE_URL } from "~/config/settings.server";
 import { SITE_UPDATED } from "~/config/constants";
