@@ -11,12 +11,14 @@ export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs 
 export const meta: MetaFunction = (args) => {
   const image = args.data?.images[0]?.url ?? false;
 
-  return getMetaData({
-    canonical: args.parentsData?.root?.canonical,
-    description: args.data?.description,
-    image,
-    title: args.data?.title,
-  });
+  return [
+    getMetaData({
+      canonical: args.parentsData?.root?.canonical,
+      description: args.data?.description,
+      image,
+      title: args.data?.title,
+    }),
+  ];
 };
 
 export default function () {

@@ -1,4 +1,3 @@
-import { Response } from "@remix-run/node";
 import type { LoaderFunction } from "@remix-run/node";
 import { fetchFromGraphCMS } from "~/utils/graphcms";
 import { getPortfolioBySlug } from "~/queries/getPortfolio";

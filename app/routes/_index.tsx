@@ -7,12 +7,14 @@ import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
 
 export const meta: MetaFunction = (args) => {
-  return {
-    ...getMetaData({
-      canonical: args.parentsData?.root?.canonical,
-      title: `${SITE_TITLE}`,
-    }),
-  };
+  return [
+    {
+      ...getMetaData({
+        canonical: args.parentsData?.root?.canonical,
+        title: `${SITE_TITLE}`,
+      }),
+    },
+  ];
 };
 
 export default function () {

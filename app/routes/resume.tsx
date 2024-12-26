@@ -19,13 +19,15 @@ export const links: LinksFunction = () => [
 ];
 
 export const meta: MetaFunction = (args) => {
-  return {
-    ...getMetaData({
-      canonical: args.parentsData?.root?.canonical,
-      description: `The resume of ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`,
-      title: `Resume | ${SITE_TITLE}`,
-    }),
-  };
+  return [
+    {
+      ...getMetaData({
+        canonical: args.parentsData?.root?.canonical,
+        description: `The resume of ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`,
+        title: `Resume | ${SITE_TITLE}`,
+      }),
+    },
+  ];
 };
 
 export default function () {

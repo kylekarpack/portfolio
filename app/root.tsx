@@ -9,6 +9,7 @@ import {
   useRouteError,
   useLoaderData,
   isRouteErrorResponse,
+  LiveReload,
 } from "@remix-run/react";
 import classnames from "classnames";
 import { AppFooter } from "~/components/AppFooter";
@@ -40,14 +41,16 @@ export const loader = async (args: DataFunctionArgs) => {
   return json({ baseUrl, canonical, theme });
 };
 
-export const meta: MetaFunction = (args) => ({
-  ...getMetaData({
-    canonical: args.data?.canonical,
-    description: SITE_DESCRIPTION,
-    image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
-    title: SITE_TITLE,
-  }),
-});
+export const meta: MetaFunction = (args) => [
+  {
+    ...getMetaData({
+      canonical: args.data?.canonical,
+      description: SITE_DESCRIPTION,
+      image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
+      title: SITE_TITLE,
+    }),
+  },
+];
 
 export default function App() {
   // Hooks
@@ -89,6 +92,25 @@ export default function App() {
 
         {/* Remix */}
         <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  console.error(error);
+  return (
+    <html>
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        Something went wrong: {error?.data}
+        {/* add the UI you want your users to see */}
         <Scripts />
       </body>
     </html>

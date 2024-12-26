@@ -9,12 +9,14 @@ import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
 
 export const meta: MetaFunction = (args) => {
-  return {
-    ...getMetaData({
-      canonical: args.parentsData?.root?.canonical,
-      title: `About | ${SITE_TITLE}`,
-    }),
-  };
+  return [
+    {
+      ...getMetaData({
+        canonical: args.parentsData?.root?.canonical,
+        title: `About | ${SITE_TITLE}`,
+      }),
+    },
+  ];
 };
 
 export const links: LinksFunction = () => {
