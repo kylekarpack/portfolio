@@ -1,3 +1,4 @@
+import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 import { vitePlugin as remix } from "@remix-run/dev";
 import { installGlobals } from "@remix-run/node";
 import { defineConfig } from "vite";
@@ -15,5 +16,6 @@ export default defineConfig({
       ignoredRouteFiles: ["**/*.css"],
     }),
     tsconfigPaths(),
+    netlifyPlugin(),
   ],
 });
