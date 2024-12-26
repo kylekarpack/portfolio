@@ -94,26 +94,3 @@ export default function App() {
     </html>
   );
 }
-
-export function ErrorBoundary() {
-  const error = useRouteError();
-
-  // when true, this is what used to go to `CatchBoundary`
-  if (isRouteErrorResponse(error)) {
-    return (
-      <div>
-        <h1>Error</h1>
-        <p>Status: {error.status}</p>
-        <p>{error.data.message}</p>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <h1>Uh oh ...</h1>
-      <p>Something went wrong.</p>
-      <pre>{JSON.stringify(error, null, 2)}</pre>
-    </div>
-  );
-}
