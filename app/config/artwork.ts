@@ -1,4 +1,4 @@
-import { MESSAGE_HIRE_CONSOLE, SITE_AUTHOR, SITE_YEAR, SOCIAL_GITHUB, SOCIAL_LINKEDIN } from "~/config/constants";
+import { MESSAGE_HIRE_CONSOLE, SITE_AUTHOR, SITE_YEAR, SOCIAL_GITHUB, SOCIAL_LINKEDIN } from "./constants";
 
 /**
  * @external https://textart.io/art/tag/rocket/1

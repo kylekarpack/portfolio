@@ -5,12 +5,9 @@
  * @external https://github.com/madyankin/postcss-modules
  * @external https://tailwindcss.com/docs/using-with-preprocessors
  */
-module.exports = {
-  plugins: [
-    require("postcss-import"),
-    require("postcss-preset-env"),
-    require("autoprefixer"),
-    require("tailwindcss"),
-    require("cssnano")
-  ]
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 };

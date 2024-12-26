@@ -1,7 +1,15 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { DataFunctionArgs, LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch, useLoaderData } from "@remix-run/react";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useRouteError,
+  useLoaderData,
+  isRouteErrorResponse,
+} from "@remix-run/react";
 import classnames from "classnames";
 import { AppFooter } from "~/components/AppFooter";
 import { AppHeader } from "~/components/AppHeader";
@@ -17,10 +25,7 @@ import styles from "~/styles/index.css";
 import Pwa from "./components/Pwa";
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: cssBundleHref! },
-    { rel: "stylesheet", href: styles },
-  ];
+  return [{ rel: "stylesheet", href: styles }];
 };
 
 export const loader = async (args: DataFunctionArgs) => {
@@ -85,83 +90,30 @@ export default function App() {
         {/* Remix */}
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
 }
 
-export function CatchBoundary() {
-  // Hooks
-  const caught = useCatch();
+export function ErrorBoundary() {
+  const error = useRouteError();
 
-  // Setup
-  const favicon = "/images/svg/logo.svg";
-  const manifest = "/manifest.json";
-
-  return (
-    <html>
-      <head>
-        <title>Error</title>
-        <Meta />
-        <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
-        <link href={favicon} rel="favicon" />
-        <link href={favicon} rel="icon" type="image/svg+xml" />
-        <link href={favicon} rel="mask-icon" type="image/svg+xml" />
-        <link href={manifest} rel="manifest" />
-        <Links />
-      </head>
-
-      <body>
-        <AppHeader />
-        <AppHeaderMobile />
-
-        <main>
-          <div className="mx-auto max-w-5xl pt-10">
-            <h1>
-              {caught.status} {caught.statusText} - Error
-            </h1>
-            <pre>{JSON.stringify(caught, null, 4)}</pre>
-          </div>
-        </main>
-
-        <AppFooter />
-
-        {/* Analytics */}
-        {/* <TrackingGA id={googleAnalytics} /> */}
-
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
-export function ErrorBoundary({ error }: { error: unknown }) {
-  // Setup
-  const favicon = "/images/svg/logo.svg";
-  const manifest = "/manifest.json";
+  // when true, this is what used to go to `CatchBoundary`
+  if (isRouteErrorResponse(error)) {
+    return (
+      <div>
+        <h1>Error</h1>
+        <p>Status: {error.status}</p>
+        <p>{error.data.message}</p>
+      </div>
+    );
+  }
 
   return (
-    <html>
-      <head>
-        <title>Error</title>
-        <Meta />
-        <link href={favicon} rel="apple-touch-icon" sizes="48x48" />
-        <link href={favicon} rel="favicon" />
-        <link href={favicon} rel="icon" type="image/svg+xml" />
-        <link href={favicon} rel="mask-icon" type="image/svg+xml" />
-        <link href={manifest} rel="manifest" />
-        <Links />
-      </head>
-
-      <body>
-        <div className="m-auto flex h-screen max-w-5xl flex-col justify-center">
-          <h1 className="mb-4 text-2xl">Error</h1>
-          <p>Something went wrong</p>
-          <pre>{JSON.stringify(error, null, 4)}</pre>
-        </div>
-        <Scripts />
-      </body>
-    </html>
+    <div>
+      <h1>Uh oh ...</h1>
+      <p>Something went wrong.</p>
+      <pre>{JSON.stringify(error, null, 2)}</pre>
+    </div>
   );
 }
