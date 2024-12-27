@@ -2,7 +2,7 @@ const Pwa = () => (
   <>
     <link rel="apple-touch-icon" href="/branding/splash/apple-icon-180.png" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
 
     <link
       rel="apple-touch-startup-image"

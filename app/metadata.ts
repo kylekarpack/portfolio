@@ -21,7 +21,7 @@ export const getMetaDataBase = (): MetaDescriptor => ({
   "color-scheme": "dark light",
   "theme-color": "#43a9d1",
   viewport: `initial-scale=1, viewport-fit=cover, width=device-width`,
-  "apple-mobile-web-app-capable": "yes",
+  "mobile-web-app-capable": "yes",
   "apple-mobile-web-app-status-bar-style": "black",
   "apple-mobile-web-app-title": `2023 Portfolio`,
 });
