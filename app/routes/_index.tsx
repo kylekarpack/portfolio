@@ -30,13 +30,16 @@ export default function () {
               tag="h1"
             />
             <div className="w-48">
-              <GraphCmsImage
-                handle="9kiAYtliQPyl2fnEN1AL"
-                alt={SITE_AUTHOR}
-                className="rounded-full"
-                outerWrapperClassName="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden p-1 rounded-full"
-                loading="eager"
-              />
+              <div className="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden rounded-full p-1">
+                <GraphCmsImage
+                  handle="9kiAYtliQPyl2fnEN1AL"
+                  alt={SITE_AUTHOR}
+                  className="rounded-full"
+                  loading="eager"
+                  width={200}
+                  height={200}
+                />
+              </div>
             </div>
           </div>
           <div className="mx-auto max-w-3xl px-4 py-12 text-center text-lg md:px-0 md:text-xl">
