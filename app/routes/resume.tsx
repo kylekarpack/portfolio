@@ -37,13 +37,17 @@ export default function () {
         <aside className="print:hidden md:w-1/5">
           <div className="sticky top-36">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
-              <GraphCmsImage
-                handle="9kiAYtliQPyl2fnEN1AL"
-                alt={SITE_AUTHOR}
-                className="rounded-full"
-                outerWrapperClassName="custom-bg-gradient aspect-square w-full overflow-hidden p-1 rounded-full"
-                loading="eager"
-              />
+              <div className="custom-bg-gradient aspect-square w-full overflow-hidden rounded-full p-1">
+                <GraphCmsImage
+                  handle="9kiAYtliQPyl2fnEN1AL"
+                  alt={SITE_AUTHOR}
+                  className="rounded-full"
+                  loading="eager"
+                  width={200}
+                  height={200}
+                />
+              </div>
+
               <div className="flex flex-shrink-0 flex-col gap-2 p-4">
                 {social.map((data) => (
                   <AppSocialLink data={data} key={data.title} />

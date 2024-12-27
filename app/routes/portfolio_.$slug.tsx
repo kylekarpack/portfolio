@@ -1,7 +1,7 @@
-import Image, { GraphImageProp } from "@karpack/react-image";
 import type { MetaFunction } from "@remix-run/node";
 import { useLoaderData, useRouteError } from "@remix-run/react";
 import { AppHero } from "~/components/AppHero";
+import GraphCmsImage from "~/components/GraphCmsImage";
 import { getMetaData } from "~/metadata";
 import type { LoaderData } from "~/routes/api/portfolio/$slug/route";
 import { loader as copyLoader } from "~/routes/api/portfolio/$slug/route";
@@ -29,12 +29,6 @@ export default function () {
   const img = data.images[0]?.url ?? false;
   const imageHandle = data.images[0]?.handle ?? false;
 
-  const asset: GraphImageProp = {
-    handle: imageHandle ?? "",
-    width: 600,
-    height: 400,
-  };
-
   return (
     <>
       <div className="mb-12 block items-center gap-12 bg-white align-middle sm:py-8 md:flex">
@@ -46,12 +40,12 @@ export default function () {
 
         {img && (
           <div className="flex-1 px-4">
-            <Image
+            <GraphCmsImage
+              handle={imageHandle}
               alt={data.title}
-              image={asset}
-              withWebp={true}
-              maxWidth={600}
-              transforms={["quality=value:50"]}
+              width={600}
+              height={400}
+              loading="eager"
               className="mt-0 w-full"
             />
           </div>

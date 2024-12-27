@@ -1,12 +1,14 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
-import { cloneElement } from "react";
-import GitHubCalendar from "react-github-calendar";
+import { Image } from "@unpic/react";
+import { cloneElement, Suspense, lazy } from "react";
 import { GoodreadsBookshelf } from "react-goodreads-shelf";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import reactTooltipStypes from "react-tooltip/dist/react-tooltip.css?url";
 import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
+
+const GitHubCalendar = lazy(() => import("react-github-calendar"));
 
 export const meta: MetaFunction = (args) => {
   return [
@@ -45,7 +47,15 @@ export default function () {
               </p>
             </div>
             <div className="flex-1">
-              <img alt="Kyle in the Rockies" loading="eager" src="/images/assets/rockies.webp" />
+              <Image
+                alt="Kyle in the Rockies"
+                loading="eager"
+                width={800}
+                height={600}
+                src="/images/assets/rockies.webp"
+                layout="constrained"
+                background="auto"
+              />
             </div>
           </div>
         </div>
@@ -53,23 +63,25 @@ export default function () {
 
       <section className="py-8 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
-          <GitHubCalendar
-            year="last"
-            username="kylekarpack"
-            colorScheme="light"
-            hideColorLegend
-            fontSize={12}
-            showWeekdayLabels
-            renderBlock={(block, activity) =>
-              cloneElement(block, {
-                "data-tooltip-id": "react-tooltip",
-                "data-tooltip-html": `${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${
-                  activity.date
-                }`,
-              })
-            }
-          />
-          <ReactTooltip id="react-tooltip" />
+          <Suspense fallback="Loading...">
+            <GitHubCalendar
+              year="last"
+              username="kylekarpack"
+              colorScheme="light"
+              hideColorLegend
+              fontSize={12}
+              showWeekdayLabels
+              renderBlock={(block, activity) =>
+                cloneElement(block, {
+                  "data-tooltip-id": "react-tooltip",
+                  "data-tooltip-html": `${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${
+                    activity.date
+                  }`,
+                })
+              }
+            />
+            <ReactTooltip id="react-tooltip" />
+          </Suspense>
         </div>
       </section>
 
