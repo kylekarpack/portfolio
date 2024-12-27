@@ -4,11 +4,10 @@ import { Image } from "@unpic/react";
 import { cloneElement, Suspense, lazy } from "react";
 import { GoodreadsBookshelf } from "react-goodreads-shelf";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import reactTooltipStypes from "react-tooltip/dist/react-tooltip.css?url";
+import reactTooltipStyles from "react-tooltip/dist/react-tooltip.css?url";
 import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
-
-const GitHubCalendar = lazy(() => import("react-github-calendar"));
+import GitHubCalendar from "react-github-calendar";
 
 export const meta: MetaFunction = (args) => {
   return [
@@ -25,7 +24,7 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: reactTooltipStypes,
+      href: reactTooltipStyles,
     },
   ];
 };
@@ -63,14 +62,13 @@ export default function () {
 
       <section className="py-8 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
-          <Suspense fallback="Loading...">
+          <Suspense>
             <GitHubCalendar
-              year="last"
               username="kylekarpack"
+              year="last"
               colorScheme="light"
               hideColorLegend
               fontSize={12}
-              showWeekdayLabels
               renderBlock={(block, activity) =>
                 cloneElement(block, {
                   "data-tooltip-id": "react-tooltip",
@@ -80,8 +78,8 @@ export default function () {
                 })
               }
             />
-            <ReactTooltip id="react-tooltip" />
           </Suspense>
+          <ReactTooltip id="react-tooltip" />
         </div>
       </section>
 

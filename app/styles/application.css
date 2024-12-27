@@ -181,12 +181,11 @@
 }
 
 .react-activity-calendar {
-  display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column-reverse !important;
 }
 
-.react-activity-calendar .react-activity-calendar__footer {
-  margin-top: 0 !important;
+.react-activity-calendar .react-activity-calendar__calendar {
+  max-width: 100%;
 }
 
 .react-activity-calendar .react-activity-calendar__count {
@@ -194,8 +193,4 @@
   line-height: theme(lineHeight.10);
   font-weight: theme(fontWeight.black);
   margin: theme(margin.0) theme(margin.0) theme(margin.4);
-}
-
-.react-activity-calendar rect {
-  fill: #eee;
 }

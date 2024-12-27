@@ -1,7 +1,7 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import styles from "mapbox-gl/dist/mapbox-gl.css?url";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import Map from "react-map-gl";
+import { Map } from "react-map-gl";
 import ContactForm from "~/components/ContactForm";
 import { SITE_AUTHOR, SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
@@ -34,8 +34,8 @@ export default function () {
           mapboxAccessToken="pk.eyJ1Ijoia3lsZWthcnBhY2siLCJhIjoiY2pvZXZmNTh4MDZ2dzN3bm1pbmk1dDlmZiJ9.Gapqs5j98RUsHOBl2rqOGQ"
           mapStyle="mapbox://styles/mapbox/outdoors-v10"
           initialViewState={{
-            latitude: 47.6798,
-            longitude: -122.3258,
+            latitude: 47.6498,
+            longitude: -122.3458,
             zoom: 11,
           }}
           style={{ height: "100%" }}
