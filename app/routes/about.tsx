@@ -1,13 +1,13 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { Image } from "@unpic/react";
-import { cloneElement, Suspense, lazy } from "react";
+import { cloneElement, Suspense } from "react";
+import GitHubCalendar from "react-github-calendar";
 import { GoodreadsBookshelf } from "react-goodreads-shelf";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import reactTooltipStyles from "react-tooltip/dist/react-tooltip.css?url";
 import { SITE_TITLE } from "~/config/constants";
 import { getMetaData } from "~/metadata";
-import GitHubCalendar from "react-github-calendar";
 
 export const meta: MetaFunction = (args) => {
   return [
