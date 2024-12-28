@@ -1,15 +1,13 @@
 import type { MetaDescriptor } from "@remix-run/node";
-import { SITE_AUTHOR, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "./config/constants";
+import { SITE_AUTHOR, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL, SITE_YEAR } from "./config/constants";
 
 export interface MetaDataOptions {
-  canonical: string;
   description?: string;
   image?: string;
   title?: string;
 }
 
 const defaults: MetaDataOptions = {
-  canonical: "",
   description: `The portfolio of ${SITE_AUTHOR}, a Software Engineer in Seattle`,
   image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
   title: SITE_TITLE,
@@ -23,7 +21,7 @@ export const getMetaDataBase = (): MetaDescriptor => ({
   viewport: `initial-scale=1, viewport-fit=cover, width=device-width`,
   "mobile-web-app-capable": "yes",
   "apple-mobile-web-app-status-bar-style": "black",
-  "apple-mobile-web-app-title": `2023 Portfolio`,
+  "apple-mobile-web-app-title": `${SITE_YEAR} Portfolio`,
 });
 
 export const getMetaData = (options: MetaDataOptions): MetaDescriptor => ({
@@ -40,13 +38,10 @@ export const getMetaData = (options: MetaDataOptions): MetaDescriptor => ({
   "og:image": options.image || defaults.image,
   "og:title": options.title || defaults.title,
   "og:type": "website",
-  "og:url": options.canonical || defaults.canonical,
 
   // Twitter
   "twitter:card": `summary_large_image`,
-  "twitter:creator": `@visormatt`,
   "twitter:description": options.description || defaults.description,
   "twitter:image": options.image || defaults.image,
-  "twitter:site": `@visormatt`,
   "twitter:title": options.title || defaults.title,
 });

@@ -14,11 +14,10 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export const meta: MetaFunction = (args) => {
+export const meta: MetaFunction = () => {
   return [
     {
       ...getMetaData({
-        canonical: args.parentsData?.root?.canonical,
         description: `Contact ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`,
         title: `Contact | ${SITE_TITLE}`,
       }),

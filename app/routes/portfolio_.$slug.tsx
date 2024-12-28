@@ -8,17 +8,20 @@ import { loader as copyLoader } from "~/routes/api/portfolio/$slug/route";
 
 export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs if the loader is simply re-exported
 
-export const meta: MetaFunction = (args) => {
+export const meta: MetaFunction<typeof loader> = (args) => {
   const image = args.data?.images[0]?.url ?? false;
 
-  return [
+  var a = [
     getMetaData({
-      canonical: args.parentsData?.root?.canonical,
       description: args.data?.description,
       image,
       title: args.data?.title,
     }),
   ];
+
+  console.log(a);
+
+  return a;
 };
 
 export default function () {

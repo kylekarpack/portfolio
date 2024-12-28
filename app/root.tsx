@@ -9,7 +9,6 @@ import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "~/conf
 import { BASE_URL } from "~/config/settings.server";
 import { cookieTheme } from "~/cookies.server";
 import { useIntro } from "~/hooks/useIntro";
-// import { usePageTracking } from "~/hooks/usePageTracking";
 import { getMetaData } from "~/metadata";
 
 import styles from "~/styles/index.css?url";
@@ -31,10 +30,9 @@ export const loader = async (args: DataFunctionArgs) => {
   return json({ baseUrl, canonical, theme });
 };
 
-export const meta: MetaFunction = (args) => [
+export const meta: MetaFunction = () => [
   {
     ...getMetaData({
-      canonical: args.data?.canonical,
       description: SITE_DESCRIPTION,
       image: `${SITE_URL}${SITE_SHARE_IMAGE}`,
       title: SITE_TITLE,
@@ -57,7 +55,6 @@ export default function App() {
 
   // Life Cycle
   useIntro();
-  // usePageTracking();
 
   return (
     <html lang="en" className={cssComponent}>
@@ -90,7 +87,6 @@ export default function App() {
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  console.error(error);
   return (
     <html>
       <head>
@@ -99,8 +95,7 @@ export function ErrorBoundary() {
         <Links />
       </head>
       <body>
-        Something went wrong: {error?.data}
-        {/* add the UI you want your users to see */}
+        Something went wrong: {(error as any)?.data}
         <Scripts />
       </body>
     </html>

@@ -13,7 +13,6 @@ export const meta: MetaFunction = (args) => {
   return [
     {
       ...getMetaData({
-        canonical: args.parentsData?.root?.canonical,
         title: `About | ${SITE_TITLE}`,
       }),
     },
