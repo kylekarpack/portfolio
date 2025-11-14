@@ -17,13 +17,16 @@ export const experience: Experience[] = [
     companyUrl: "https://adobe.com/",
     description: `
       <p>
-        Leading front-end efforts towards developing and delivering Adobe's flagship analysis products.
+        Leading Insights and Analytics in Adobe’s Digital Experience division, including:
       </p>
     `,
     highlights: [
-      `Managing the UI roadmap, including planning and implementing large-scale projects`,
+      `Proposing, architecting, and building the new Marketo/AJO B2B Core Data Platform to supply data to internal teams`,
+      `Cultivating relationships with various other teams to drive consensus on specifications, contracts, and timelines`,
+      `Developing and owning React dashboards, AI tooling, and other UI features to provide visual insights to users`,
       `Migrating our main business intelligence UI to a new framework and infrastructure while adding new features, improving build time by 80%, and exceeding Adobe's targeted code quality and performance metrics`,
       `Leading a product-wide goal to move new development to React and leverage Adobe's unified experience architecture`,
+      `Mentoring teammates, particularly in UI engineering and the adoption of new tools and processes`,
     ],
     roles: [
       {
