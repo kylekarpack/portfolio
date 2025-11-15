@@ -11,17 +11,13 @@ export const loader = copyLoader; // Odd syntax fixes a routing bug that occurs 
 export const meta: MetaFunction<typeof loader> = (args) => {
   const image = args.data?.images[0]?.url ?? false;
 
-  var a = [
+  return [
     getMetaData({
       description: args.data?.description,
       image,
       title: args.data?.title,
     }),
   ];
-
-  console.log(a);
-
-  return a;
 };
 
 export default function () {
