@@ -1,10 +1,11 @@
-import * as React from "react";
+import { NodeRendererType, RichText } from "@graphcms/rich-text-react-renderer";
 import Prism from "prismjs";
-import { RichText } from "@graphcms/rich-text-react-renderer";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
+import * as React from "react";
 
 export interface AppWysiwygProps {
   content: any;
+  renderers?: NodeRendererType;
 }
 
 export const AppWysiwyg = (props: AppWysiwygProps) => {
@@ -25,6 +26,7 @@ export const AppWysiwyg = (props: AppWysiwygProps) => {
               <code className="language-js">{children}</code>
             </pre>
           ),
+          ...(props.renderers ?? {}),
         }}
       />
     </div>

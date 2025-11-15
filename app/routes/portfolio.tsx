@@ -33,7 +33,7 @@ export default function () {
   return (
     <>
       <section>
-        <div className="border-0 border-b border-t border-color-border bg-color-background-light text-color-background-dark">
+        <div className="border-0 border-b border-color-border bg-color-background-light text-color-background-dark">
           <AppHero className="py-12 md:py-10" copy="Current Work" highlight="Portfolio" tag="h1" reverse />
         </div>
         <div className="mx-auto md:max-w-6xl">

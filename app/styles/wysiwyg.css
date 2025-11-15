@@ -11,7 +11,7 @@
 .wysiwyg h6 {
   color: theme("colors.color-copy");
   font-family: theme("fontFamily.sans");
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
