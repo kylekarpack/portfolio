@@ -29,13 +29,13 @@ export default function () {
 
   return (
     <>
-      <div className="mb-12 block items-center gap-12 bg-white align-middle sm:py-8 md:flex">
-        <div className="flex-1 px-4">
+      <div className="mb-12 block items-center gap-12 bg-white py-8 align-middle md:flex">
+        <div className="px-4 xs:w-full">
           <div className="m-auto max-w-3xl">
             <AppHero
-              className="py-12 sm:py-20"
+              className="h-auto py-8 text-left sm:py-12"
               highlight={data.title}
-              copy={<div className="mt-4">{intl.format(new Date(data.publicationDate))}</div>}
+              copy={<div className="mt-4 text-base text-gray-500">{intl.format(new Date(data.publicationDate))}</div>}
               tag="h1"
               reverse
             />
@@ -43,19 +43,19 @@ export default function () {
         </div>
 
         {img && (
-          <div className="flex-1 px-4">
+          <div className="px-4 xs:w-full sm:w-full sm:text-center">
             <GraphCmsImage
               handle={imageHandle}
               alt={data.title}
               width={600}
               height={400}
               loading="eager"
-              className="mt-0 w-full"
+              className="mt-0 w-full xs:m-auto"
             />
           </div>
         )}
       </div>
-      <div className="relative m-auto max-w-3xl px-4 sm:px-0">
+      <div className="relative m-auto max-w-3xl px-4 sm:px-3">
         <AppWysiwyg content={data.content.raw} />
       </div>
     </>
