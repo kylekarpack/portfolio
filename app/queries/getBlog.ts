@@ -10,6 +10,7 @@ export const getBlog = gql`
         handle
       }
       publicationDate
+      categories
       content {
         markdown
         text

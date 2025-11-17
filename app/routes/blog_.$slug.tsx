@@ -25,13 +25,20 @@ export default function () {
   // Setup
   const img = data.previewImage?.url ?? false;
   const imageHandle = data.previewImage?.handle ?? false;
+  const intl = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 
   return (
     <>
       <div className="mb-12 block items-center gap-12 bg-white align-middle sm:py-8 md:flex">
         <div className="flex-1 px-4">
           <div className="m-auto max-w-3xl">
-            <AppHero className="py-12 sm:py-20" highlight={data.title} tag="h1" reverse />
+            <AppHero
+              className="py-12 sm:py-20"
+              highlight={data.title}
+              copy={<div className="mt-4">{intl.format(new Date(data.publicationDate))}</div>}
+              tag="h1"
+              reverse
+            />
           </div>
         </div>
 

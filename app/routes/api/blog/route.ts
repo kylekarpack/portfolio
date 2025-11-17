@@ -8,9 +8,11 @@ export interface Blog {
     text: string;
     raw: any;
   };
+  categories: string[];
   publicationDate: string;
   previewImage: {
     url: string;
+    handle: string;
   };
   slug: string;
   title: string;
