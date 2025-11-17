@@ -15,6 +15,9 @@ export const AllNavLinks: FunctionComponent<{ onClose: () => void }> = ({ onClos
     <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/portfolio">
       Portfolio
     </NavLink>
+    <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/blog">
+      Blog
+    </NavLink>
     <NavLink className="header-link" onClick={onClose} prefetch="intent" to="/resume">
       Resume
     </NavLink>
