@@ -26,8 +26,6 @@ export const loader: LoaderFunction = async (args): Promise<LoaderData> => {
   const res = await data.json();
   const blogs = res.data.blogs ?? [];
 
-  console.log(blogs[0].previewImage);
-
   if (blogs.length !== 1) {
     throw new Response(`Blog "${slug}" not found`, { status: 404 });
   }
