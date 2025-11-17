@@ -85,7 +85,13 @@ export default function () {
       <section className="bg-color-background-light py-8 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
           <h2 className="my-4 text-xl md:text-3xl">Recently Read</h2>
-          <GoodreadsBookshelf userId="63515611" limit={12} width={100} displayOptions={{ hideDetails: true }} />
+          <GoodreadsBookshelf
+            userId="63515611"
+            limit={12}
+            width={100}
+            displayOptions={{ hideDetails: true }}
+            filter={(book) => !book.subtitle?.toLowerCase().includes("hardy")}
+          />
 
           <Link to="/about/reading">See more</Link>
         </div>
