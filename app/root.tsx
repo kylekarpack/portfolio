@@ -6,7 +6,7 @@ import { AppFooter } from "~/components/AppFooter";
 import { AppHeader } from "~/components/AppHeader";
 import { AppHeaderMobile } from "~/components/AppHeaderMobile";
 import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "~/config/constants";
-import { BASE_URL } from "~/config/settings.server";
+import { BASE_URL, GA_TRACKING_ID } from "~/config/settings.server";
 import { cookieTheme } from "~/cookies.server";
 import { useIntro } from "~/hooks/useIntro";
 import { getMetaData } from "~/metadata";
@@ -27,7 +27,7 @@ export const loader = async (args: DataFunctionArgs) => {
   const cookie = (await cookieTheme.parse(header)) ?? {};
   const { theme = "light" } = cookie;
 
-  return json({ baseUrl, canonical, theme });
+  return json({ baseUrl, canonical, theme, gaTrackingId: GA_TRACKING_ID });
 };
 
 export const meta: MetaFunction = () => [
@@ -45,7 +45,7 @@ export default function App() {
   const data = useLoaderData<typeof loader>();
 
   // Setup
-  const { canonical, theme } = data;
+  const { canonical, theme, gaTrackingId } = data;
   const isDark = theme === "dark";
   const favicon = "/images/favicon/favicon.ico";
   const manifest = "/manifest.json";
@@ -68,6 +68,26 @@ export default function App() {
 
         <Links />
         <Meta />
+        {process.env.NODE_ENV === "development" || !gaTrackingId ? null : (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`} />
+            <script
+              async
+              id="gtag-init"
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${gaTrackingId}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body>
         <AppHeader />
