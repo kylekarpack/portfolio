@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SITE_AUTHOR, SITE_YEAR, SOCIAL_GITHUB, SOCIAL_LINKEDIN } from "../config/constants";
 
@@ -19,7 +20,7 @@ export const AppFooter = () => {
     <footer className="justify-center gap-2 py-10 text-center text-sm print:hidden md:py-20">
       <div className="m-auto flex justify-center gap-4">
         <a className="p-2" href={SOCIAL_LINKEDIN} target="_blank" rel="noreferrer">
-          <img
+          <Image
             alt="Follow me on LinkedIn"
             className="footer-social"
             height={16}
@@ -29,7 +30,7 @@ export const AppFooter = () => {
           />
         </a>
         <a className="p-2" href={SOCIAL_GITHUB} target="_blank" rel="noreferrer">
-          <img
+          <Image
             alt="Follow me on GitHub"
             className="footer-social"
             height={16}

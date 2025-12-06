@@ -1,6 +1,7 @@
 "use client";
 
 import classNames from "classnames";
+import Image from "next/image";
 import { useState } from "react";
 import { AllNavLinks } from "./AppHeader";
 import { AppLogo } from "./AppLogo";
@@ -30,7 +31,7 @@ export const AppHeaderMobile = () => {
           onClick={onToggle}
           title="Toggle menu"
           type="button">
-          <img
+          <Image
             alt="Toggle Menu"
             className="max-h-4"
             height={16}

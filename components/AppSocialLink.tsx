@@ -1,4 +1,5 @@
 import type { Social } from "@/data/resume";
+import Image from "next/image";
 
 export interface AppSocialLinkProps {
   data: Social;
@@ -18,7 +19,7 @@ export const AppSocialLink = (props: AppSocialLinkProps) => {
       key={data.title}
       rel="noopener noreferrer"
       target="_blank">
-      <img alt={alt} height={size} src={data.icon} width={size} />
+      <Image alt={alt} height={size} src={data.icon} width={size} />
       {data.title}
     </a>
   );

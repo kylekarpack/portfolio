@@ -34,7 +34,7 @@ const GraphCmsImage: FunctionComponent<
     },
   });
 
-  return <Image src={url.toString()} {...rest} transformer={transform} background="auto" />;
+  return <Image src={url.toString()} {...rest} alt={rest.alt} transformer={transform} background="auto" />;
 };
 
 // Fixed from https://github.com/ascorbic/unpic/blob/main/src/transformers/hygraph.ts to be case-insensitive

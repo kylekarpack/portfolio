@@ -18,7 +18,7 @@ export const AboutContent = () => {
               <h2 className="my-4 text-xl md:text-3xl">About Me</h2>
 
               <p>
-                Thanks for checking out my site. I'm a software engineer based in Seattle. If you are looking to hire an
+                Thanks for checking out my site. I&apos;m a software engineer based in Seattle. If you are looking to hire an
                 experienced software engineering leader, please check out my <Link href="/resume">resume</Link> and feel
                 free to <Link href="/contact">contact me</Link> any time. Outside work, I enjoy being outside, cooking,
                 reading, fixing my old house, and spending time with family.
