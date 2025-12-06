@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-remix",
+  "name": "portfolio",
   "description": "Portfolio of Kyle Karpack",
   "engines": {
     "node": ">=18"
