@@ -9,7 +9,7 @@ export const usePageTransition = () => {
   // Setup
   const isBrowser = typeof window !== "undefined";
   // @ts-ignore
-  const isSupported = isBrowser && typeof document.startViewTransition === 'function';
+  const isSupported = isBrowser && typeof document.startViewTransition === "function";
 
   // Handlers
   const transition = async (path: string) => {
