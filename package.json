@@ -12,7 +12,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./",
-    "format": "prettier --write ./"
+    "format": "prettier --write ./",
+    "test": "vitest run"
   },
   "sideEffects": false,
   "type": "module",

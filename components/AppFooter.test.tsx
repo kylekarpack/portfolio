@@ -55,9 +55,8 @@ describe("AppFooter Component", () => {
             <p
               class="text-color-copy-light"
             >
-              © 
-              2024
-              , 
+              2025
+               
               Kyle Karpack
             </p>
           </footer>

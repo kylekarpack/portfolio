@@ -8,10 +8,12 @@ export const AppFooter = () => {
   const pathname = usePathname();
 
   // Setup
-  const isResume = pathname.startsWith("/resume");
+  const isResume = pathname?.startsWith("/resume");
 
-  // 🔌 Short Circuit
-  if (isResume) return null;
+  // Short Circuit
+  if (isResume) {
+		return null;
+	};
 
   return (
     <footer className="justify-center gap-2 py-10 text-center text-sm print:hidden md:py-20">

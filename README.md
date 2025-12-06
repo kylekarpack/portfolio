@@ -6,7 +6,7 @@ The professional portfolio of Kyle Karpack
 
 **Technology:**
 
-- [Remix][remix]
+- [NextJS][nextjs]
 - [React](https://reactjs.org)
 - [TailwindCSS](https://tailwindcss.com)
 - [GraphCMS][graphcms]
@@ -31,5 +31,4 @@ npm run dev
 
 [graphcms]: https://graphcms.com "GraphCMS"
 [nextjs]: https://nextjs.org "NextJS"
-[remix]: https://remix.run "Remix"
 [netlify]: https://netlify.com "Netlify"
