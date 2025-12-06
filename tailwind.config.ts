@@ -1,13 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-		"./app/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-	],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-			colors: {
+      colors: {
         "color-background-light": "#fff",
         "color-background": "#f5f8fa",
         "color-background-dark": "#24292e",
@@ -32,7 +29,7 @@ const config: Config = {
       screens: {
         xs: "320px",
       },
-		},
+    },
   },
   plugins: [],
 };

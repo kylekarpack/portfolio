@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import { cookies } from "next/headers";
-import Script from "next/script";
-import classNames from "classnames";
 import { AppFooter } from "@/components/AppFooter";
 import { AppHeader } from "@/components/AppHeader";
 import { AppHeaderMobile } from "@/components/AppHeaderMobile";
 import Pwa from "@/components/Pwa";
 import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "@/config/constants";
 import { GA_TRACKING_ID } from "@/config/settings.server";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import classNames from "classnames";
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
 
 import "../styles/index.css";
 
@@ -43,22 +43,7 @@ export default async function RootLayout({
         <AppHeaderMobile />
         <main>{children}</main>
         <AppFooter />
-        {GA_TRACKING_ID && (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} strategy="afterInteractive" />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', '${GA_TRACKING_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
+        {GA_TRACKING_ID && <GoogleAnalytics gaId={GA_TRACKING_ID} />}
       </body>
     </html>
   );
