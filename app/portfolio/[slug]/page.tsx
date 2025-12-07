@@ -9,23 +9,25 @@ import { notFound } from "next/navigation";
 async function getData(slug: string) {
   const data = await fetchFromGraphCMS(getPortfolioBySlug, { slug });
   const res = await data.json();
-  const portfolios = res.data.portfolios ?? [];
+  const portfolios = res.data?.portfolios ?? [];
   if (portfolios.length !== 1) return null;
   return portfolios[0];
 }
 
-export async function generateStaticParams() {
+export const dynamic = "force-static";
+
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const data = await fetchFromGraphCMS(getPortfolios);
   const res = await data.json();
-  const portfolios = res.data.portfolios ?? [];
+  const portfolios = res.data?.portfolios ?? [];
 
   return portfolios.map((portfolio: { slug: string }) => ({
     slug: portfolio.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const data = await getData(slug);
   if (!data) {
 		return {};
@@ -39,8 +41,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function PortfolioSlugPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PortfolioSlugPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = await getData(slug);
   if (!data) {
 		notFound();

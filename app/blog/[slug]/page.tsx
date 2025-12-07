@@ -10,23 +10,25 @@ import { getBlogs } from "@/queries/getBlogs";
 async function getData(slug: string) {
   const data = await fetchFromGraphCMS(getBlog, { slug });
   const res = await data.json();
-  const blogs = res.data.blogs ?? [];
+  const blogs = res.data?.blogs ?? [];
   if (blogs.length !== 1) return null;
   return blogs[0];
 }
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const data = await fetchFromGraphCMS(getBlogs);
   const res = await data.json();
-  const blogs = res.data.blogs ?? [];
+  const blogs = res.data?.blogs ?? [];
 
   return blogs.map((blog: { slug: string }) => ({
     slug: blog.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const data = await getData(slug);
   if (!data) {
     return {};
@@ -37,8 +39,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogSlugPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function BlogSlugPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = await getData(slug);
   if (!data) {
     notFound();
