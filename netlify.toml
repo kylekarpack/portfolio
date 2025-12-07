@@ -4,4 +4,4 @@ publish = "build/client"
 
 [dev]
 command = "pnpm run dev"
-framework = "vite"
+framework = "nextjs"
