@@ -83,7 +83,7 @@ const ContactForm = () => {
         <button
           disabled={state.submitting}
           type="submit"
-          className="hover:bg-blue-dark mt-3 rounded-lg bg-sky-600 py-3 px-6 font-bold text-white transition duration-300 ease-in-out hover:bg-sky-500 md:inline-block">
+          className="ui-btn custom-bg-gradient block w-full whitespace-nowrap rounded-2xl px-4 py-2 mt-4 text-center font-normal text-white cursor-pointer">
           {state.submitting ? "Submitting..." : "Submit"}
         </button>
       </form>
