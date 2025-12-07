@@ -1,26 +1,25 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { AppHero } from "@/components/AppHero";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
 import GraphCmsImage from "@/components/GraphCmsImage";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
 import { getBlog } from "@/queries/getBlog";
 import { getBlogs } from "@/queries/getBlogs";
+import { Blog } from "@/types";
+import { fetchFromGraphCMS } from "@/utils/graphcms";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-async function getData(slug: string) {
-  const data = await fetchFromGraphCMS(getBlog, { slug });
-  const res = await data.json();
-  const blogs = res.data?.blogs ?? [];
-  if (blogs.length !== 1) return null;
+async function getData(slug: string): Promise<Blog | null> {
+  const { data } = await fetchFromGraphCMS<{ blogs: Blog[]; description: string }>(getBlog, { slug });
+  const blogs = data?.blogs ?? [];
+  if (blogs.length !== 1) {
+    return null;
+  }
   return blogs[0];
 }
 
-export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  const data = await fetchFromGraphCMS(getBlogs);
-  const res = await data.json();
-  const blogs = res.data?.blogs ?? [];
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const { data } = await fetchFromGraphCMS<{ blogs: Blog[] }>(getBlogs);
+  const blogs = data?.blogs ?? [];
 
   return blogs.map((blog: { slug: string }) => ({
     slug: blog.slug,

@@ -1,16 +1,16 @@
-import { MetadataRoute } from "next";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
-import { getSitemap } from "@/queries/getSitemap";
-import { BASE_URL } from "@/config/settings.server";
 import { SITE_UPDATED } from "@/config/constants";
+import { BASE_URL } from "@/config/settings.server";
+import { getSitemap } from "@/queries/getSitemap";
+import { Portfolio } from "@/types";
+import { fetchFromGraphCMS } from "@/utils/graphcms";
+import { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const data = await fetchFromGraphCMS(getSitemap);
-  const res = await data.json();
-  const { portfolios } = res.data;
+  const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getSitemap);
+  const { portfolios } = data;
 
   const routes = ["/blog", "/portfolio", "/resume", "/uses"];
 

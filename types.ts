@@ -5,6 +5,9 @@ export interface Portfolio {
   description: string;
   slug: string;
   title: string;
+  content: {
+    html: string;
+  };
 }
 
 export interface Blog {
@@ -21,4 +24,5 @@ export interface Blog {
   };
   slug: string;
   title: string;
+  description: string;
 }
