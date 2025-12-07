@@ -11,10 +11,9 @@ export const metadata: Metadata = {
   description: `The portfolio of ${SITE_AUTHOR}.`,
 };
 
-async function getData() {
-  const data = await fetchFromGraphCMS(getPortfolios);
-  const res = await data.json();
-  return res.data.portfolios ?? [];
+async function getData(): Promise<Portfolio[]> {
+  const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getPortfolios);
+  return data?.portfolios ?? [];
 }
 
 export default async function PortfolioPage() {

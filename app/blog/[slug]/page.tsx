@@ -1,41 +1,49 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { AppHero } from "@/components/AppHero";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
 import GraphCmsImage from "@/components/GraphCmsImage";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
 import { getBlog } from "@/queries/getBlog";
+import { getBlogs } from "@/queries/getBlogs";
+import { Blog } from "@/types";
+import { fetchFromGraphCMS } from "@/utils/graphcms";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-async function getData(slug: string) {
-  const data = await fetchFromGraphCMS(getBlog, { slug });
-  const res = await data.json();
-  const blogs = res.data.blogs ?? [];
-  if (blogs.length !== 1) return null;
+async function getData(slug: string): Promise<Blog | null> {
+  const { data } = await fetchFromGraphCMS<{ blogs: Blog[]; description: string }>(getBlog, { slug });
+  const blogs = data?.blogs ?? [];
+  if (blogs.length !== 1) {
+    return null;
+  }
   return blogs[0];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const { data } = await fetchFromGraphCMS<{ blogs: Blog[] }>(getBlogs);
+  const blogs = data?.blogs ?? [];
+
+  return blogs.map((blog: { slug: string }) => ({
+    slug: blog.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = await getData(slug);
-  if (!data) return {};
+  if (!data) {
+    return {};
+  }
   return {
     title: data.title,
-    description: data.description, // Note: description might not be in Blog interface, check API
-    // Original code used args.data?.description but Blog interface doesn't have description?
-    // Let's check Blog interface again. It has content, categories, publicationDate, previewImage, slug, title.
-    // No description. Maybe it uses title or excerpt?
-    // Original code: description: args.data?.description
-    // The API route type definition didn't have description in Blog interface but LoaderData had it?
-    // Wait, LoaderData in api/blog/$slug/route.ts didn't have description.
-    // Ah, I missed checking if description is in the query.
-    // If it's not there, I'll omit it or use title.
+    description: data.description,
   };
 }
 
-export default async function BlogSlugPage({ params }: { params: { slug: string } }) {
+export default async function BlogSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const data = await getData(slug);
-  if (!data) notFound();
+  if (!data) {
+    notFound();
+  }
 
   const img = data.previewImage?.url ?? false;
   const imageHandle = data.previewImage?.handle ?? false;

@@ -13,10 +13,9 @@ export const metadata: Metadata = {
   description: `The blog of ${SITE_AUTHOR}.`,
 };
 
-async function getData() {
-  const data = await fetchFromGraphCMS(getBlogs);
-  const res = await data.json();
-  return res.data.blogs ?? [];
+async function getData(): Promise<Blog[]> {
+  const { data } = await fetchFromGraphCMS<{ blogs: Blog[] }>(getBlogs);
+  return data?.blogs ?? [];
 }
 
 export default async function BlogPage() {

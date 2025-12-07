@@ -1,22 +1,36 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { AppHero } from "@/components/AppHero";
 import GraphCmsImage from "@/components/GraphCmsImage";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
 import { getPortfolioBySlug } from "@/queries/getPortfolio";
+import { getPortfolios } from "@/queries/getPortfolios";
+import { Portfolio } from "@/types";
+import { fetchFromGraphCMS } from "@/utils/graphcms";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-async function getData(slug: string) {
-  const data = await fetchFromGraphCMS(getPortfolioBySlug, { slug });
-  const res = await data.json();
-  const portfolios = res.data.portfolios ?? [];
-  if (portfolios.length !== 1) return null;
+async function getData(slug: string): Promise<Portfolio | null> {
+  const data = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getPortfolioBySlug, { slug });
+  const portfolios = data.data?.portfolios ?? [];
+  if (portfolios.length !== 1) {
+    return null;
+  }
   return portfolios[0];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getPortfolios);
+  const portfolios = data?.portfolios ?? [];
+
+  return portfolios.map((portfolio: { slug: string }) => ({
+    slug: portfolio.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = await getData(slug);
-  if (!data) return {};
+  if (!data) {
+    return {};
+  }
   return {
     title: data.title,
     description: data.description,
@@ -26,10 +40,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function PortfolioSlugPage({ params }: { params: { slug: string } }) {
+export default async function PortfolioSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const data = await getData(slug);
-  if (!data) notFound();
+  if (!data) {
+    notFound();
+  }
 
   const img = data.images[0]?.url ?? false;
   const imageHandle = data.images[0]?.handle ?? false;

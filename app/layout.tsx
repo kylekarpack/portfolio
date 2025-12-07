@@ -4,12 +4,9 @@ import { AppHeaderMobile } from "@/components/AppHeaderMobile";
 import Pwa from "@/components/Pwa";
 import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "@/config/constants";
 import { GA_TRACKING_ID } from "@/config/settings.server";
+import "@/styles/index.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import classNames from "classnames";
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
-
-import "../styles/index.css";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -26,13 +23,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const theme = cookieStore.get("theme")?.value || "light";
-  const isDark = theme === "dark";
-  const cssComponent = classNames(theme, { dark: isDark });
-
   return (
-    <html lang="en" className={cssComponent}>
+    <html lang="en" className="light">
       <head>
         <link rel="icon" href="/images/favicon/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />

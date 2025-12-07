@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { AppSocialLink } from "@/components/AppSocialLink";
 import GraphCmsImage from "@/components/GraphCmsImage";
 import Mantra from "@/components/Mantra";
@@ -8,6 +7,7 @@ import { SectionProficiencies } from "@/components/SectionProficiencies";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
 import { social } from "@/data/resume";
 import "@/styles/resume.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Resume | ${SITE_TITLE}`,
@@ -40,7 +40,7 @@ export default function ResumePage() {
             </div>
             <div className="mt-8 flex justify-center gap-4 print:hidden">
               <a
-                className="ui-btn custom-bg-gradient block max-w-xs flex-1 whitespace-nowrap rounded-2xl px-4 py-2 text-center text-sm font-normal text-white"
+                className="ui-btn custom-bg-gradient block max-w-xs flex-1 whitespace-nowrap rounded-2xl px-4 py-2 text-center text-sm font-normal text-white cursor-pointer"
                 download={true}
                 href="/resume/Kyle_Karpack_Resume.pdf">
                 Download Resume
