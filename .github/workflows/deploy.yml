@@ -22,6 +22,9 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - name: 📥 Download deps
         run: pnpm install
 
@@ -43,6 +46,9 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - name: 📥 Download deps
         run: pnpm install
 
@@ -60,6 +66,9 @@ jobs:
 
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install dependencies
         run: pnpm install
