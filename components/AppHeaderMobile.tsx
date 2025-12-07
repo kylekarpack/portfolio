@@ -22,7 +22,7 @@ export const AppHeaderMobile = () => {
 
   return (
     <header
-      className={classNames("header overflow-hidden print:hidden md:hidden hidden", {
+      className={classNames("header overflow-hidden print:hidden md:hidden", {
         closed,
       })}>
       <div className="flex h-14 w-full items-center md:text-sm">
