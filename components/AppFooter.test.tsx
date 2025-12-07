@@ -30,9 +30,12 @@ describe("AppFooter Component", () => {
                 <img
                   alt="Follow me on LinkedIn"
                   class="footer-social"
+                  data-nimg="1"
+                  decoding="async"
                   height="16"
                   loading="lazy"
                   src="/images/svg/linkedin-dark.svg"
+                  style="color: transparent;"
                   width="16"
                 />
               </a>
@@ -45,9 +48,12 @@ describe("AppFooter Component", () => {
                 <img
                   alt="Follow me on GitHub"
                   class="footer-social"
+                  data-nimg="1"
+                  decoding="async"
                   height="16"
                   loading="lazy"
                   src="/images/svg/github-dark.svg"
+                  style="color: transparent;"
                   width="16"
                 />
               </a>

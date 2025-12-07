@@ -11,11 +11,14 @@ describe("AppLogo Component", () => {
       <body>
         <div>
           <img
-            alt="Toggle Menu"
+            alt="Kyle Karpack Logo"
+            data-nimg="1"
+            decoding="async"
             height="32"
             loading="eager"
             src="/images/branding/logo.svg"
-            style="height: 32px;"
+            style="color: transparent;"
+            width="110"
           />
         </div>
       </body>

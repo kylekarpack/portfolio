@@ -26,8 +26,12 @@ describe("AppSocialLink Component", () => {
           >
             <img
               alt="Follow me on Facebook"
+              data-nimg="1"
+              decoding="async"
               height="14"
+              loading="lazy"
               src="/path/to/facebook.svg"
+              style="color: transparent;"
               width="14"
             />
             Facebook
