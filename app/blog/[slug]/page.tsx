@@ -5,6 +5,7 @@ import { AppWysiwyg } from "@/components/AppWysiwyg";
 import GraphCmsImage from "@/components/GraphCmsImage";
 import { fetchFromGraphCMS } from "@/utils/graphcms";
 import { getBlog } from "@/queries/getBlog";
+import { getBlogs } from "@/queries/getBlogs";
 
 async function getData(slug: string) {
   const data = await fetchFromGraphCMS(getBlog, { slug });
@@ -14,28 +15,34 @@ async function getData(slug: string) {
   return blogs[0];
 }
 
+export async function generateStaticParams() {
+  const data = await fetchFromGraphCMS(getBlogs);
+  const res = await data.json();
+  const blogs = res.data.blogs ?? [];
+
+  return blogs.map((blog: { slug: string }) => ({
+    slug: blog.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const data = await getData(slug);
-  if (!data) return {};
+  if (!data) {
+    return {};
+  }
   return {
     title: data.title,
-    description: data.description, // Note: description might not be in Blog interface, check API
-    // Original code used args.data?.description but Blog interface doesn't have description?
-    // Let's check Blog interface again. It has content, categories, publicationDate, previewImage, slug, title.
-    // No description. Maybe it uses title or excerpt?
-    // Original code: description: args.data?.description
-    // The API route type definition didn't have description in Blog interface but LoaderData had it?
-    // Wait, LoaderData in api/blog/$slug/route.ts didn't have description.
-    // Ah, I missed checking if description is in the query.
-    // If it's not there, I'll omit it or use title.
+    description: data.description,
   };
 }
 
 export default async function BlogSlugPage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+  const { slug } = params;
   const data = await getData(slug);
-  if (!data) notFound();
+  if (!data) {
+    notFound();
+  }
 
   const img = data.previewImage?.url ?? false;
   const imageHandle = data.previewImage?.handle ?? false;
