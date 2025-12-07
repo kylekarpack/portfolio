@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { AppHero } from "@/components/AppHero";
 import GraphCmsImage from "@/components/GraphCmsImage";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
 import { getPortfolioBySlug } from "@/queries/getPortfolio";
+import { getPortfolios } from "@/queries/getPortfolios";
+import { fetchFromGraphCMS } from "@/utils/graphcms";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 async function getData(slug: string) {
   const data = await fetchFromGraphCMS(getPortfolioBySlug, { slug });
@@ -13,10 +14,22 @@ async function getData(slug: string) {
   return portfolios[0];
 }
 
+export async function generateStaticParams() {
+  const data = await fetchFromGraphCMS(getPortfolios);
+  const res = await data.json();
+  const portfolios = res.data.portfolios ?? [];
+
+  return portfolios.map((portfolio: { slug: string }) => ({
+    slug: portfolio.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const data = await getData(slug);
-  if (!data) return {};
+  if (!data) {
+		return {};
+	};
   return {
     title: data.title,
     description: data.description,
@@ -27,9 +40,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function PortfolioSlugPage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+  const { slug } = params;
   const data = await getData(slug);
-  if (!data) notFound();
+  if (!data) {
+		notFound();
+	};
 
   const img = data.images[0]?.url ?? false;
   const imageHandle = data.images[0]?.handle ?? false;
