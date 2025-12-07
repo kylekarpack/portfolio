@@ -15,7 +15,6 @@ export default defineConfig({
 
   test: {
     coverage: {
-      all: true,
       exclude: ["node_modules", "public/build/**/*", "**/*.test.{ts,tsx}"],
       include: ["app/**/*.{ts,tsx}"],
       reporter: ["text", "json", "html"],

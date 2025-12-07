@@ -1,7 +1,3 @@
 [build]
-command = "pnpm run build"
-publish = "build/client"
-
-[dev]
-command = "pnpm run dev"
-framework = "vite"
+	publish = ".next"
+	command = "pnpm run build"
