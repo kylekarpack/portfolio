@@ -10,7 +10,7 @@ export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getSitemap);
-  const { portfolios } = data;
+  const portfolios = data?.portfolios ?? [];
 
   const routes = ["/blog", "/portfolio", "/resume", "/uses"];
 
