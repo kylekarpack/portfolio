@@ -195,4 +195,5 @@
   line-height: theme(lineHeight.10);
   font-weight: theme(fontWeight.black);
   margin: theme(margin.0) theme(margin.0) theme(margin.4);
+  white-space: normal;
 }
