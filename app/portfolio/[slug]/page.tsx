@@ -20,6 +20,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getPortfolios);
   const portfolios = data?.portfolios ?? [];
 
+  console.log(`Generating static params for portfolio: ${portfolios.length} items found`);
+  if (portfolios.length > 0) {
+    console.log(`Slugs: ${portfolios.map((p) => p.slug).join(", ")}`);
+  }
+
   return portfolios.map((portfolio: { slug: string }) => ({
     slug: portfolio.slug,
   }));
@@ -42,8 +47,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PortfolioSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  console.log(`Rendering portfolio page for slug: ${slug}`);
   const data = await getData(slug);
   if (!data) {
+    console.warn(`Portfolio not found for slug: ${slug}`);
     notFound();
   }
 
