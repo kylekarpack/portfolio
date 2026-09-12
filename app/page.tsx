@@ -24,7 +24,7 @@ export default function Home() {
             <div className="w-48">
               <div className="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden rounded-full p-1">
                 <GraphCmsImage
-                  handle="9kiAYtliQPyl2fnEN1AL"
+                  handle="cmtykcbnvndbs07llny849vx0"
                   alt={SITE_AUTHOR}
                   className="rounded-full"
                   loading="eager"
