@@ -17,10 +17,11 @@ export const experience: Experience[] = [
     companyUrl: "https://adobe.com/",
     description: `
       <p>
-        Leading Insights and Analytics in Adobe’s Digital Experience division, including:
+      In an evolving role, I've worked on some of Adobe's most ambitious projects and efforts, including:
       </p>
     `,
     highlights: [
+      `Leading AI adoption for Adobe's new data visualization and storytelling tooling as a part of Adobe Incubator`,
       `Proposing, architecting, and building the new Marketo/AJO B2B Core Data Platform to supply data to internal teams`,
       `Cultivating relationships with various other teams to drive consensus on specifications, contracts, and timelines`,
       `Developing and owning React dashboards, AI tooling, and other UI features to provide visual insights to users`,
@@ -30,8 +31,12 @@ export const experience: Experience[] = [
     ],
     roles: [
       {
-        title: `Lead Software Engineer`,
-        dateRange: { start: new Date("2023-07-01") },
+        title: `Software Architect - Adobe Incubator`,
+        dateRange: { start: new Date("2025-12-29") },
+      },
+      {
+        title: `Staff Software Engineer`,
+        dateRange: { start: new Date("2023-07-01"), end: new Date("2025-12-29") },
       },
       {
         title: `Senior Software Engineer II`,
