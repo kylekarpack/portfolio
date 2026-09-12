@@ -23,7 +23,7 @@ export default function ResumePage() {
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
               <div className="custom-bg-gradient aspect-square w-full overflow-hidden rounded-full p-1">
                 <GraphCmsImage
-                  handle="9kiAYtliQPyl2fnEN1AL"
+                  handle="cmtykcbnvndbs07llny849vx0"
                   alt={SITE_AUTHOR}
                   className="rounded-full"
                   loading="eager"
