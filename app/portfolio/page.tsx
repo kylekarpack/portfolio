@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { AppHero } from "@/components/AppHero";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
-import { getPortfolios } from "@/queries/getPortfolios";
+import { getPortfolios } from "@/lib/content";
 import type { Portfolio } from "@/types";
 
 export const metadata: Metadata = {
@@ -11,13 +10,8 @@ export const metadata: Metadata = {
   description: `The portfolio of ${SITE_AUTHOR}.`,
 };
 
-async function getData(): Promise<Portfolio[]> {
-  const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getPortfolios);
-  return data?.portfolios ?? [];
-}
-
 export default async function PortfolioPage() {
-  const data: Portfolio[] = await getData();
+  const data: Portfolio[] = await getPortfolios();
   const current = data.filter((node) => node.portfolioItemType === "current");
   const past = data.filter((node) => node.portfolioItemType === "past");
   const student = data.filter((node) => node.portfolioItemType === "student");

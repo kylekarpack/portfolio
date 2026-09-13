@@ -1,16 +1,14 @@
 import { SITE_UPDATED } from "@/config/constants";
 import { BASE_URL } from "@/config/settings.server";
-import { getSitemap } from "@/queries/getSitemap";
-import { Portfolio } from "@/types";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
+import { getBlogs, getPortfolios } from "@/lib/content";
 import { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { data } = await fetchFromGraphCMS<{ portfolios: Portfolio[] }>(getSitemap);
-  const portfolios = data?.portfolios ?? [];
+  const portfolios = await getPortfolios();
+  const blogs = await getBlogs();
 
   const routes = ["/blog", "/portfolio", "/resume", "/uses"];
 
@@ -21,11 +19,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 1.0,
   }));
 
-  const portfolioRoutes = portfolios.map((p: any) => ({
+  const portfolioRoutes = portfolios.map((p) => ({
     url: `${BASE_URL}/portfolio/${p.slug}`,
     lastModified: new Date(p.date),
     changeFrequency: "monthly" as const,
     priority: 0.9,
+  }));
+
+  const blogRoutes = blogs.map((b) => ({
+    url: `${BASE_URL}/blog/${b.slug}`,
+    lastModified: new Date(b.publicationDate),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
   }));
 
   return [
@@ -37,5 +42,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...staticRoutes,
     ...portfolioRoutes,
+    ...blogRoutes,
   ];
 }

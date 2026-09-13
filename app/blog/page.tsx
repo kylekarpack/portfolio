@@ -4,8 +4,7 @@ import { AppHero } from "@/components/AppHero";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
 import GraphCmsImage from "@/components/GraphCmsImage";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
-import { fetchFromGraphCMS } from "@/utils/graphcms";
-import { getBlogs } from "@/queries/getBlogs";
+import { getBlogs } from "@/lib/content";
 import type { Blog } from "@/types";
 
 export const metadata: Metadata = {
@@ -13,13 +12,8 @@ export const metadata: Metadata = {
   description: `The blog of ${SITE_AUTHOR}.`,
 };
 
-async function getData(): Promise<Blog[]> {
-  const { data } = await fetchFromGraphCMS<{ blogs: Blog[] }>(getBlogs);
-  return data?.blogs ?? [];
-}
-
 export default async function BlogPage() {
-  const data: Blog[] = await getData();
+  const data: Blog[] = await getBlogs();
   const intl = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 
   const camelCaseToWords = (s: string) => {
@@ -36,37 +30,7 @@ export default async function BlogPage() {
         <div className="mx-auto md:max-w-3xl">
           <div className="p-4">
             {data.map((node) => {
-              let content = node.content.raw;
-              // Clone content to avoid mutating original if needed, though here we just filter children
-              // Deep clone might be needed if raw is reused, but for now shallow copy of children array
-              const contentChildren = content.children.filter((el: any, index: number) => {
-                // Logic from original: keep first paragraph?
-                // Original:
-                // content.children = content.children.filter((el: any) => {
-                //   const isPara = el.type === "paragraph";
-                //   if (isPara && first) {
-                //     first = false;
-                //     return true;
-                //   }
-                //   return false;
-                // });
-                // This logic keeps ONLY the first paragraph.
-                return el.type === "paragraph";
-              });
-
-              // Wait, the original logic was stateful inside map (first variable).
-              // It keeps the FIRST paragraph found.
-              let first = true;
-              const filteredChildren = content.children.filter((el: any) => {
-                const isPara = el.type === "paragraph";
-                if (isPara && first) {
-                  first = false;
-                  return true;
-                }
-                return false;
-              });
-
-              const previewContent = { ...content, children: filteredChildren };
+              const excerpt = node.description || (node.content.split("\n\n")[0] ?? node.content);
 
               return (
                 <div key={node.slug} className="my-20">
@@ -79,7 +43,7 @@ export default async function BlogPage() {
                     <Link href={`/blog/${node.slug}`}>
                       <div className="mb-4">
                         <GraphCmsImage
-                          handle={node.previewImage.handle}
+                          src={node.previewImage}
                           alt={node.title}
                           width={800}
                           height={300}
@@ -89,7 +53,7 @@ export default async function BlogPage() {
                       </div>
                     </Link>
                   )}
-                  {node.categories && (
+                  {node.categories && node.categories.length > 0 && (
                     <div className="mb-4">
                       {node.categories.map((el) => (
                         <span
@@ -101,7 +65,7 @@ export default async function BlogPage() {
                     </div>
                   )}
 
-                  <AppWysiwyg content={previewContent} />
+                  <AppWysiwyg content={excerpt} />
                   <Link href={`/blog/${node.slug}`}>Read More</Link>
                 </div>
               );

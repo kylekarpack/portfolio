@@ -57,7 +57,7 @@ describe("AppFooter Component", () => {
             <p
               class="text-color-copy-light"
             >
-              2025
+              2026
                
               Kyle Karpack
             </p>
