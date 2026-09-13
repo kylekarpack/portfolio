@@ -5,6 +5,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 import * as React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Image } from "@unpic/react";
 
 export interface AppWysiwygProps {
   content: string;
@@ -23,7 +24,26 @@ export const AppWysiwyg = (props: AppWysiwygProps) => {
 
   return (
     <div className="wysiwyg">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          img: ({ src, alt, width, height }) => {
+            const parsedWidth = width ? Number(width) : 800;
+            const parsedHeight = height ? Number(height) : 500;
+            return (
+              <Image
+                src={typeof src === "string" ? src : ""}
+                alt={alt || ""}
+                width={isNaN(parsedWidth) ? 800 : parsedWidth}
+                height={isNaN(parsedHeight) ? 500 : parsedHeight}
+                layout="constrained"
+                className="mx-auto my-4 rounded-md shadow-sm"
+              />
+            );
+          },
+        }}>
+        {content}
+      </ReactMarkdown>
     </div>
   );
 };

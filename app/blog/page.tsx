@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Image } from "@unpic/react";
 import { AppHero } from "@/components/AppHero";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
-import GraphCmsImage from "@/components/GraphCmsImage";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
 import { getBlogs } from "@/lib/content";
 import type { Blog } from "@/types";
@@ -42,7 +42,7 @@ export default async function BlogPage() {
                   {node.previewImage && (
                     <Link href={`/blog/${node.slug}`}>
                       <div className="mb-4">
-                        <GraphCmsImage
+                        <Image
                           src={node.previewImage}
                           alt={node.title}
                           width={800}

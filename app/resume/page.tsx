@@ -1,5 +1,6 @@
+import type { Metadata } from "next";
+import { Image } from "@unpic/react";
 import { AppSocialLink } from "@/components/AppSocialLink";
-import GraphCmsImage from "@/components/GraphCmsImage";
 import Mantra from "@/components/Mantra";
 import { SectionEducation } from "@/components/SectionEducation";
 import { SectionExperience } from "@/components/SectionExperience";
@@ -7,7 +8,6 @@ import { SectionProficiencies } from "@/components/SectionProficiencies";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
 import { social } from "@/data/resume";
 import "@/styles/resume.css";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Resume | ${SITE_TITLE}`,
@@ -22,8 +22,8 @@ export default function ResumePage() {
           <div className="sticky top-36">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
               <div className="custom-bg-gradient aspect-square w-full overflow-hidden rounded-full p-1">
-                <GraphCmsImage
-                  handle="cmtykcbnvndbs07llny849vx0"
+                <Image
+                  src="/images/profile.jpg"
                   alt={SITE_AUTHOR}
                   className="rounded-full"
                   loading="eager"

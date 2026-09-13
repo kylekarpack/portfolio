@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { format } from "date-fns";
+import { Image } from "@unpic/react";
 import type { Portfolio } from "@/types";
-import GraphCmsImage from "./GraphCmsImage";
 
 export interface PortfolioPreviewProps {
   hideDate: boolean;
@@ -22,7 +22,7 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
     <Link className="work-preview text-color-copy" href={`/portfolio/${data.slug}`}>
       {imageSrc && (
         <div className="w-full">
-          <GraphCmsImage
+          <Image
             alt={data.title}
             src={imageSrc}
             width={400}

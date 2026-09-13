@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { Image } from "@unpic/react";
 import { AppHero } from "@/components/AppHero";
-import GraphCmsImage from "@/components/GraphCmsImage";
 import Mantra from "@/components/Mantra";
 import { SectionProficiencies } from "@/components/SectionProficiencies";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
@@ -23,8 +23,8 @@ export default function Home() {
             />
             <div className="w-48">
               <div className="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden rounded-full p-1">
-                <GraphCmsImage
-                  handle="cmtykcbnvndbs07llny849vx0"
+                <Image
+                  src="/images/profile.jpg"
                   alt={SITE_AUTHOR}
                   className="rounded-full"
                   loading="eager"

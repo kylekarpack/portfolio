@@ -1,9 +1,9 @@
-import { AppHero } from "@/components/AppHero";
-import { AppWysiwyg } from "@/components/AppWysiwyg";
-import GraphCmsImage from "@/components/GraphCmsImage";
-import { getPortfolioBySlug, getPortfolios } from "@/lib/content";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Image } from "@unpic/react";
+import { AppHero } from "@/components/AppHero";
+import { AppWysiwyg } from "@/components/AppWysiwyg";
+import { getPortfolioBySlug, getPortfolios } from "@/lib/content";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const portfolios = await getPortfolios();
@@ -48,7 +48,7 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
 
         {img && (
           <div className="flex-1 px-4">
-            <GraphCmsImage
+            <Image
               src={img}
               alt={data.title}
               width={600}
