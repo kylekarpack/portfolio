@@ -21,7 +21,7 @@
   "dependencies": {
     "@formcarry/react": "^1.0.4",
     "@next/third-parties": "^16.0.7",
-    "@unpic/react": "^0.1.15",
+    "@unpic/react": "^1.0.2",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
@@ -37,7 +37,7 @@
     "react-markdown": "^10.1.0",
     "react-tooltip": "^5.28.0",
     "remark-gfm": "^4.0.1",
-    "unpic": "^3.22.0"
+    "unpic": "^4.2.2"
   },
   "devDependencies": {
     "@netlify/functions": "^1.4.0",
