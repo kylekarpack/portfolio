@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Image } from "@unpic/react";
 import { AppHero } from "@/components/AppHero";
+import { AppImage } from "@/components/AppImage";
 import Mantra from "@/components/Mantra";
 import { SectionProficiencies } from "@/components/SectionProficiencies";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
@@ -23,14 +23,13 @@ export default function Home() {
             />
             <div className="w-48">
               <div className="custom-bg-gradient mx-auto aspect-square w-full overflow-hidden rounded-full p-1">
-                <Image
+                <AppImage
                   src="/images/profile.jpg"
                   alt={SITE_AUTHOR}
                   className="rounded-full"
                   loading="eager"
                   width={200}
                   height={200}
-                  background="auto"
                 />
               </div>
             </div>

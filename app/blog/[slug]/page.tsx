@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Image } from "@unpic/react";
 import { AppHero } from "@/components/AppHero";
+import { AppImage } from "@/components/AppImage";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
 import { getBlogBySlug, getBlogs } from "@/lib/content";
 
@@ -51,14 +51,13 @@ export default async function BlogSlugPage({ params }: { params: Promise<{ slug:
         </div>
 
         {img && (
-          <div className="px-4 xs:w-full sm:w-full sm:text-center">
-            <Image
+          <div className="px-4 overflow-hidden xs:w-full sm:w-full sm:text-center">
+            <AppImage
               src={img}
               alt={data.title}
               width={600}
               height={400}
               loading="eager"
-              background="auto"
               className="mt-0 w-full xs:m-auto"
             />
           </div>

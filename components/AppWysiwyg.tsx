@@ -5,7 +5,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers";
 import * as React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Image } from "@unpic/react";
+import { AppImage } from "@/components/AppImage";
 
 export interface AppWysiwygProps {
   content: string;
@@ -31,7 +31,7 @@ export const AppWysiwyg = (props: AppWysiwygProps) => {
             const parsedWidth = width ? Number(width) : 800;
             const parsedHeight = height ? Number(height) : 500;
             return (
-              <Image
+              <AppImage
                 src={typeof src === "string" ? src : ""}
                 alt={alt || ""}
                 width={isNaN(parsedWidth) ? 800 : parsedWidth}

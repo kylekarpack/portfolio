@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Image } from "@unpic/react";
 import { AppHero } from "@/components/AppHero";
+import { AppImage } from "@/components/AppImage";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
 import { getPortfolioBySlug, getPortfolios } from "@/lib/content";
 
@@ -47,14 +47,13 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
         </div>
 
         {img && (
-          <div className="flex-1 px-4">
-            <Image
+          <div className="flex-1 overflow-hidden px-4">
+            <AppImage
               src={img}
               alt={data.title}
               width={600}
               height={400}
               loading="eager"
-              background="auto"
               className="mt-0 w-full"
             />
           </div>

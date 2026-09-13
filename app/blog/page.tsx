@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Image } from "@unpic/react";
 import { AppHero } from "@/components/AppHero";
+import { AppImage } from "@/components/AppImage";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
 import { SITE_AUTHOR, SITE_TITLE } from "@/config/constants";
 import { getBlogs } from "@/lib/content";
@@ -29,7 +29,7 @@ export default async function BlogPage() {
         </div>
         <div className="mx-auto md:max-w-3xl">
           <div className="p-4">
-            {data.map((node) => {
+            {data.map((node, index) => {
               const excerpt = node.description || (node.content.split("\n\n")[0] ?? node.content);
 
               return (
@@ -41,14 +41,13 @@ export default async function BlogPage() {
 
                   {node.previewImage && (
                     <Link href={`/blog/${node.slug}`}>
-                      <div className="mb-4">
-                        <Image
+                      <div className="mb-4 overflow-hidden">
+                        <AppImage
                           src={node.previewImage}
                           alt={node.title}
                           width={800}
                           height={300}
-                          loading="eager"
-                          background="auto"
+                          loading={index === 0 ? "eager" : "lazy"}
                           className="mx-auto mt-0 w-full shadow-md transition-all hover:scale-105 hover:opacity-90"
                         />
                       </div>

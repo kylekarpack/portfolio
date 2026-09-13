@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { format } from "date-fns";
-import { Image } from "@unpic/react";
+import { AppImage } from "@/components/AppImage";
 import type { Portfolio } from "@/types";
 
 export interface PortfolioPreviewProps {
@@ -21,14 +21,13 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
   return (
     <Link className="work-preview text-color-copy" href={`/portfolio/${data.slug}`}>
       {imageSrc && (
-        <div className="w-full">
-          <Image
+        <div className="w-full overflow-hidden">
+          <AppImage
             alt={data.title}
             src={imageSrc}
             width={400}
             height={250}
             loading="lazy"
-            background="auto"
             className="w-full border transition-all hover:scale-105 hover:opacity-90"
           />
         </div>

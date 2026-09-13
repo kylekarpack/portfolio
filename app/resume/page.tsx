@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Image } from "@unpic/react";
+import { AppImage } from "@/components/AppImage";
 import { AppSocialLink } from "@/components/AppSocialLink";
 import Mantra from "@/components/Mantra";
 import { SectionEducation } from "@/components/SectionEducation";
@@ -22,14 +22,13 @@ export default function ResumePage() {
           <div className="sticky top-36">
             <div className="flex flex-row items-center justify-center gap-6 md:flex-col">
               <div className="custom-bg-gradient aspect-square w-full overflow-hidden rounded-full p-1">
-                <Image
+                <AppImage
                   src="/images/profile.jpg"
                   alt={SITE_AUTHOR}
                   className="rounded-full"
                   loading="eager"
                   width={200}
                   height={200}
-                  background="auto"
                 />
               </div>
 
