@@ -29,6 +29,7 @@ export default function ResumePage() {
                   loading="eager"
                   width={200}
                   height={200}
+                  background="auto"
                 />
               </div>
 

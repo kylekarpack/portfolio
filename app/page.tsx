@@ -30,6 +30,7 @@ export default function Home() {
                   loading="eager"
                   width={200}
                   height={200}
+                  background="auto"
                 />
               </div>
             </div>

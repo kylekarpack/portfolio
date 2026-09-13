@@ -58,6 +58,7 @@ export default async function BlogSlugPage({ params }: { params: Promise<{ slug:
               width={600}
               height={400}
               loading="eager"
+              background="auto"
               className="mt-0 w-full xs:m-auto"
             />
           </div>

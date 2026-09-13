@@ -54,6 +54,7 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
               width={600}
               height={400}
               loading="eager"
+              background="auto"
               className="mt-0 w-full"
             />
           </div>

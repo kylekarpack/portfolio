@@ -48,6 +48,7 @@ export default async function BlogPage() {
                           width={800}
                           height={300}
                           loading="eager"
+                          background="auto"
                           className="mx-auto mt-0 w-full shadow-md transition-all hover:scale-105 hover:opacity-90"
                         />
                       </div>
