@@ -1,0 +1,23 @@
+---
+title: Gatsby Starter Tailwind CSS & GraphCMS
+description: A starter project for getting up and running with Gatsby and GraphCMS
+date: '2021-02-15T00:00:00.000Z'
+portfolioItemType: past
+images:
+  - /images/portfolio/gatsby-starter-tailwind-css-and-graphcms-1.jpg
+---
+### Case Study
+
+I built a portfolio website for a local engineering firm using Gatsby. When searching for existing starters, I found modern portfolio Gatsby starters in short supply. During the build process, I found that I was able to reduce page load times by over 90% while reducing maintenance cost substantially. With some modifications, I was able to make this starter available for wider use.
+
+### Links
+
+- [GitHub](https://github.com/kylekarpack/gatsby-starter-tailwind-graphcms)
+- [Live Demo](https://gatsby-starter-tailwind-graphcms.netlify.app/)
+
+### Skills Used
+
+- Gatsby
+- React
+- Tailwind CSS
+- Headless CMS

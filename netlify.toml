@@ -1,3 +1,8 @@
 [build]
 	publish = ".next"
 	command = "pnpm run build"
+
+[dev]
+	command = "next dev"
+	port = 3001
+	targetPort = 3000
