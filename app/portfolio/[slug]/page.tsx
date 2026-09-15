@@ -52,6 +52,7 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
               src={img}
               alt={data.title}
               layout="fullWidth"
+              aspectRatio={3 / 2}
               loading="eager"
               background="auto"
               className="mt-0 w-full"

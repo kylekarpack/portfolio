@@ -25,8 +25,9 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
           <AppImage
             alt={data.title}
             src={imageSrc}
+            layout="constrained"
             width={400}
-            height={250}
+            aspectRatio={4 / 3}
             background="auto"
             loading="lazy"
             className="w-full border transition-all hover:scale-105 hover:opacity-90"
