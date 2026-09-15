@@ -20,3 +20,6 @@ coverage/
 netlify/functions/server/build/
 
 .next/
+
+next-env.d.ts
+deno.lock
