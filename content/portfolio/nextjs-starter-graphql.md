@@ -15,9 +15,13 @@ Getting started with a GraphQL server in a NextJS application can be a little di
 - TypeScript
 - Apollo Server for GraphQL
 - CSS modules
-- Jest for tests<ul><li>Testing Library for component tests
+- Jest for tests
+  - Testing Library for component tests
+- Linting set up with NextJS eslint
+- Prettier for formatting
+- Github Actions integration for build and test running
 
-</li><li>Linting set up with NextJS eslint</li><li>Prettier for formatting</li><li>Github Actions integration for build and test running</li></ul>### Links
+### Links
 
 - [GitHub](https://github.com/kylekarpack/nextjs-starter-graphql)
 - [Live Demo](https://nextjs-starter-graphql.vercel.app/)

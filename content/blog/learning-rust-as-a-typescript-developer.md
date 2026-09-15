@@ -5,7 +5,7 @@ publicationDate: '2022-02-02T00:00:00.000Z'
 categories:
   - softwareEngineering
   - learning
-previewImage: /images/blog/learning-rust-as-a-typescript-develper.jpg
+previewImage: /images/blog/learning-rust-as-a-typescript-developer.jpg
 ---
 As someone who has spent years writing TypeScript, learning Rust has been challenging, but a lot of fun. TypeScript gives you some safety without getting in your way, while Rust gives you safety by making you work much harder. Here are a few things I learned during my journey.
 

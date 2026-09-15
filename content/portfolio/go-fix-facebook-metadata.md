@@ -15,12 +15,13 @@ This is the first substantial project that I have written in Go. Coming from a J
 ### Links
 
 - [GitHub](https://github.com/kylekarpack/fix-fb-meta)
-- Downloads:<ul><li>[Windows x86](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/win-x86/fix-fb-meta.exe)
-- [Windows x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/win-x64/fix-fb-meta.exe)
-- [MacOS AMD x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/darwin-amd64/fix-fb-meta)
-- [MacOS ARM x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/darwin-arm64/fix-fb-meta)
-- [Linux AMD x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/linux-amd64/fix-fb-meta)
+- Downloads:
+  - [Windows x86](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/win-x86/fix-fb-meta.exe)
+  - [Windows x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/win-x64/fix-fb-meta.exe)
+  - [MacOS AMD x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/darwin-amd64/fix-fb-meta)
+  - [MacOS ARM x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/darwin-arm64/fix-fb-meta)
+  - [Linux AMD x64](https://github.com/kylekarpack/fix-fb-meta/blob/main/bin/linux-amd64/fix-fb-meta)
 
-</li></ul>### Skills Used
+### Skills Used
 
 - Go
