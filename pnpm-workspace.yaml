@@ -1,6 +1,6 @@
 allowBuilds:
   esbuild: true
-  netlify-cli: set this to true or false
+  netlify-cli: true
   sharp: true
-  unix-dgram: set this to true or false
+  unix-dgram: true
   unrs-resolver: true
