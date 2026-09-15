@@ -37,6 +37,7 @@ export const AppWysiwyg = (props: AppWysiwygProps) => {
                 width={isNaN(parsedWidth) ? 800 : parsedWidth}
                 height={isNaN(parsedHeight) ? 500 : parsedHeight}
                 layout="constrained"
+                background="auto"
                 className="mx-auto my-4 rounded-md shadow-sm"
               />
             );
