@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const portfolios = await getPortfolios();
   const blogs = await getBlogs();
 
-  const routes = ["/blog", "/portfolio", "/resume", "/uses"];
+  const routes = ["/about", "/about/reading", "/blog", "/contact", "/portfolio", "/resume"];
 
   const staticRoutes = routes.map((route) => ({
     url: `${BASE_URL}${route}`,
