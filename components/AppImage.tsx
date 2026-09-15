@@ -18,6 +18,7 @@ export function AppImage({ className, onLoad, onError, alt = "", loading = "lazy
       alt={alt}
       loading={loading}
       cdn="netlify"
+      operations={{ netlify: { quality: 50 } }}
       {...props}
       onLoad={(e) => {
         setLoaded(true);
