@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import fs from "fs";
 import { notFound } from "next/navigation";
+import path from "path";
+import { imageSize } from "image-size";
 import { AppHero } from "@/components/AppHero";
 import { AppImage } from "@/components/AppImage";
 import { AppWysiwyg } from "@/components/AppWysiwyg";
@@ -37,6 +40,19 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
 
   const img = data.images[0] ?? false;
 
+  // Natural dimensions keep the Netlify resize aspect-correct (no cover crop),
+  // while still reserving the box so the low-res preview has somewhere to paint.
+  const displayWidth = 800;
+  let displayHeight = 500;
+  if (img) {
+    try {
+      const dims = imageSize(fs.readFileSync(path.join(process.cwd(), "public", img)));
+      displayHeight = Math.round((displayWidth * dims.height) / dims.width);
+    } catch {
+      // Fall back to a default box if the file can't be read
+    }
+  }
+
   return (
     <>
       <div className="mb-12 block items-center gap-12 bg-white align-middle sm:py-8 md:flex">
@@ -51,8 +67,8 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
             <AppImage
               src={img}
               alt={data.title}
-              layout="fullWidth"
-              aspectRatio={3 / 2}
+              width={displayWidth}
+              height={displayHeight}
               loading="eager"
               background="auto"
               className="mt-0 w-full"
