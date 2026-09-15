@@ -48,7 +48,14 @@ export default async function PortfolioSlugPage({ params }: { params: Promise<{ 
 
         {img && (
           <div className="flex-1 overflow-hidden px-4">
-            <AppImage src={img} alt={data.title} layout="fullWidth" loading="eager" className="mt-0 w-full" />
+            <AppImage
+              src={img}
+              alt={data.title}
+              layout="fullWidth"
+              loading="eager"
+              background="auto"
+              className="mt-0 w-full"
+            />
           </div>
         )}
       </div>

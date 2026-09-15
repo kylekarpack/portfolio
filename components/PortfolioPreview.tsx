@@ -27,6 +27,7 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
             src={imageSrc}
             width={400}
             height={250}
+            background="auto"
             loading="lazy"
             className="w-full border transition-all hover:scale-105 hover:opacity-90"
           />

@@ -47,6 +47,7 @@ export default async function BlogPage() {
                           alt={node.title}
                           width={800}
                           height={300}
+                          background="auto"
                           loading={index === 0 ? "eager" : "lazy"}
                           className="mx-auto mt-0 w-full shadow-md transition-all hover:scale-105 hover:opacity-90"
                         />
