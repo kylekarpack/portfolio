@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "netlify dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./",
@@ -58,6 +58,7 @@
     "eslint-config-next": "^16.0.7",
     "eslint-plugin-prettier": "^5.0.0",
     "jsdom": "^27.2.0",
+    "netlify-cli": "^27.5.2",
     "postcss": "^8.5.10",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
