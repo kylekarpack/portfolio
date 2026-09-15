@@ -17,6 +17,7 @@ export function AppImage({ className, onLoad, onError, alt = "", loading = "lazy
       ref={imgRef}
       alt={alt}
       loading={loading}
+      cdn="netlify"
       {...props}
       onLoad={(e) => {
         setLoaded(true);
