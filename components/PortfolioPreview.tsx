@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { format } from "date-fns";
+import { AppImage } from "@/components/AppImage";
 import type { Portfolio } from "@/types";
-import GraphCmsImage from "./GraphCmsImage";
 
 export interface PortfolioPreviewProps {
   hideDate: boolean;
@@ -15,19 +15,20 @@ export const PortfolioPreview = (props: PortfolioPreviewProps) => {
   const { hideDate: current = false, data } = props;
 
   // Setup
-  const date = new Date(data.date);
-
-  const handle = data.images[0]?.handle ?? "";
+  const date = data.date ? new Date(data.date) : null;
+  const imageSrc = data.images && data.images.length > 0 ? data.images[0] : "";
 
   return (
     <Link className="work-preview text-color-copy" href={`/portfolio/${data.slug}`}>
-      {handle && (
-        <div className="w-full">
-          <GraphCmsImage
+      {imageSrc && (
+        <div className="w-full overflow-hidden">
+          <AppImage
             alt={data.title}
-            handle={handle}
+            src={imageSrc}
+            layout="constrained"
             width={400}
-            height={250}
+            aspectRatio={4 / 3}
+            background="auto"
             loading="lazy"
             className="w-full border transition-all hover:scale-105 hover:opacity-90"
           />
