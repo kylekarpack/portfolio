@@ -20,7 +20,7 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
     },
     globals: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     exclude: ["build", "node_modules", "public", ".templates/**"],
     setupFiles: "./test/setup.ts",
   },

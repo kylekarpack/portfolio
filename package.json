@@ -22,7 +22,7 @@
     "@next/third-parties": "^16.4.3",
     "@unpic/react": "^1.0.2",
     "classnames": "^2.3.2",
-    "date-fns": "^2.29.3",
+    "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
     "image-size": "^2.0.4",
     "mapbox-gl": "^2.13.0",
@@ -39,25 +39,24 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "@types/prismjs": "^1.26.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^5.2.0",
-    "@vitest/coverage-v8": "^4.1.12",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitest/coverage-v8": "^5.0.5",
     "autoprefixer": "^10.6.2",
-    "jsdom": "^27.4.0",
+    "happy-dom": "^21.0.4",
     "netlify-cli": "^27.16.1",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
     "postcss": "^8.5.32",
-    "postcss-import": "^15.1.0",
+    "postcss-import": "^17.0.1",
     "tailwindcss": "^3.4.19",
     "typescript": "7.0.2",
-    "vite": "^7.3.7",
-    "vitest": "^4.1.12"
+    "vitest": "^5.0.5"
   },
   "packageManager": "pnpm@12.10.1"
 }
