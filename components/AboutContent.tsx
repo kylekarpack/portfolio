@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Image } from "@unpic/react";
 import { cloneElement, Suspense } from "react";
 import GitHubCalendar from "react-github-calendar";
-import { GoodreadsBookshelf } from "react-goodreads-shelf";
+import { HardcoverShelf } from "react-hardcover-shelf";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
@@ -18,10 +18,10 @@ export const AboutContent = () => {
               <h2 className="my-4 text-xl md:text-3xl">About Me</h2>
 
               <p>
-                Thanks for checking out my site. I&apos;m a software engineer based in Seattle. If you are looking to hire an
-                experienced software engineering leader, please check out my <Link href="/resume">resume</Link> and feel
-                free to <Link href="/contact">contact me</Link> any time. Outside work, I enjoy being outside, cooking,
-                reading, fixing my old house, and spending time with family.
+                Thanks for checking out my site. I&apos;m a software engineer based in Seattle. If you are looking to
+                hire an experienced software engineering leader, please check out my <Link href="/resume">resume</Link>{" "}
+                and feel free to <Link href="/contact">contact me</Link> any time. Outside work, I enjoy being outside,
+                cooking, reading, fixing my old house, and spending time with family.
               </p>
             </div>
             <div className="flex-1">
@@ -65,8 +65,9 @@ export const AboutContent = () => {
       <section className="bg-color-background-light py-8 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-0">
           <h2 className="my-4 text-xl md:text-3xl">Recently Read</h2>
-          <GoodreadsBookshelf
-            userId="63515611"
+          <HardcoverShelf
+            userId="kylekarpack"
+            apiKey={process.env.NEXT_PUBLIC_HARDCOVER_API_KEY}
             limit={12}
             width={100}
             displayOptions={{ hideDetails: true }}

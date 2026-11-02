@@ -4,3 +4,5 @@ allowBuilds:
   sharp: true
   unix-dgram: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - react-hardcover-shelf@0.1.0
