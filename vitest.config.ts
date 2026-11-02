@@ -2,14 +2,12 @@ import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { defineConfig } from "vitest/config";
 
-/**
- * @external https://vitejs.dev/config/
- */
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "~": resolve(__dirname, "./app"),
+      "@": resolve(import.meta.dirname, "."),
+      "~": resolve(import.meta.dirname, "./app"),
     },
   },
 
@@ -20,7 +18,7 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
     },
     globals: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     exclude: ["build", "node_modules", "public", ".templates/**"],
     setupFiles: "./test/setup.ts",
   },
