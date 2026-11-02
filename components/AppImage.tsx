@@ -2,7 +2,7 @@
 
 import { Image, type ImageProps } from "@unpic/react";
 
-export function AppImage({ className, onLoad, onError, alt = "", loading = "lazy", ...props }: ImageProps) {
+export function AppImage({ className, alt = "", loading = "lazy", ...props }: ImageProps) {
   return (
     <Image
       alt={alt}

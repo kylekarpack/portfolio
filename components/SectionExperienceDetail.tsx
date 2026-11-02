@@ -29,6 +29,7 @@ export const SectionExperienceDetail = (props: SectionExperienceDetailProps) => 
         <div className="flex">
           <h3 className="flex items-center gap-2 font-bold">
             <a
+              aria-label={company}
               className="underline-offset-4 hover:underline print:text-color-copy-dark"
               dangerouslySetInnerHTML={{ __html: company }}
               href={companyUrl}

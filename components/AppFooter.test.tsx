@@ -3,9 +3,7 @@ import { expect, test } from "vitest";
 import { AppFooter } from "./AppFooter";
 
 describe("AppFooter Component", () => {
-  const component = render(
-      <AppFooter />
-  );
+  const component = render(<AppFooter />);
 
   test("should render our footer", () => {
     expect(component.baseElement).toMatchInlineSnapshot(`

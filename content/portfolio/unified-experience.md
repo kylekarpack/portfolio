@@ -1,14 +1,16 @@
 ---
 title: Unified Experience
 description: Integrating the existing Marketo Measure UI into Adobe's frameworks
-date: '2023-01-25T00:00:00.000Z'
+date: "2023-01-25T00:00:00.000Z"
 portfolioItemType: past
 images:
   - /images/portfolio/unified-experience-1.jpg
 ---
+
 ### Case Study
 
-Throughout 2021, I led the integration of the existing Marketo Measure UI into Adobe's user experience frameworks. This involved rebranding and restyling the application, integrating with the framework, and removing obselete code.
+Throughout 2021, I led the integration of the existing Marketo Measure UI into Adobe's user experience frameworks. This
+involved rebranding and restyling the application, integrating with the framework, and removing obselete code.
 
 ### Outcomes
 

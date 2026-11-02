@@ -13,8 +13,8 @@ export const AppFooter = () => {
 
   // Short Circuit
   if (isResume) {
-		return null;
-	};
+    return null;
+  }
 
   return (
     <footer className="justify-center gap-2 py-10 text-center text-sm print:hidden md:py-20">
