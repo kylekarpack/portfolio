@@ -14,5 +14,3 @@ export function AppImage({ className, alt = "", loading = "lazy", ...props }: Im
     />
   );
 }
-
-export default AppImage;

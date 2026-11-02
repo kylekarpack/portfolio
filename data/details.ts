@@ -1,10 +1,3 @@
-export interface Data {
-  className: string;
-  company: string;
-  image: string;
-  url: string;
-}
-
 export const technologies: Record<string, string[]> = {
   Languages: [
     "TypeScript",
