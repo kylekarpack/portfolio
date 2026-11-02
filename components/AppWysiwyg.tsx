@@ -27,7 +27,7 @@ const loadHighlightPlugin = async () => {
     languages: [ts.ts, tsx.tsx, js.js, jsx.jsx, json.json, shell.shell, html.html, css.css, yaml.yaml],
   });
 
-  return remark.remarkHighlightCodeBlocks({ highlighter });
+  return () => remark.remarkHighlightCodeBlocks({ highlighter });
 };
 
 let highlightPluginPromise: ReturnType<typeof loadHighlightPlugin> | undefined;

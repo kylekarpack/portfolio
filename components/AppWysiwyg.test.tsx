@@ -8,7 +8,7 @@ test("highlights fenced code blocks with TanStack Highlight", async () => {
   );
 
   expect(markup).toContain("th-keyword");
-  expect(markup).toContain("const answer");
+  expect(markup).toContain("answer:");
 });
 
 test("does not add highlight markup when there are no code fences", async () => {
