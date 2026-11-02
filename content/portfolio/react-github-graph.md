@@ -13,7 +13,9 @@ images:
 A lightweight React component that displays Github contributions for a given user. Usage is remarkably simple. After
 installing and importing the component, simply drop the tag into a React component:
 
-`<GithubContributions username="kylekarpack" />`Please feel free to use this on your portfolio or in your project.
+`<GithubContributions username="kylekarpack" />`
+
+Please feel free to use this on your portfolio or in your project.
 
 ### Skills Used
 
