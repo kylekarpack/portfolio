@@ -1,6 +1,6 @@
 "use client";
 
-import { GoodreadsBookshelf } from "react-goodreads-shelf";
+import { HardcoverShelf } from "react-hardcover-shelf";
 
 export const ReadingContent = () => {
   return (
@@ -12,8 +12,9 @@ export const ReadingContent = () => {
         }
       `}</style>
       <h2 className="my-4 text-xl md:text-3xl">Reading</h2>
-      <GoodreadsBookshelf
-        userId="63515611"
+      <HardcoverShelf
+        userId="kylekarpack"
+        apiKey={process.env.NEXT_PUBLIC_HARDCOVER_API_KEY}
         limit={500}
         width={170}
         groupBy="year"
