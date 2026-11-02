@@ -1,10 +1,11 @@
-name: Deploy
+name: CI Checks
 on:
+  pull_request:
   push:
-    branches:
-      - main
-      - dev
-  pull_request: {}
+    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
   ci:
@@ -29,10 +30,10 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm run lint
+        run: pnpm lint
 
       - name: Test
-        run: pnpm run test --coverage
+        run: pnpm test --coverage
 
       - name: Build
-        run: pnpm run build
+        run: pnpm build
