@@ -1,16 +1,23 @@
 ---
 title: Capability Scoring
-description: ''
-publicationDate: '2015-11-18T00:00:00.000Z'
+description: ""
+publicationDate: "2015-11-18T00:00:00.000Z"
 categories:
   - dataVisualization
 previewImage: /images/blog/capability-scoring.jpg
 ---
-I recently helped apply for and received a patent ([US9182758](https://patents.google.com/patent/US9182758 "https://patents.google.com/patent/US9182758")) for "C_omputer-implemented system and method for capability zone-based manufacturing quality control_". I'm very proud of this work, and I'd like to briefly explain it.
+
+I recently helped apply for and received a patent
+([US9182758](https://patents.google.com/patent/US9182758 "https://patents.google.com/patent/US9182758")) for
+"C_omputer-implemented system and method for capability zone-based manufacturing quality control_". I'm very proud of
+this work, and I'd like to briefly explain it.
 
 ## Overview
 
-This patent is for a computer system for improving manufacturing quality control by analyzing how **close** measured features are to their **nominal (target)** values. This means it looks at not just whether they fall within tolerance. It assigns each measurement to a “capability zone” and computes capability scores for suppliers, machines, operators, etc.
+This patent is for a computer system for improving manufacturing quality control by analyzing how **close** measured
+features are to their **nominal (target)** values. This means it looks at not just whether they fall within tolerance.
+It assigns each measurement to a “capability zone” and computes capability scores for suppliers, machines, operators,
+etc.
 
 ## Problem It Solves
 
@@ -51,7 +58,8 @@ Zones are defined as ranges of percent-of-tolerance from nominal.
 ### 4. **Capability Scoring**
 
 - Each zone has a weight (higher is worse)
-- Weighted counts are aggregated to produce a **0–100 capability score** for a supplier, operator, feature, machine, etc.
+- Weighted counts are aggregated to produce a **0–100 capability score** for a supplier, operator, feature, machine,
+  etc.
 - Scores compare performance across any combination of attributes
 
 ### 5. **Visualization & UI**
@@ -73,10 +81,12 @@ The system produces:
 
 ## Example
 
-If tolerance is ±0.010 cm and a measurement is 0.002 cm from nominal, it is 20% of tolerance. This places it in a specific zone (e.g., 5-sigma). Many such measurements form a distribution that determines a capability score.
+If tolerance is ±0.010 cm and a measurement is 0.002 cm from nominal, it is 20% of tolerance. This places it in a
+specific zone (e.g., 5-sigma). Many such measurements form a distribution that determines a capability score.
 
 ## Implementation Notes
 
 - The system may run on servers or cloud platforms
-- Measurements exactly equal to nominal may be excluded to avoid skewing results. In manufacturing and high-precision industries, these are rarely valuable pieces of data since they are often fabricated or put is as defaults
+- Measurements exactly equal to nominal may be excluded to avoid skewing results. In manufacturing and high-precision
+  industries, these are rarely valuable pieces of data since they are often fabricated or put is as defaults
 - The system can map attributes to causes to recommended corrective actions.

@@ -1,12 +1,15 @@
 ---
 title: Comparing Modern BI Tools
-description: ''
-publicationDate: '2025-03-01T00:00:00.000Z'
+description: ""
+publicationDate: "2025-03-01T00:00:00.000Z"
 categories:
   - dataVisualization
 previewImage: /images/blog/comparing-modern-bi-tools.jpg
 ---
-Late last year, I performed an extensive evaluation of various business intelligence solutions. My team was looking for a product that could replace and augment our homegrown dashboards without unnecessarily constraining our design and development workflows. I ultimately evaluated about 25 tools on the following criteria:
+
+Late last year, I performed an extensive evaluation of various business intelligence solutions. My team was looking for
+a product that could replace and augment our homegrown dashboards without unnecessarily constraining our design and
+development workflows. I ultimately evaluated about 25 tools on the following criteria:
 
 - Multi-tenancy
 - Embedding capabilities
@@ -91,16 +94,21 @@ Here were some that best fit our needs.
 
 ### LightDash
 
-Lightdash requires a dbt project and connection. I didn't have a complete one at the time, so I wasn't able to fully evaluate it. The dbt-based project is definitely an interesting prospect.
+Lightdash requires a dbt project and connection. I didn't have a complete one at the time, so I wasn't able to fully
+evaluate it. The dbt-based project is definitely an interesting prospect.
 
 ### Metabase
 
-Metabase is open source-based with excellent UI out of the box. It was difficult to trial due to unusual licensing structure, and its features and data modeling are rudimentary. Many BI users reported outgrowing it quickly.
+Metabase is open source-based with excellent UI out of the box. It was difficult to trial due to unusual licensing
+structure, and its features and data modeling are rudimentary. Many BI users reported outgrowing it quickly.
 
 ### Apache Superset
 
-Superset is an open source BI framework that looks great out of the box. The self-service options require more familiarity with SQL than many competitors, but customization is very strong. It also has some basic analytics-as-code features. Embedding was a weak spot.
+Superset is an open source BI framework that looks great out of the box. The self-service options require more
+familiarity with SQL than many competitors, but customization is very strong. It also has some basic analytics-as-code
+features. Embedding was a weak spot.
 
 ## Conclusion
 
-These evaluations are based on my team's needs and may not match your requirements. These products are also constantly evolving, so be sure to check them out for your next BI or dashboarding project!
+These evaluations are based on my team's needs and may not match your requirements. These products are also constantly
+evolving, so be sure to check them out for your next BI or dashboarding project!
