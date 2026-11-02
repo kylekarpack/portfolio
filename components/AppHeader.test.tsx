@@ -3,9 +3,7 @@ import { expect, test } from "vitest";
 import { AppHeader } from "./AppHeader";
 
 describe("AppHeader Component", () => {
-  const component = render(
-      <AppHeader />
-  );
+  const component = render(<AppHeader />);
 
   test("should render our footer", () => {
     expect(component.baseElement).toMatchInlineSnapshot(`

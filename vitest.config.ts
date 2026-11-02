@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      "@": resolve(__dirname, "."),
       "~": resolve(__dirname, "./app"),
     },
   },
@@ -20,7 +21,7 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
     },
     globals: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     exclude: ["build", "node_modules", "public", ".templates/**"],
     setupFiles: "./test/setup.ts",
   },
