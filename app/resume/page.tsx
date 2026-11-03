@@ -32,7 +32,7 @@ export default function ResumePage() {
                 />
               </div>
 
-              <div className="flex flex-shrink-0 flex-col gap-2 p-4">
+              <div className="flex shrink-0 flex-col gap-2 p-4">
                 {social.map((data) => (
                   <AppSocialLink data={data} key={data.title} />
                 ))}

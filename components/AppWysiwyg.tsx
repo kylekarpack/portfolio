@@ -59,7 +59,7 @@ export const AppWysiwyg = async ({ content }: AppWysiwygProps) => {
                 height={isNaN(parsedHeight) ? 500 : parsedHeight}
                 layout="constrained"
                 background="auto"
-                className="mx-auto my-4 rounded-md shadow-sm"
+                className="mx-auto my-4 rounded-md shadow-xs"
               />
             );
           },

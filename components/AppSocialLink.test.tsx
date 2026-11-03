@@ -19,7 +19,7 @@ describe("AppSocialLink Component", () => {
       <body>
         <div>
           <a
-            class="flex items-center gap-4 break-words break-all text-sm text-color-copy-light"
+            class="flex items-center gap-4 wrap-break-word break-all text-sm text-color-copy-light"
             href="https://facebook.com"
             rel="noopener noreferrer"
             target="_blank"

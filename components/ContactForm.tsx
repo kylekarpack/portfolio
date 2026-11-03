@@ -49,7 +49,7 @@ const ContactForm = () => {
             id="name"
             placeholder="Your Name"
             required
-            className="w-100 mt-2 rounded-lg border border-gray-400 bg-white py-3 px-3 text-gray-800 focus:border-sky-500 focus:outline-none"
+            className="w-100 mt-2 rounded-lg border border-gray-400 bg-white py-3 px-3 text-gray-800 focus:border-sky-500 focus:outline-hidden"
           />
         </div>
 
@@ -63,7 +63,7 @@ const ContactForm = () => {
             id="email"
             placeholder="Email"
             required
-            className="w-100 mt-2 rounded-lg border border-gray-400 bg-white py-3 px-3 text-gray-800 focus:border-sky-500 focus:outline-none"
+            className="w-100 mt-2 rounded-lg border border-gray-400 bg-white py-3 px-3 text-gray-800 focus:border-sky-500 focus:outline-hidden"
           />
         </div>
 
@@ -76,7 +76,7 @@ const ContactForm = () => {
             id="message"
             placeholder="Message"
             required
-            className="w-100 mt-2 rounded-lg border border-gray-400 bg-white py-3 px-3 text-gray-800 focus:border-sky-500 focus:outline-none"
+            className="w-100 mt-2 rounded-lg border border-gray-400 bg-white py-3 px-3 text-gray-800 focus:border-sky-500 focus:outline-hidden"
           />
         </div>
 
@@ -89,7 +89,7 @@ const ContactForm = () => {
       </form>
 
       {state.error && (
-        <div className="relative mt-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700" role="alert">
+        <div className="relative mt-4 rounded-sm border border-red-400 bg-red-100 px-4 py-3 text-red-700" role="alert">
           <span className="block sm:inline">{state.error.message}</span>
         </div>
       )}
