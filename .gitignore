@@ -20,7 +20,10 @@ coverage/
 netlify/functions/server/build/
 
 .next/
+.astro/
 
 tsconfig.tsbuildinfo
 next-env.d.ts
 deno.lock
+
+dist/

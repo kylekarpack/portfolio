@@ -1,0 +1,13 @@
+---
+import Shell from "../layouts/Shell.astro";
+import { MapboxIsland } from "../components/islands/MapboxIsland";
+import { ContactFormIsland } from "../components/islands/ContactFormIsland";
+import { SITE_AUTHOR, SITE_TITLE } from "../../config/constants";
+---
+
+<Shell
+  title={`Contact | ${SITE_TITLE}`}
+  description={`Contact ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`}>
+  <MapboxIsland client:visible />
+  <ContactFormIsland client:idle />
+</Shell>

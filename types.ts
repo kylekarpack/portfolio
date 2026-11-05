@@ -8,12 +8,3 @@ export interface Portfolio {
   content: string;
 }
 
-export interface Blog {
-  content: string;
-  categories: string[];
-  publicationDate: string;
-  previewImage?: string;
-  slug: string;
-  title: string;
-  description: string;
-}
