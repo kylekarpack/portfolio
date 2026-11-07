@@ -1,4 +1,5 @@
 import { transformProps } from "@unpic/core";
+import { imageOptions } from "../config/images";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -16,9 +17,13 @@ export interface RenderMarkdownOptions {
 const CODE_FENCE_PATTERN = /(?:^|\n) {0,3}(?:`{3,}|~{3,})/;
 
 /**
- * Netlify CDN image transforms for `![]()` images inside Markdown content,
- * replacing the old ReactMarkdown `<AppImage>` component override.
+ * CDN transform URLs for `![]()` images inside Markdown content, replacing
+ * the old ReactMarkdown `<AppImage>` component override. See
+ * `src/config/images.ts` for CDN selection (Netlify default, Cloudflare,
+ * or plain originals for the wrangler look build).
  */
+const { cdn, operations } = imageOptions;
+
 function rehypeUnpicImages() {
   return (tree: any) => {
     visit(tree, "element", (node: Element) => {
@@ -34,8 +39,8 @@ function rehypeUnpicImages() {
         width: numeric(width, 800),
         height: numeric(height, 500),
         layout: "constrained",
-        cdn: "netlify",
-        operations: { netlify: { quality: 50 } },
+        cdn,
+        operations,
       });
 
       const { className: _className, style, ...htmlAttrs } = attrs as Record<string, unknown>;

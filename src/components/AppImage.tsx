@@ -1,5 +1,6 @@
 import type { CSSProperties, ImgHTMLAttributes } from "react";
 import { transformProps } from "@unpic/core";
+import { imageOptions } from "../config/images";
 
 type HtmlAttrs = ImgHTMLAttributes<HTMLImageElement>;
 
@@ -15,9 +16,10 @@ export interface AppImageProps extends Omit<HtmlAttrs, "srcSet" | "sizes" | "sty
 }
 
 /**
- * Image with Netlify CDN transforms, the static equivalent of the old
+ * Image with CDN srcset transforms, the static equivalent of the old
  * `@unpic/react` `AppImage`. All srcset/sizes generation happens at build
- * time, so no client JavaScript is shipped.
+ * time, so no client JavaScript is shipped. CDN selection via
+ * `src/config/images.ts` (Netlify default; Cloudflare or off via env).
  */
 export function AppImage({
   alt = "",
@@ -40,8 +42,7 @@ export function AppImage({
     background: background ?? undefined,
     alt,
     loading,
-    cdn: "netlify",
-    operations: { netlify: { quality: 50 } },
+    ...imageOptions,
   } as any);
 
   const { className: _attrsClass, ...htmlAttrs } = attrs as Record<string, unknown>;

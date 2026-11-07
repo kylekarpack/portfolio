@@ -10,6 +10,7 @@
     "dev": "netlify dev",
     "build": "astro build",
     "start": "astro preview",
+    "look": "PUBLIC_IMAGE_CDN=off astro build && wrangler dev",
     "lint": "oxlint .",
     "lint:fix": "oxlint --fix .",
     "format": "oxfmt",

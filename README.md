@@ -19,12 +19,30 @@ The professional portfolio of Kyle Karpack
 NEXT_PUBLIC_MAPBOX_API_KEY=<mapbox token>
 NEXT_PUBLIC_HARDCOVER_API_KEY=<hardcover token>
 
+# Optional: image CDN for non-Netlify builds
+#   PUBLIC_IMAGE_CDN=cloudflare  → Cloudflare /cdn-cgi/image transforms
+#   PUBLIC_IMAGE_CDN=off         → plain originals (wrangler look preview)
+# Default: netlify
+
 # Install dependencies
 pnpm install
 
 # Start developing
 pnpm dev
 ```
+
+## Image CDNs
+
+`src/config/images.ts` selects the image CDN at build time:
+
+- **Netlify** (default) — `/.netlify/images?...` transforms; used by the Netlify build.
+- **Cloudflare** — `PUBLIC_IMAGE_CDN=cloudflare` generates `/cdn-cgi/image/...` URLs.
+  Requires the production domain on a Cloudflare zone with
+  [Transformations](https://developers.cloudflare.com/images/transform-images/transform-via-url/)
+  enabled (free plan: 5,000 unique transformations/month). Not available on
+  `*.workers.dev` subdomains.
+- **Off** — plain originals; used by `pnpm run look` for local wrangler
+  previews (`wrangler dev` can't transform images).
 
 <!-- Links -->
 

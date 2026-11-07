@@ -7,9 +7,12 @@
   // - Build output must exist before deploy/preview: the build command
   //   (`pnpm run build`) writes to dist/.
   //
-  // NOTE: image transforms use Netlify's CDN (`/.netlify/images?...`) and
-  // will 404 in Cloudflare-hosted previews until the image pipeline is
-  // migrated (option: build var `PUBLIC_IMAGE_CDN=off`).
+  // Image CDN: the site builds with Netlify CDN URLs by default. For
+  // Cloudflare builds, set the build variable `PUBLIC_IMAGE_CDN=cloudflare`
+  // (requires the production domain on a Cloudflare zone with
+  // transformations enabled — not on *.workers.dev, and not for local
+  // `wrangler dev`; use `PUBLIC_IMAGE_CDN=off` builds (pnpm run look) for
+  // local viewing).
   "name": "portfolio",
   "compatibility_date": "2026-11-04",
   "assets": {
