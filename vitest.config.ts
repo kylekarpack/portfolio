@@ -7,19 +7,18 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(import.meta.dirname, "."),
-      "~": resolve(import.meta.dirname, "./app"),
     },
   },
 
   test: {
     coverage: {
-      exclude: ["node_modules", "public/build/**/*", "**/*.test.{ts,tsx}"],
-      include: ["app/**/*.{ts,tsx}"],
+      exclude: ["node_modules", "public/**", "**/*.test.{ts,tsx}", ".astro/**", "dist/**"],
+      include: ["src/**/*.{ts,tsx}"],
       reporter: ["text", "json", "html"],
     },
     globals: true,
     environment: "happy-dom",
-    exclude: ["build", "node_modules", "public", ".templates/**"],
+    exclude: ["build", "dist", "node_modules", "public", ".templates/**", ".astro/**"],
     setupFiles: "./test/setup.ts",
   },
 });

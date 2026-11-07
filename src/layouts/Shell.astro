@@ -1,0 +1,64 @@
+---
+/**
+ * The one shared document shell. Everything inside <main> is React; this file
+ * exists only for the html/head boundary, which needs Astro for head-tag
+ * hoisting and the inline analytics scripts.
+ */
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import { MobileHeader } from "../components/MobileHeader";
+import Pwa from "./Pwa.astro";
+import { SITE_DESCRIPTION, SITE_SHARE_IMAGE, SITE_TITLE, SITE_URL } from "../../config/constants";
+import { GA_TRACKING_ID } from "../config/site";
+import "../../styles/index.css";
+
+interface Props {
+  /** Full page title; defaults to the site title. */
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <Pwa />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={SITE_TITLE} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+    <meta property="og:image" content={`${SITE_URL}${SITE_SHARE_IMAGE}`} />
+    <meta property="og:url" content={SITE_URL} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <Header path={path} />
+    <MobileHeader path={path} />
+    <main>
+      <slot />
+    </main>
+    <Footer path={path} />
+    {
+      GA_TRACKING_ID && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+          <script is:inline define:vars={{ gaId: GA_TRACKING_ID }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", gaId);
+          </script>
+        </>
+      )
+    }
+  </body>
+</html>

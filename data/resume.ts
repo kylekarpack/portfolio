@@ -1,4 +1,4 @@
-export type Role = {
+type Role = {
   title: string;
   dateRange: { start: Date; end?: Date };
 };

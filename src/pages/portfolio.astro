@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import Shell from "../layouts/Shell.astro";
+import { PortfolioIndex } from "../views/PortfolioIndex";
+import { SITE_AUTHOR, SITE_TITLE } from "../../config/constants";
+import type { Portfolio } from "../../types";
+
+const items: Portfolio[] = (await getCollection("portfolio")).map((post) => ({
+  slug: post.id,
+  title: post.data.title,
+  description: post.data.description,
+  date: post.data.date,
+  portfolioItemType: post.data.portfolioItemType,
+  images: post.data.images,
+  content: post.body ?? "",
+}));
+---
+
+<Shell title={`Recent Work | ${SITE_TITLE}`} description={`The portfolio of ${SITE_AUTHOR}.`}>
+  <PortfolioIndex items={items} />
+</Shell>

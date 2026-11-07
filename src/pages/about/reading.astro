@@ -1,0 +1,11 @@
+---
+import Shell from "../../layouts/Shell.astro";
+import { HardcoverShelfIsland } from "../../components/islands/HardcoverShelfIsland";
+import { SITE_AUTHOR, SITE_TITLE } from "../../../config/constants";
+
+const hardcoverApiKey = import.meta.env.NEXT_PUBLIC_HARDCOVER_API_KEY;
+---
+
+<Shell title={`Reading | ${SITE_TITLE}`} description={`What ${SITE_AUTHOR} is reading`}>
+  <HardcoverShelfIsland client:visible variant="reading" apiKey={hardcoverApiKey} limit={500} width={170} groupBy="year" />
+</Shell>
