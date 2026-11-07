@@ -9,7 +9,7 @@
   --footer-height: 4rem;
 }
 
-@screen md {
+@media (min-width: 48rem) {
   :root {
     --header-height: 4rem;
   }
@@ -108,11 +108,3 @@ html.dark {
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

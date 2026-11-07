@@ -6,29 +6,27 @@ The professional portfolio of Kyle Karpack
 
 **Technology:**
 
-- [NextJS][nextjs]
+- [Astro](https://astro.build) (static output, React islands)
 - [React](https://reactjs.org)
 - [TailwindCSS](https://tailwindcss.com)
-- [GraphCMS][graphcms]
+- [TanStack Highlight][highlight]
 - [Netlify][netlify]
 
 ## Setup
 
 ```bash
 # Add the following variables to your .env file
-<GRAPHCMS_ADMIN>
-<GRAPHCMS_TOKEN>
-<GRAPHCMS_URL>
+NEXT_PUBLIC_MAPBOX_API_KEY=<mapbox token>
+NEXT_PUBLIC_HARDCOVER_API_KEY=<hardcover token>
 
 # Install dependencies
-npm install
+pnpm install
 
-# Start building
-npm run dev
+# Start developing
+pnpm dev
 ```
 
 <!-- Links -->
 
-[graphcms]: https://graphcms.com "GraphCMS"
-[nextjs]: https://nextjs.org "NextJS"
+[highlight]: https://tanstack.com/highlight "TanStack Highlight"
 [netlify]: https://netlify.com "Netlify"
