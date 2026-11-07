@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Shell from "../../layouts/Shell.astro";
+import { PortfolioPost } from "../../views/PortfolioPost";
+import { renderMarkdown } from "../../lib/markdown";
+import type { Portfolio } from "../../types";
+
+export async function getStaticPaths() {
+  const items = await getCollection("portfolio");
+  return items.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const data: Portfolio = {
+  slug: post.id,
+  title: post.data.title,
+  description: post.data.description,
+  date: post.data.date,
+  portfolioItemType: post.data.portfolioItemType,
+  images: post.data.images,
+  content: post.body ?? "",
+};
+const contentHtml = await renderMarkdown(data.content);
+---
+
+<Shell title={data.title} description={data.description}>
+  <PortfolioPost data={data} contentHtml={contentHtml} />
+</Shell>

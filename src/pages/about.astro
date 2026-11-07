@@ -1,0 +1,17 @@
+---
+import Shell from "../layouts/Shell.astro";
+import { AboutIntro } from "../views/About";
+import { GitHubCalendarIsland } from "../components/islands/GitHubCalendarIsland";
+import { HardcoverShelfIsland } from "../components/islands/HardcoverShelfIsland";
+import { SITE_AUTHOR, SITE_TITLE } from "../../config/constants";
+
+const hardcoverApiKey = import.meta.env.NEXT_PUBLIC_HARDCOVER_API_KEY;
+---
+
+<Shell
+  title={`About | ${SITE_TITLE}`}
+  description={`About ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`}>
+  <AboutIntro />
+  <GitHubCalendarIsland client:visible />
+  <HardcoverShelfIsland client:visible variant="about" apiKey={hardcoverApiKey} limit={12} width={100} />
+</Shell>

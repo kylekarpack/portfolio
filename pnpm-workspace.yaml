@@ -4,6 +4,7 @@ allowBuilds:
   sharp: true
   unix-dgram: true
   unrs-resolver: true
+  workerd: true
 minimumReleaseAgeExclude:
   - react-hardcover-shelf@0.1.0
   - '@tanstack/highlight@1.2.8'

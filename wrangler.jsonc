@@ -1,0 +1,23 @@
+{
+  // Cloudflare Workers configuration
+  //
+  // The site is published as static assets only (no Worker script).
+  // - CI builds run `wrangler deploy` on the production branch and
+  //   `wrangler preview` otherwise; previews require this `previews` block.
+  // - Build output must exist before deploy/preview: the build command
+  //   (`pnpm run build`) writes to dist/.
+  //
+  // Image CDN: the site builds with Netlify CDN URLs by default. For
+  // Cloudflare builds, set the build variable `PUBLIC_IMAGE_CDN=cloudflare`
+  // (requires the production domain on a Cloudflare zone with
+  // transformations enabled — not on *.workers.dev, and not for local
+  // `wrangler dev`; use `PUBLIC_IMAGE_CDN=off` builds (pnpm run look) for
+  // local viewing).
+  "name": "portfolio",
+  "compatibility_date": "2026-11-04",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "previews": {}
+}

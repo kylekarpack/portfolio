@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Shell from "../layouts/Shell.astro";
+import { BlogIndex, type BlogIndexPost } from "../views/BlogIndex";
+import { SITE_AUTHOR, SITE_TITLE } from "../../config/constants";
+import { renderMarkdown } from "../lib/markdown";
+
+const posts: BlogIndexPost[] = await Promise.all(
+  (await getCollection("blog"))
+    .map((post) => ({
+      slug: post.id,
+      title: post.data.title,
+      publicationDate: post.data.publicationDate,
+      categories: post.data.categories,
+      previewImage: post.data.previewImage,
+      content: post.body ?? "",
+    }))
+    .sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime())
+    .map(async (post) => ({
+      slug: post.slug,
+      title: post.title,
+      publicationDate: post.publicationDate,
+      categories: post.categories,
+      previewImage: post.previewImage,
+      excerptHtml: await renderMarkdown(post.description || (post.content.split("\n\n")[0] ?? post.content)),
+    })),
+);
+---
+
+<Shell title={`Blog | ${SITE_TITLE}`} description={`The blog of ${SITE_AUTHOR}.`}>
+  <BlogIndex posts={posts} />
+</Shell>

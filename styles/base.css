@@ -43,7 +43,7 @@ blockquote {
   text-align: center;
 }
 
-@screen md {
+@media (min-width: 48rem) {
   blockquote {
     margin: 4rem 4rem;
   }

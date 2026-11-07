@@ -1,0 +1,11 @@
+---
+import Shell from "../layouts/Shell.astro";
+import { ResumeView } from "../views/Resume";
+import { SITE_AUTHOR, SITE_TITLE } from "../../config/constants";
+---
+
+<Shell
+  title={`Resume | ${SITE_TITLE}`}
+  description={`The resume of ${SITE_AUTHOR}, a Software Engineer in Seattle, Washington`}>
+  <ResumeView />
+</Shell>

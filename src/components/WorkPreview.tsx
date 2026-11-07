@@ -1,0 +1,42 @@
+import { format } from "date-fns";
+import type { Portfolio } from "../../types";
+import { AppImage } from "./AppImage";
+
+export interface WorkPreviewProps {
+  hideDate: boolean;
+  data: Portfolio;
+}
+
+/** Preview a portfolio item, replacing the old `PortfolioPreview`. */
+export const WorkPreview = ({ hideDate: current = false, data }: WorkPreviewProps) => {
+  const date = data.date ? new Date(data.date) : null;
+  const imageSrc = data.images && data.images.length > 0 ? data.images[0] : "";
+
+  return (
+    <a className="work-preview text-color-copy" href={`/portfolio/${data.slug}`}>
+      {imageSrc ? (
+        <div className="w-full overflow-hidden">
+          <AppImage
+            alt={data.title}
+            src={imageSrc}
+            layout="constrained"
+            width={400}
+            aspectRatio={4 / 3}
+            background="auto"
+            loading="lazy"
+            className="w-full border transition-all hover:scale-105 hover:opacity-90"
+          />
+        </div>
+      ) : null}
+
+      <h3 className="mb-2 mt-4 font-font-serif text-xl font-bold transition-all duration-300">{data.title}</h3>
+      {!current && date ? (
+        <div className="mb-2 mt-2 flex items-baseline gap-2 font-medium text-color-copy-light">
+          <span>{format(date, "MMMM yyyy")}</span>
+        </div>
+      ) : null}
+
+      <p>{data.description}</p>
+    </a>
+  );
+};
